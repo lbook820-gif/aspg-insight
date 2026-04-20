@@ -9,17 +9,14 @@ const hotKeywords = ['DMA', 'Google Play', 'App Store', '反垄断', 'Epic Games
 export default function LatestNews() {
   const [searchQuery, setSearchQuery] = useState('');
 
-  // 获取上周快讯（4月8日-4月14日）
-  const lastWeekNews = sortedNewsData.filter(news => {
-    const date = new Date(news.publishDate);
-    return date >= new Date('2026-04-08') && date <= new Date('2026-04-14');
-  }).sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
+  // 获取当日新增新闻
+  const now = new Date();
+  const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  const todayNews = sortedNewsData.filter(news => news.publishDate === today)
+    .sort((a, b) => b.score - a.score);
 
-  // 获取近期动态（最近5条，排除上周新闻）
-  const recentNews = getLatestNews(30).filter(news => {
-    const date = new Date(news.publishDate);
-    return date < new Date('2026-04-08') || date > new Date('2026-04-14');
-  }).slice(0, 5);
+  // 获取近期动态（最近10条，排除今日新闻）
+  const recentNews = getLatestNews(30).filter(news => news.publishDate !== today).slice(0, 5);
 
   // 搜索功能 - 实时筛选
   const searchResults = searchQuery.trim()
@@ -152,7 +149,7 @@ export default function LatestNews() {
             聚焦欧盟DMA政策、应用商店监管与欧洲数字市场动态
           </p>
           <p className="mt-2 text-gray-400 text-xs">
-            网站更新于：2026年4月15日
+            网站更新于：{today}
           </p>
         </div>
 
@@ -233,23 +230,23 @@ export default function LatestNews() {
           </div>
         )}
 
-        {/* 上周快讯一览 - 仅在无搜索时显示 */}
+        {/* 当日新增 - 仅在无搜索时显示 */}
         {!searchQuery && (
           <div className="mb-10">
             <div className="mb-4 border-b border-gray-200 pb-2">
               <h3 className="font-bold text-lg">
-                上周快讯一览
+                当日新增 {todayNews.length > 0 && <span className="text-sm font-normal text-gray-500">（{today}）</span>}
               </h3>
             </div>
 
-            {lastWeekNews.length > 0 ? (
+            {todayNews.length > 0 ? (
               <div className="space-y-4 md:space-y-6">
-                {lastWeekNews.map((news) => renderNewsCard(news, true))}
+                {todayNews.map((news) => renderNewsCard(news, true))}
               </div>
             ) : (
               <div className="text-center py-8 bg-white rounded-lg border border-gray-200">
                 <p className="text-gray-500">
-                  上周无快讯
+                  今日暂无新增新闻
                 </p>
               </div>
             )}
