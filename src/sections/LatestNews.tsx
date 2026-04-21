@@ -242,7 +242,7 @@ export default function LatestNews() {
           <div className="mb-10">
             <div className="mb-4 border-b border-gray-200 pb-2">
               <h3 className="font-bold text-lg">
-                当日新增 {todayNews.length > 0 && <span className="text-sm font-normal text-gray-500">（{today}）</span>}
+                当日新增 <span className="text-sm font-normal text-gray-500">（{todayNews.length}）</span>
               </h3>
             </div>
 
@@ -265,7 +265,7 @@ export default function LatestNews() {
           <div className="mb-6">
             <div className="flex items-center justify-between mb-4 border-b border-gray-200 pb-2">
               <h3 className="font-bold text-lg">
-                近期动态
+                近期动态 <span className="text-sm font-normal text-gray-500">（{recentNews.length}）</span>
               </h3>
               <div className="flex gap-2">
                 <Link

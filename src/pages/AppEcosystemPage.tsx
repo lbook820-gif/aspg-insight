@@ -53,7 +53,7 @@ export default function AppEcosystemPage() {
             <span className="text-black">应用生态新闻</span>
           </div>
           <h1 className="font-bold mb-2 text-gray-900 text-xl md:text-2xl">
-            应用生态新闻
+            应用生态新闻 <span className="text-base font-normal text-gray-500">（{appEcosystemNews.length}）</span>
           </h1>
           <p className="text-gray-600">
             应用商店政策、平台更新、开发者动态

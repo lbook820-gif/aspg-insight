@@ -32,7 +32,7 @@ export default function SummitPage() {
             <span className="text-black">生态峰会动态</span>
           </div>
           <h1 className="font-bold mb-2 text-gray-900 text-xl md:text-2xl">
-            生态峰会动态
+            生态峰会动态 <span className="text-base font-normal text-gray-500">（{sortedSummitData.length}）</span>
           </h1>
           <p className="text-gray-600">
             未来6个月互联网、AI、支付领域欧美及亚太峰会一览

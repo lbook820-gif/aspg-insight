@@ -53,7 +53,7 @@ export default function PaymentEcosystemPage() {
             <span className="text-black">支付生态新闻</span>
           </div>
           <h1 className="font-bold mb-2 text-gray-900 text-xl md:text-2xl">
-            支付生态新闻
+            支付生态新闻 <span className="text-base font-normal text-gray-500">（{paymentEcosystemNews.length}）</span>
           </h1>
           <p className="text-gray-600">
             支付政策、佣金调整、第三方支付动态
