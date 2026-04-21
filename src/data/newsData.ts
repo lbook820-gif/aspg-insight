@@ -19,6 +19,21 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: '49',
+    title: '苹果App Store Connect迎史上最大更新，新增超100项数据指标',
+    source: 'TechWeb / IT之家',
+    sourceUrl: 'https://www.techweb.com.cn/it/2026-03-26/2973520.shtml',
+    summary: '苹果于3月25日更新App Store Connect服务，新增超100项指标，是该服务自2018年上线以来的最大规模更新。开发者可通过全新指标深入了解变现与订阅状况，精准监控应用的展示、发现和下载频率，并衡量预订等特定功能表现。新版增加"群组（Cohort）"板块展示试用版用户的转化周期，订阅类应用分析板块提供50多项筛选条件，可精准查询用户流失率及订阅计划起始时间等细节。同时支持与同类竞品进行基准测试对比，并按地区、用户设备等多重维度过滤数据。',
+    aiComment: {
+      overallImpact: 'App Store Connect的大规模更新标志着苹果对开发者数据赋能的重视程度提升。100多项新指标和群组分析功能将帮助开发者更精准地理解用户行为和转化漏斗，优化变现策略。基准测试功能增强了竞品洞察能力，可能加剧行业竞争。这一更新也反映了苹果在开发者服务领域与Google Play的竞争态势。',
+      huaweiImpact: 'App Store Connect的数据分析升级对华为AppGallery Connect具有重要对标价值。功能层面：苹果的"群组分析"和"订阅漏斗"功能展示了精细化运营数据的价值，华为应在AppGallery Connect中引入类似的高级分析能力，帮助开发者追踪用户生命周期价值（LTV）、留存曲线、付费转化周期等关键指标。竞争层面：苹果的数据赋能可能提升iOS开发者的运营效率和收益，进而增强iOS生态的吸引力。华为需加快AppGallery Connect的数据分析能力建设，避免开发者在数据洞察层面形成"iOS优于鸿蒙"的认知。差异化机会：苹果的分析功能虽强大但相对复杂，华为可主打"简洁易用"的数据面板，降低中小开发者的数据分析门槛，同时提供AI驱动的智能洞察建议，帮助开发者快速发现问题并优化策略。生态整合：华为可将AppGallery Connect的数据能力与鸿蒙生态深度整合，提供跨设备用户行为分析、原子化服务转化追踪等苹果不具备的独特能力。',
+    },
+    publishDate: '2026-04-22',
+    score: 7,
+    category: 'appstore',
+    tags: ['苹果', 'App Store Connect', '数据分析', '开发者工具', '订阅'],
+  },
+  {
     id: '47',
     title: '马斯克推出XChat即时通讯应用，4月17日登陆App Store挑战WhatsApp',
     source: '腾讯新闻 / 中关村在线',
