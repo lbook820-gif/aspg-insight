@@ -694,6 +694,36 @@ export const newsData: NewsItem[] = [
     category: 'appstore',
     tags: ['苹果', 'App Store', '政策', 'Xcode', '年龄验证', '替代市场'],
   },
+  {
+    id: '37',
+    title: '英国CMA就Apple和Google应用商店规则征集证据，聚焦引流政策与第三方计费',
+    source: 'UK Government / CMA',
+    sourceUrl: 'https://www.gov.uk/government/calls-for-evidence/recent-developments-in-relation-to-apples-and-googles-app-store-rules',
+    summary: '英国竞争与市场管理局(CMA)发布证据征集通知，就Apple和Google应用商店规则的最新发展征求利益相关方意见。征集于2026年4月22日截止。CMA重点关注两大领域：一是"引流"(steering)政策的发展，包括Apple和Google允许开发者引导用户到外部完成交易的新规则、相关服务费率以及用户体验设计；二是更广泛的应用商店规则变化，如Apple在欧盟的Core Technology Commission(5%)和Store Services Fee(5%/13%)、Google计划在全球范围内推出的引流交易费率(10%-20%)以及"Registered App Stores"计划。CMA特别希望了解这些变化对英国开发者和用户的影响，以及是否足以增加对Apple和Google的竞争压力。',
+    aiComment: {
+      overallImpact: 'CMA此次证据征集标志着英国对应用商店监管进入实质性阶段。不同于此前接受Apple和Google自愿承诺的做法，CMA现在正评估这些科技巨头近期在全球推出的政策变化是否足以解决竞争关切。若证据显示现有措施不足，CMA准备在2026年上半年就"引流"干预措施进行正式磋商，并可能 imposing binding conduct requirements。这延续了全球范围内对应用商店 gatekeeping 行为的监管收紧趋势，与欧盟DMA、美国Epic v. Apple判决、日本移动软件竞争法形成呼应。',
+      huaweiImpact: '华为应当密切关注CMA的最终结论。如果英国要求Apple和Google进一步开放应用商店生态（如降低引流交易费率、改善外部支付体验），将为全球应用分发模式树立新标杆。华为目前通过AppGallery采用15%-20%的佣金率，若西方监管机构成功迫使Apple/Google降低费率，华为可能面临竞争压力需要调整自身定价策略。另一方面，若CMA认定现有变化已足够，则意味着全球应用商店格局将维持现状，华为可以继续以其较低的佣金率作为差异化竞争优势吸引开发者。',
+    },
+    publishDate: '2026-04-03',
+    score: 8,
+    category: 'dma',
+    tags: ['英国', 'CMA', 'DMA', '应用商店', '引流', '第三方计费', '监管'],
+  },
+  {
+    id: '38',
+    title: 'Google Play新政：禁止应用直接读取联系人列表，强制使用系统Contact Picker',
+    source: 'GBlock',
+    sourceUrl: 'https://www.gblock.app/articles/google-play-contact-location-privacy-android',
+    summary: 'Google Play于2026年4月15日发布新政策，大幅收紧应用对Android设备联系人和位置数据的访问权限。核心变化包括：应用不再能直接读取用户整个联系人列表，必须改用Android系统提供的Contact Picker，由用户主动选择要分享的具体联系人；位置权限方面，应用必须提供"位置按钮"(location button)让用户按需授权；账户转移功能要求开发者在5月27日前实现强制性工作流；健康数据访问引入更细粒度的权限控制；照片/视频权限 clarified为仅访问用户明确选择的内容。此外，Google还推出了预测市场应用的全球试点计划，允许符合条件的赌博/交易应用在特定市场分发。',
+    aiComment: {
+      overallImpact: '这是Google Play近年来最重大的隐私政策更新之一，标志着Google从"告知同意"模式向"数据最小化"模式的转变。强制使用Contact Picker将彻底改变社交、CRM、营销类应用的数据收集方式，依赖完整联系人图谱的商业模式面临重构。位置按钮要求则影响所有LBS服务。预测市场试点则开辟了新的应用类别，可能吸引金融科技开发者进入Google Play生态。这些变化既响应了全球隐私监管趋势（GDPR、美国各州隐私法），也强化了Google作为"隐私守护者"的品牌形象。',
+      huaweiImpact: '华为应用市场应当密切关注Google此次隐私政策调整的方向。中国用户对个人隐私的敏感度持续提升，若华为能率先在AppGallery实施类似的"数据最小化"原则（如强制Contact Picker、按需位置授权），将形成相对于国内其他安卓应用市场的差异化优势。同时，预测市场全球试点表明Google正在探索新的应用类别边界，华为也可以考虑在合规前提下开放更多创新应用类型（如金融衍生品、去中心化应用），吸引被Apple/Google严格政策排斥的开发者。健康数据细粒度权限的做法尤其值得借鉴，可为华为智能穿戴生态的健康应用提供更清晰的隐私框架。',
+    },
+    publishDate: '2026-04-19',
+    score: 8,
+    category: 'googleplay',
+    tags: ['Google Play', '隐私', '联系人', '位置', '权限', '政策'],
+  },
 ];
 
 // 按日期降序排序（最新的在前）
