@@ -19,7 +19,7 @@
 - 读取 `src/data/newsData.ts`，提取已有 sourceUrl 去重
 - 对每条新发现的新闻，AI 生成：
   - `overallImpact`：整体行业影响分析
-  - `huaweiImpact`：对华为的影响分析（**核心字段，必须生成**）
+  - `huaweiImpact`：对华为的影响分析（**核心字段，必须生成**），提供深度扩展的多维度分析结果。
   - `score`：1-10 重要性评分
   - `category`：appstore / googleplay / dma / thirdparty / developer
   - `tags`：相关标签
@@ -67,4 +67,4 @@
 
 ## 更新历史
 - 2026-04-21：初始化工作流，添加3条华为生态新闻，设置定时任务
-- 2026-04-21：优化关键词，新增XChat、Apple Maps广告等关键词，移除纯华为产品报道
+- 2026-04-21：优化关键词，新增XChat、Apple Maps广告等关键词，移除纯华为产品报道；深化华为影响分析
