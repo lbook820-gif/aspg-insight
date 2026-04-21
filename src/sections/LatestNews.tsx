@@ -6,12 +6,19 @@ import { getLatestNews, sortedNewsData } from '../data/newsData';
 // 热门搜索关键词
 const hotKeywords = ['DMA', 'Google Play', 'App Store', '反垄断', 'Epic Games', 'WhatsApp', 'Meta'];
 
+// 获取北京时间（UTC+8）的日期字符串
+const getBeijingDate = (): string => {
+  const now = new Date();
+  // 北京时间 = UTC时间 + 8小时
+  const beijingTime = new Date(now.getTime() + (8 * 60 * 60 * 1000));
+  return `${beijingTime.getUTCFullYear()}-${String(beijingTime.getUTCMonth() + 1).padStart(2, '0')}-${String(beijingTime.getUTCDate()).padStart(2, '0')}`;
+};
+
 export default function LatestNews() {
   const [searchQuery, setSearchQuery] = useState('');
 
-  // 获取当日新增新闻
-  const now = new Date();
-  const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  // 获取当日新增新闻（使用北京时间）
+  const today = getBeijingDate();
   const todayNews = sortedNewsData.filter(news => news.publishDate === today)
     .sort((a, b) => b.score - a.score);
 
