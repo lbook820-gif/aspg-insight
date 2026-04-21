@@ -5,13 +5,15 @@
 ### 1. 新闻采集（由我执行）
 - **时间**：每天北京时间 00:00（午夜）
 - **方式**：OpenClaw Cron 任务（isolated session）
-- **搜索关键词**（6组）：
-  1. Apple App Store / iOS / App Store Connect 政策
+- **搜索关键词**（8组）：
+  1. Apple App Store / iOS / App Store Connect 政策 / XChat
   2. Google Play / Android / Play Store 政策
   3. DMA / 欧盟数字市场法 / 反垄断
   4. Epic Games Store / 第三方应用商店 / 侧载
-  5. 华为 / 鸿蒙 HarmonyOS / AppGallery / 应用生态
-  6. 开发者 / 佣金 / 支付 IAP / 第三方计费
+  5. Apple Maps / 地图广告 / 本地广告
+  6. 即时通讯 / WhatsApp / Telegram / 隐私加密
+  7. 开发者 / 佣金 / 支付 IAP / 第三方计费
+  8. 应用生态 / 平台政策 / 监管合规
 
 ### 2. 内容生成
 - 读取 `src/data/newsData.ts`，提取已有 sourceUrl 去重
@@ -19,9 +21,10 @@
   - `overallImpact`：整体行业影响分析
   - `huaweiImpact`：对华为的影响分析（**核心字段，必须生成**）
   - `score`：1-10 重要性评分
-  - `category`：appstore / googleplay / dma / thirdparty / huawei / developer
+  - `category`：appstore / googleplay / dma / thirdparty / developer
   - `tags`：相关标签
 - 新新闻追加到数组末尾，id 按最大+1递增
+- **注意**：不收录纯华为产品报道，聚焦行业动态和监管政策
 
 ### 3. 构建与推送
 - `npm install`（如 node_modules 不存在）
@@ -50,9 +53,9 @@
 - **表单字段**：标题、链接、来源、摘要、整体影响、华为影响、分类、评分
 
 ## 相关路径
-- 本地仓库：`/root/.openclaw/workspace/aspg-insight/`
+- 本地仓库：`/home/sandbox/.openclaw/workspace/repo/aspg-insight/`
 - 远程仓库：`https://github.com/lbook820-gif/aspg-insight`
-- 网站地址：`https://lbook820-gif.github.io/aspg-insight/`（需先启用 Pages）
+- 网站地址：`https://lbook820-gif.github.io/aspg-insight/`
 
 ## 定时任务信息
 - **任务ID**：`5e03e870-b12c-4ba1-8068-105306a3f3bb`
@@ -64,3 +67,4 @@
 
 ## 更新历史
 - 2026-04-21：初始化工作流，添加3条华为生态新闻，设置定时任务
+- 2026-04-21：优化关键词，新增XChat、Apple Maps广告等关键词，移除纯华为产品报道

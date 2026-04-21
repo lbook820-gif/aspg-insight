@@ -19,6 +19,36 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: '47',
+    title: '马斯克推出XChat即时通讯应用，4月17日登陆App Store挑战WhatsApp',
+    source: '腾讯新闻 / 中关村在线',
+    sourceUrl: 'https://news.qq.com/rain/a/20260414A06AD0',
+    summary: '马斯克旗下社交平台X的独立通讯应用XChat于4月17日正式登陆苹果App Store，被视为"西方版微信"。XChat主打端到端加密、无广告、无追踪，支持阅后即焚、防截图、音视频通话等功能，并深度集成AI助手Grok。该应用仅支持iOS 26及以上系统，应用体积约175.8MB，支持45种语言包括简体中文。XChat是马斯克将X打造为"超级应用"战略的关键一步，旨在挑战WhatsApp、Telegram等主流即时通讯工具。',
+    aiComment: {
+      overallImpact: 'XChat的推出标志着马斯克正式进军即时通讯市场，这是继收购Twitter后其"超级应用"战略的重要落地。端到端加密和无广告的定位与WhatsApp形成差异化竞争，但仅支持iOS 26的限制可能影响初期用户增长。Grok AI的深度集成展示了AI在通讯场景的应用潜力，可能引领行业新趋势。',
+      huaweiImpact: 'XChat的出现为即时通讯市场带来新的竞争格局。华为畅连在国内市场面临微信的强势地位，XChat的隐私优先理念值得借鉴。同时，XChat仅支持iOS 26的策略也提醒华为，在推广畅连时应注重系统兼容性，覆盖更广泛的用户群体。',
+    },
+    publishDate: '2026-04-21',
+    score: 8,
+    category: 'appstore',
+    tags: ['XChat', '马斯克', '即时通讯', 'App Store', '隐私', 'Grok'],
+  },
+  {
+    id: '48',
+    title: '苹果地图Apple Maps将引入广告功能，今年夏季登陆美国和加拿大',
+    source: '安兔兔 / 彭博社',
+    sourceUrl: 'https://www.antutu.com/doc/136523.htm',
+    summary: '苹果公司宣布Apple Maps广告功能将于2026年夏季正式登陆美国和加拿大市场。iOS 26.5测试版代码显示，广告将基于用户的近似位置、当前搜索词或地图浏览区域展示本地商户广告，出现在搜索结果列表顶部和"推荐地点"板块。苹果承诺广告信息不会与Apple ID关联，用户观看或点击广告的行为不会被用于用户画像构建。这是苹果继App Store广告后，服务业务收入多元化的又一重要布局。',
+    aiComment: {
+      overallImpact: 'Apple Maps广告的推出标志着苹果地图商业化进程加速，将与Google Maps在本地广告市场展开竞争。对于线下商户而言，这是一个新的精准营销渠道。苹果强调的隐私保护标准可能成为其差异化优势，吸引注重隐私的广告主和用户。',
+      huaweiImpact: '华为Petal Maps（花瓣地图）目前尚未大规模商业化。苹果地图广告的模式为华为提供了参考，华为可以考虑在Petal Maps中引入类似的本地广告系统，为商户提供精准营销服务，同时借鉴苹果的隐私保护做法，建立用户信任。',
+    },
+    publishDate: '2026-04-21',
+    score: 7,
+    category: 'appstore',
+    tags: ['苹果', 'Apple Maps', '地图广告', '本地广告', 'iOS 26.5'],
+  },
+  {
     id: '44',
     title: '苹果App Store广告位全面扩充，搜索结果将显示多个广告位',
     source: '搜狐网 / 市场资讯',
@@ -32,21 +62,6 @@ export const newsData: NewsItem[] = [
     score: 7,
     category: 'appstore',
     tags: ['苹果', 'App Store', '搜索广告', '广告扩展', 'iOS'],
-  },
-  {
-    id: '45',
-    title: 'HUAWEI AppGallery Connect全新升级，支持鸿蒙生态全生命周期服务',
-    source: '华为开发者联盟',
-    sourceUrl: 'https://developer.huawei.com/consumer/information/cn/news/detail?contType=news&id=a4b1765266554f759d5fe2be3a8e9d6e',
-    summary: '华为宣布HUAWEI AppGallery Connect全新升级，成为覆盖鸿蒙应用、原子化服务、快应用等各类移动应用的全生命周期服务平台。开发者可以在平台使用包含鸿蒙应用和原子化服务的分发、运营、分析、增长等全流程服务。鸿蒙原子化服务具有四大独特价值：应用更轻量、入口更丰富（超10亿硬件入口、超100个系统级入口）、分发更智能、转化更高效（提升上百倍用户转化率）。平台已面向开发者累计开通服务123项，在全球170+国家/区域为575万+开发者提供服务。',
-    aiComment: {
-      overallImpact: '华为AppGallery Connect的全面升级展示了华为构建完整开发者生态的决心。全生命周期服务平台降低了开发者的技术门槛和运营成本，123项服务的整合体现了平台化战略。这将加速鸿蒙生态的成熟，吸引更多开发者加入。',
-      huaweiImpact: '这是华为生态建设的核心基础设施升级。通过提供一站式服务，华为降低了开发者进入鸿蒙生态的门槛，提升了留存率。原子化服务的高转化率为开发者提供了新的增长机会，有望吸引更多优质应用入驻华为应用市场。',
-    },
-    publishDate: '2026-04-21',
-    score: 8,
-    category: 'huawei',
-    tags: ['华为', 'AppGallery Connect', '鸿蒙', '开发者服务', '原子化服务'],
   },
   {
     id: '46',
@@ -77,21 +92,6 @@ export const newsData: NewsItem[] = [
     score: 8,
     category: 'dma',
     tags: ['DMA', '欧盟', '反垄断', '数字市场法', '里贝拉'],
-  },
-  {
-    id: '42',
-    title: '华为发布鸿蒙应用开发者激励计划2026，单应用最高获万元激励',
-    source: 'ITBear科技资讯 / 华为',
-    sourceUrl: 'https://www.itbear.com.cn/html/2026-04/1281521.html',
-    summary: '华为HarmonyOS官方于4月16日宣布，鸿蒙应用开发者激励计划2026正式发布。开发者在2026年3月12日至9月30日期间完成鸿蒙应用开发并上架华为应用市场，每款应用最高可获1万元激励，单开发者最高可获百万激励。该计划面向所有鸿蒙开发者，包括个人开发者、企业开发者、开发服务商等，旨在推动鸿蒙生态建设和繁荣发展。',
-    aiComment: {
-      overallImpact: '华为的大规模开发者激励计划显示了其对鸿蒙生态建设的决心。现金激励将有效吸引开发者投入鸿蒙应用开发，加速生态繁荣。这与苹果、谷歌的开发者支持计划形成差异化竞争，可能引发其他平台跟进类似激励措施。',
-      huaweiImpact: '这是华为生态建设的重大举措。通过真金白银的激励，华为有望快速扩大鸿蒙应用数量和质量，缩小与iOS、Android的应用生态差距。开发者应抓住这一窗口期，积极参与鸿蒙应用开发，获取激励红利。',
-    },
-    publishDate: '2026-04-21',
-    score: 8,
-    category: 'huawei',
-    tags: ['华为', '鸿蒙', 'HarmonyOS', '开发者激励', 'AppGallery'],
   },
   {
     id: '43',
