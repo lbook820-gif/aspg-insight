@@ -47,9 +47,9 @@
     font-size: 16px; /* 基准字体大小 */
   }
   
-  /* 大字体模式 - 根字体放大 25% */
+  /* 大字体模式 - 根字体放大 12.5% */
   html.large-text {
-    font-size: 20px;
+    font-size: 18px;
   }
   
   body {
