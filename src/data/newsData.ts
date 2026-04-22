@@ -120,7 +120,7 @@ export const newsData: NewsItem[] = [
     },
     publishDate: '2026-04-14',
     score: 9,
-    category: 'googleplay',
+    category: 'thirdparty',
     tags: ['Aptoide', 'Google', '反垄断', 'Android', '第三方商店', '垄断'],
   },
   {
