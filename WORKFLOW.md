@@ -5,7 +5,7 @@
 ### 1. 新闻采集（由我执行）
 - **时间**：每天北京时间 00:00（午夜）
 - **方式**：OpenClaw Cron 任务（isolated session）
-- **搜索关键词**（8组）：
+- **搜索关键词**（10组）：
   1. Apple App Store / iOS / App Store Connect 政策 / XChat
   2. Google Play / Android / Play Store 政策
   3. DMA / 欧盟数字市场法 / 反垄断
@@ -14,6 +14,8 @@
   6. 即时通讯 / WhatsApp / Telegram / 隐私加密
   7. 开发者 / 佣金 / 支付 IAP / 第三方计费
   8. 应用生态 / 平台政策 / 监管合规
+  9. EPI / Wero / 欧洲支付 / 支付主权 / 数字欧元
+  10. Visa / Mastercard / 跨境支付 / 数字钱包 / 即时支付
 
 ### 2. 内容生成
 - 读取 `src/data/newsData.ts`，提取已有 sourceUrl 去重
@@ -68,3 +70,4 @@
 ## 更新历史
 - 2026-04-21：初始化工作流，添加3条华为生态新闻，设置定时任务
 - 2026-04-21：优化关键词，新增XChat、Apple Maps广告等关键词，移除纯华为产品报道；深化华为影响分析
+- 2026-04-22：新增支付生态关键词（EPI/Wero/欧洲支付/数字欧元等），添加6条EPI相关新闻，覆盖欧洲支付主权、Wero数字钱包、Airwallex/Worldpay/PingPong合作等动态
