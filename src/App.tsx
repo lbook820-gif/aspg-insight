@@ -42,7 +42,7 @@ function AppContent() {
         </Routes>
         <Footer />
         <PageNavigator />
-        <div className="fixed bottom-6 right-4 z-50 flex flex-col gap-3">
+        <div className="fixed bottom-4 right-3 md:bottom-6 md:right-4 z-50 flex flex-col gap-2 md:gap-3">
           <DisplayModeToggle />
           <RefreshButton />
         </div>
