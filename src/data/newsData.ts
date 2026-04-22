@@ -839,7 +839,14 @@ export const sortedNewsData = [...newsData].sort((a, b) => {
 // 支付生态相关新闻（佣金、支付、第三方支付等）
 export const paymentEcosystemNews = sortedNewsData.filter((item) => {
   const paymentKeywords = ['佣金', '支付', 'IAP', '计费', '费率', '费用', 'price', 'fee', 'commission'];
+  const excludeKeywords = ['Aptoide', '第三方商店', '应用商店', '侧载', '反垄断诉讼', '垄断Android'];
   const text = (item.title + item.summary + item.tags.join(' ')).toLowerCase();
+  
+  // 如果包含排除关键词，则不算作支付生态新闻
+  if (excludeKeywords.some(kw => text.includes(kw.toLowerCase()))) {
+    return false;
+  }
+  
   return paymentKeywords.some(kw => text.includes(kw.toLowerCase()));
 });
 
