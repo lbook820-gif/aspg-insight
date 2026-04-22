@@ -8,6 +8,7 @@ import PaymentEcosystemPage from './pages/PaymentEcosystemPage';
 import SummitPage from './pages/SummitPage';
 import PrivacyPage from './pages/PrivacyPage';
 import MetaAnalysisPage from './pages/MetaAnalysisPage';
+import EPIInsightPage from './pages/EPIInsightPage';
 import Footer from './sections/Footer';
 import RefreshButton from './components/RefreshButton';
 import DisplayModeToggle from './components/DisplayModeToggle';
@@ -37,6 +38,7 @@ function AppContent() {
           <Route path="/summit" element={<SummitPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/meta-analysis" element={<MetaAnalysisPage />} />
+          <Route path="/epi-insight" element={<EPIInsightPage />} />
         </Routes>
         <Footer />
         <PageNavigator />

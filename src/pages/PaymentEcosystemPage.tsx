@@ -63,6 +63,34 @@ export default function PaymentEcosystemPage() {
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 py-8">
+        {/* EPI Insight Banner */}
+        <Link 
+          to="/epi-insight" 
+          className="block mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-lg p-5 hover:shadow-lg transition-all group"
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="px-3 py-1 bg-blue-600 text-white font-semibold rounded-full text-xs">
+                  专栏
+                </span>
+                <span className="text-blue-600 font-bold text-lg">EPI 洞察专栏</span>
+              </div>
+              <p className="text-gray-700 text-sm md:text-base">
+                欧洲支付主权战略深度分析 · Wero 数字钱包 · 2026 年商业化关键年
+              </p>
+              <p className="text-gray-500 text-xs mt-2">
+                点击查看完整分析 →
+              </p>
+            </div>
+            <div className="ml-4 text-blue-600 group-hover:translate-x-1 transition-transform">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
+        </Link>
+
         {/* Search Bar */}
         <div className="mb-8 relative">
           <div className="relative max-w-xl">
