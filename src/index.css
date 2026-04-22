@@ -52,6 +52,12 @@
     font-size: 18px;
   }
   
+  /* 浮动按钮不受大字体模式影响 */
+  html.large-text .fixed.bottom-4,
+  html.large-text .fixed.bottom-6 {
+    font-size: 16px;
+  }
+  
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Barlow', sans-serif;
