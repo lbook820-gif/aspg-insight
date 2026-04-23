@@ -4,7 +4,7 @@ import { ExternalLink, TrendingUp, Minus, TrendingDown, Search } from 'lucide-re
 import { paymentEcosystemNews } from '../data/newsData';
 
 // 热门搜索关键词
-const hotKeywords = ['佣金', 'IAP', '第三方支付', 'Google Play', 'App Store', 'EPI'];
+const hotKeywords = ['EPI', 'Wero', 'Visa', 'Mastercard', 'Stripe', '数字欧元'];
 
 export default function PaymentEcosystemPage() {
   useEffect(() => {

@@ -874,6 +874,36 @@ export const newsData: NewsItem[] = [
     category: 'dma',
     tags: ['Meta', 'WhatsApp', 'AI助手', '欧盟', '反垄断', 'DMA'],
   },
+  {
+    id: '59',
+    title: 'Stripe估值暴涨至1590亿美元，年交易额达1.9万亿美元占全球GDP 1.6%',
+    source: '凤凰网 / Odaily星球日报',
+    sourceUrl: 'https://ishare.ifeng.com/c/s/v002JG71XYozHea--2wS6o10yWsHKZrqZkdiDq--sOq4pxVuQ__',
+    summary: '2026年2月24日，全球支付巨头Stripe宣布以1590亿美元估值完成新一轮要约收购，Thrive Capital、Coatue、a16z等机构联合出资，较一年前915亿美元的估值暴涨74%。Stripe两大联创Patrick和John Collison发布了2025年度公开信，回顾了Stripe平台上1.9万亿美元的年度交易额，同比增长34%，约占全球GDP的1.6%。与此同时，PayPal正接触潜在收购方，据彭博社报道，Stripe考虑收购PayPal全部或部分业务。',
+    aiComment: {
+      overallImpact: 'Stripe估值的暴涨和PayPal的潜在被收购，标志着全球支付行业格局的重大转变。Stripe凭借技术优势和全球化布局，已成为新一代支付基础设施的领导者。1.9万亿美元的交易额和占全球GDP 1.6%的数据，展示了支付平台在现代经济中的核心地位。若Stripe收购PayPal，将进一步巩固其在数字支付市场的统治地位，重塑行业竞争格局。',
+      huaweiImpact: 'Stripe的崛起对华为支付业务具有多重战略启示。技术路线层面：Stripe的成功证明了"可编程支付"和"开发者友好"策略的价值，华为支付应借鉴这一思路，为开发者提供灵活的API和SDK，降低支付集成门槛。全球化布局层面：Stripe覆盖195个国家、支持135种货币的能力展示了支付全球化的必要性，华为支付若要拓展海外市场，需建立类似的全球支付网络。市场机会层面：PayPal的衰落和潜在被收购，表明传统支付巨头面临转型压力，华为可趁机吸纳PayPal的技术人才和商户资源。竞争态势层面：Stripe与PayPal的此消彼长，提醒华为支付需要持续创新，避免重蹈PayPal因创新不足而被边缘化的覆辙。生态整合层面：华为可将支付能力与鸿蒙生态深度整合，提供Stripe不具备的跨设备支付、原子化服务支付等差异化能力。',
+    },
+    publishDate: '2026-02-24',
+    score: 9,
+    category: 'developer',
+    tags: ['Stripe', 'PayPal', '支付', '估值', '全球支付'],
+  },
+  {
+    id: '60',
+    title: 'Stripe联合Crypto.com推出加密货币支付服务，2026年初上线',
+    source: 'Crowdfundinsider / 逗游网',
+    sourceUrl: 'https://m.doyo.cn/article/545410',
+    summary: 'Stripe宣布与Crypto.com达成战略合作伙伴关系，计划在2026年初推出加密货币支付服务。该合作允许Crypto.com用户在Stripe支持的在线商家直接使用数字资产进行支付，系统会自动将加密货币转换为法定货币交付给商家。这一整合消除了用户手动转换或中间步骤的需求，使加密货币交易变得与使用信用卡一样简单。对商家而言，他们将以稳定的法定货币收款，避免加密货币波动风险，同时接触到全球数字资产持有者。',
+    aiComment: {
+      overallImpact: 'Stripe与Crypto.com的合作标志着主流支付平台对加密货币的接纳进入新阶段。自动转换机制解决了商家对加密货币波动性的顾虑，同时为加密货币持有者提供了实际消费场景。这可能推动更多支付平台跟进，加速加密货币从投资资产向支付工具的转变。Stripe作为全球领先的支付平台，其举措具有行业风向标意义。',
+      huaweiImpact: 'Stripe的加密货币支付服务对华为支付业务具有重要的前瞻性启示。技术储备层面：华为支付应提前研究加密货币支付的技术架构和合规要求，为未来可能的加密货币支付功能做准备。市场机会层面：加密货币支付在年轻用户和技术爱好者群体中具有吸引力，华为可考虑在特定市场试点加密货币支付，吸引这部分用户。合规风险层面：加密货币监管在全球范围内仍处于演变期，华为需密切关注各国监管政策，确保合规经营。差异化竞争层面：华为可探索央行数字货币（CBDC）与加密货币的结合点，利用中国在数字人民币领域的先行优势，提供独特的数字货币支付体验。生态整合层面：华为可将加密货币支付与华为钱包、华为云等服务整合，构建完整的数字资产管理生态。',
+    },
+    publishDate: '2026-01-10',
+    score: 8,
+    category: 'developer',
+    tags: ['Stripe', 'Crypto.com', '加密货币', '数字支付', '区块链'],
+  },
 ];
 
 // 按日期降序排序（最新的在前）
@@ -886,12 +916,12 @@ export const sortedNewsData = [...newsData].sort((a, b) => {
 export const paymentEcosystemNews = sortedNewsData.filter((item) => {
   // 支付生态核心关键词：支付渠道、支付公司、银行、卡组织、钱包、数字货币
   const paymentCoreKeywords = [
-    'Visa', 'Mastercard', '万事达', 'PayPal',
+    'Visa', 'Mastercard', '万事达', 'PayPal', 'Stripe',
     'EPI', 'Wero', '数字欧元', '数字货币', 'CBDC',
     'Airwallex', 'PingPong', 'Worldpay',
     '支付主权', '支付倡议', '欧洲支付',
     '数字钱包', '跨境支付', '即时支付',
-    '银行', '卡组织'
+    '银行', '卡组织', '加密货币'
   ];
   
   // 排除关键词：应用商店生态相关新闻
