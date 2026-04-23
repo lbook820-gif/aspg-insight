@@ -12,7 +12,6 @@ export default function AppEcosystemPage() {
   }, []);
 
   const [searchQuery, setSearchQuery] = useState('');
-  const [showResults, setShowResults] = useState(false);
 
   // 搜索过滤
   const filteredNews = searchQuery.trim()
@@ -27,7 +26,10 @@ export default function AppEcosystemPage() {
 
   const handleKeywordClick = (keyword: string) => {
     setSearchQuery(keyword);
-    setShowResults(true);
+  };
+
+  const clearSearch = () => {
+    setSearchQuery('');
   };
 
   const getScoreIcon = (score: number) => {
@@ -64,67 +66,57 @@ export default function AppEcosystemPage() {
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Search Bar */}
-        <div className="mb-8 relative">
+        <div className="mb-8">
           <div className="relative max-w-xl">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="text"
               placeholder="搜索应用生态新闻..."
               value={searchQuery}
-              onChange={(e) => {
-                setSearchQuery(e.target.value);
-                setShowResults(e.target.value.trim().length > 0);
-              }}
-              onBlur={() => {
-                setTimeout(() => setShowResults(false), 200);
-              }}
-              onFocus={() => {
-                if (searchQuery.trim()) setShowResults(true);
-              }}
-              className="w-full pl-12 pr-4 py-3 md:py-4 focus:outline-none bg-white border border-gray-200 rounded-lg focus:border-black text-sm"
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-12 pr-10 py-3 md:py-4 focus:outline-none bg-white border border-gray-200 rounded-lg focus:border-black text-sm"
             />
-
-            {/* Search Results Dropdown */}
-            {showResults && searchQuery.trim() && (
-              <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden max-h-72 overflow-y-auto z-50">
-                {filteredNews.length > 0 ? (
-                  filteredNews.map((news) => (
-                    <button
-                      key={news.id}
-                      onClick={() => {
-                        setSearchQuery('');
-                        setShowResults(false);
-                        const element = document.getElementById(`news-${news.id}`);
-                        if (element) {
-                          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        }
-                      }}
-                      className="w-full px-4 py-3 text-left hover:bg-gray-50 border-b border-gray-100 last:border-b-0"
-                    >
-                      <p className="font-medium text-gray-900 text-sm">{news.title}</p>
-                      <p className="text-gray-500 mt-1 text-xs">{news.source} · {news.publishDate}</p>
-                    </button>
-                  ))
-                ) : (
-                  <div className="px-4 py-3 text-gray-500 text-sm">未找到相关新闻</div>
-                )}
-              </div>
+            {/* 清除按钮 */}
+            {searchQuery && (
+              <button
+                onClick={clearSearch}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              >
+                ✕
+              </button>
             )}
           </div>
 
           {/* Hot Keywords */}
-          <div className="mt-3 flex flex-wrap items-center gap-2">
-            <span className="text-gray-400 text-xs">热门搜索：</span>
-            {hotKeywords.map((keyword) => (
+          {!searchQuery && (
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+              <span className="text-gray-400 text-xs">热门搜索：</span>
+              {hotKeywords.map((keyword) => (
+                <button
+                  key={keyword}
+                  onClick={() => handleKeywordClick(keyword)}
+                  className="px-2.5 py-1 bg-white border border-gray-200 text-gray-600 rounded-full hover:bg-gray-100 text-xs"
+                >
+                  {keyword}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* 搜索结果统计 */}
+          {searchQuery && (
+            <div className="mt-3 flex items-center justify-between">
+              <span className="text-gray-600 text-sm">
+                找到 <strong>{filteredNews.length}</strong> 条相关新闻
+              </span>
               <button
-                key={keyword}
-                onClick={() => handleKeywordClick(keyword)}
-                className="px-2.5 py-1 bg-white border border-gray-200 text-gray-600 rounded-full hover:bg-gray-100 text-xs"
+                onClick={clearSearch}
+                className="text-blue-600 hover:text-blue-700 text-sm"
               >
-                {keyword}
+                清除搜索
               </button>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
 
         {/* News List */}
