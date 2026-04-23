@@ -904,6 +904,21 @@ export const newsData: NewsItem[] = [
     category: 'developer',
     tags: ['Stripe', 'Crypto.com', '加密货币', '数字支付', '区块链'],
   },
+  {
+    id: '61',
+    title: '华为宣布将Curve Pay非接支付扩展至华为Watch设备，欧洲可穿戴支付场景持续发展',
+    source: '移动支付网',
+    sourceUrl: 'https://www.mpaypass.com.cn/news/202603/20100102.html',
+    summary: '华为宣布在欧洲扩大Curve Pay非接触支付功能的设备覆盖范围。Curve Pay已新增支持HUAWEI WATCH Ultimate 2、HUAWEI WATCH GT 6、HUAWEI WATCH GT 5及HUAWEI WATCH FIT 4等多款手表设备，此前该功能已率先集成于HUAWEI WATCH GT Runner 2。用户可通过Curve Pay在兼容终端实现腕表碰一碰支付，还支持多卡整合、卡片管理及离腕检测等功能。这也表明，欧洲可穿戴支付场景正持续向独立化、无手机化方向发展。',
+    aiComment: {
+      overallImpact: '华为与Curve Pay的合作标志着可穿戴设备支付场景的进一步成熟。腕表碰一碰支付功能的扩展，使用户摆脱了对手机的依赖，提升了支付便捷性。这也反映了欧洲市场对非接触支付的接受度持续提升，可穿戴支付正成为移动支付的重要分支。Curve Pay作为数字钱包平台，通过与华为等硬件厂商的合作，加速了其在欧洲市场的渗透。',
+      huaweiImpact: '此次合作对华为具有多重战略意义。生态整合层面：Curve Pay集成到华为手表，丰富了华为可穿戴设备的支付功能，提升了产品竞争力。用户可通过华为手表实现便捷支付，增强了华为生态的粘性。市场拓展层面：Curve Pay在欧洲拥有超600万用户，华为通过与Curve的合作，为欧洲用户提供了熟悉的支付体验，有助于华为手表在欧洲市场的推广。技术能力层面：离腕检测等安全功能的实现，展示了华为在可穿戴设备安全技术方面的实力。差异化竞争层面：华为手表支持Curve Pay，与Apple Watch的Apple Pay形成对标，为欧洲用户提供了替代选择。未来展望：华为可考虑将Curve Pay扩展至更多设备类型（如平板、车机），并探索与更多欧洲本地支付平台的合作，进一步丰富华为生态的支付能力。',
+    },
+    publishDate: '2026-03-20',
+    score: 8,
+    category: 'developer',
+    tags: ['Curve Pay', '华为', '可穿戴支付', '数字钱包', '欧洲'],
+  },
 ];
 
 // 按日期降序排序（最新的在前）
@@ -916,7 +931,7 @@ export const sortedNewsData = [...newsData].sort((a, b) => {
 export const paymentEcosystemNews = sortedNewsData.filter((item) => {
   // 支付生态核心关键词：支付渠道、支付公司、银行、卡组织、钱包、数字货币
   const paymentCoreKeywords = [
-    'Visa', 'Mastercard', '万事达', 'PayPal', 'Stripe',
+    'Visa', 'Mastercard', '万事达', 'PayPal', 'Stripe', 'Curve',
     'EPI', 'Wero', '数字欧元', '数字货币', 'CBDC',
     'Airwallex', 'PingPong', 'Worldpay',
     '支付主权', '支付倡议', '欧洲支付',
