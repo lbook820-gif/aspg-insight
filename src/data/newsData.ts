@@ -882,9 +882,26 @@ export const sortedNewsData = [...newsData].sort((a, b) => {
 });
 
 // 支付生态相关新闻（佣金、支付、第三方支付等）
+// 支付生态相关新闻（支付渠道、支付公司、银行、卡组织、钱包、数字货币）
 export const paymentEcosystemNews = sortedNewsData.filter((item) => {
-  const paymentKeywords = ['佣金', '支付', 'IAP', '计费', '费率', '费用', 'price', 'fee', 'commission'];
-  const excludeKeywords = ['Aptoide', '第三方商店', '应用商店', '侧载', '反垄断诉讼', '垄断Android', '诉讼案', '最高法院', '上诉', '韩国'];
+  // 支付生态核心关键词：支付渠道、支付公司、银行、卡组织、钱包、数字货币
+  const paymentCoreKeywords = [
+    'Visa', 'Mastercard', '万事达', 'PayPal',
+    'EPI', 'Wero', '数字欧元', '数字货币', 'CBDC',
+    'Airwallex', 'PingPong', 'Worldpay',
+    '支付主权', '支付倡议', '欧洲支付',
+    '数字钱包', '跨境支付', '即时支付',
+    '银行', '卡组织'
+  ];
+  
+  // 排除关键词：应用商店生态相关新闻
+  const excludeKeywords = [
+    'Epic Games', 'Epic Games Store', 'Fortnite',
+    'App Store', 'Google Play', '应用商店',
+    '第三方商店', '侧载', '诉讼', '上诉',
+    '佣金', 'IAP', '计费', '市场报告', '应用内购买'
+  ];
+  
   const text = (item.title + item.summary + item.tags.join(' ')).toLowerCase();
   
   // 如果包含排除关键词，则不算作支付生态新闻
@@ -892,7 +909,8 @@ export const paymentEcosystemNews = sortedNewsData.filter((item) => {
     return false;
   }
   
-  return paymentKeywords.some(kw => text.includes(kw.toLowerCase()));
+  // 只有包含支付生态核心关键词才算作支付生态新闻
+  return paymentCoreKeywords.some(kw => text.includes(kw.toLowerCase()));
 });
 
 // 应用生态相关新闻（其他所有新闻）
