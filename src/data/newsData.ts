@@ -1023,10 +1023,16 @@ export const appEcosystemNews = sortedNewsData.filter((item) => {
   return !paymentEcosystemNews.find(p => p.id === item.id);
 });
 
-// 获取最近一个月的新闻（用于最新动态）
+// 获取北京时间（UTC+8）的日期
+const getBeijingNow = (): Date => {
+  const now = new Date();
+  return new Date(now.getTime() + (8 * 60 * 60 * 1000));
+};
+
+// 获取最近N天的新闻（用于最新动态，基于北京时间）
 export const getLatestNews = (days: number = 30) => {
-  const now = new Date('2026-04-07');
-  const cutoffDate = new Date(now.getTime() - days * 24 * 60 * 60 * 1000);
+  const beijingNow = getBeijingNow();
+  const cutoffDate = new Date(beijingNow.getTime() - days * 24 * 60 * 60 * 1000);
 
   return sortedNewsData.filter((item) => {
     const itemDate = new Date(item.publishDate);
@@ -1035,6 +1041,10 @@ export const getLatestNews = (days: number = 30) => {
 };
 
 // 获取当日新增新闻（用于首页当日新增版块）
-export const getTodayNews = (today: string = '2026-04-07') => {
+export const getTodayNews = (today?: string) => {
+  if (!today) {
+    const beijingNow = getBeijingNow();
+    today = `${beijingNow.getUTCFullYear()}-${String(beijingNow.getUTCMonth() + 1).padStart(2, '0')}-${String(beijingNow.getUTCDate()).padStart(2, '0')}`;
+  }
   return sortedNewsData.filter((item) => item.publishDate === today);
 };
