@@ -64,7 +64,7 @@ export default function WeeklySummary() {
             <span className="flex-shrink-0 w-5 h-5 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold">
               {index + 1}
             </span>
-            <span className="flex-1 text-gray-700 text-sm group-hover:text-blue-600 transition-colors line-clamp-1">
+            <span className="flex-1 text-gray-700 text-sm group-hover:text-blue-600 transition-colors">
               {news.title}
             </span>
             <span className="text-xs text-gray-400 flex-shrink-0">
