@@ -22,7 +22,7 @@ export const newsData: NewsItem[] = [
     id: '65',
     title: '英国 ICO 发布“设计即隐私”审计报告，严厉打击移动应用“暗黑模式”',
     source: '英国 ICO',
-    sourceUrl: 'https://ico.org.uk/action-weve-taken/audits-and-overview-reports/',
+    sourceUrl: 'https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/accountability-and-governance/privacy-by-design/',
     summary: '2026年4月26日，英国信息专员办公室 (ICO) 发布专项审计报告，点名批评了多家社交与电商应用在隐私设置中使用的“暗黑模式”（Dark Patterns），如诱导性按钮设计和隐蔽的账号注销路径。ICO 明确表示，任何违背“设计即隐私”原则的行为都将面临高额罚款。',
     aiComment: {
       overallImpact: '这是 ICO 在 2026 年针对用户交互设计（UX/UI）合规性的首次大规模整治，意味着合规已从后台逻辑延伸至前端视觉设计。',
