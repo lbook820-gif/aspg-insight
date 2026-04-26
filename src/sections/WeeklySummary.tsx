@@ -9,19 +9,32 @@ const getBeijingDate = (): Date => {
   return new Date(now.getTime() + (8 * 60 * 60 * 1000));
 };
 
-// 获取过去7天的日期范围
-const getLast7DaysRange = (): { start: string; end: string } => {
+const isMondayInBeijing = (): boolean => {
+  return getBeijingDate().getUTCDay() === 1;
+};
+
+// 根据是否周一返回不同的日期范围
+const getDateRange = (): { start: string; end: string; title: string; isWeekly: boolean } => {
   const beijingNow = getBeijingDate();
-  const end = beijingNow.toISOString().split('T')[0];
-  const start = new Date(beijingNow.getTime() - (7 * 24 * 60 * 60 * 1000)).toISOString().split('T')[0];
-  return { start, end };
+  const isMonday = isMondayInBeijing();
+  
+  if (isMonday) {
+    // 上周一到上周日
+    const end = new Date(beijingNow.getTime() - (1 * 24 * 60 * 60 * 1000)).toISOString().split('T')[0];
+    const start = new Date(beijingNow.getTime() - (7 * 24 * 60 * 60 * 1000)).toISOString().split('T')[0];
+    return { start, end, title: '上周快讯一览', isWeekly: true };
+  } else {
+    // 当日新增
+    const today = beijingNow.toISOString().split('T')[0];
+    return { start: today, end: today, title: '当日新增', isWeekly: false };
+  }
 };
 
 export default function WeeklySummary() {
-  const { start, end } = getLast7DaysRange();
+  const { start, end, title, isWeekly } = getDateRange();
 
-  // 获取过去7天的新闻
-  const weeklyNews = useMemo(() => {
+  // 获取对应时间范围的新闻
+  const displayNews = useMemo(() => {
     return sortedNewsData.filter(news => {
       return news.publishDate >= start && news.publishDate <= end;
     });
@@ -30,46 +43,46 @@ export default function WeeklySummary() {
   // 按分类统计
   const categoryStats = useMemo(() => {
     const stats: Record<string, number> = {};
-    weeklyNews.forEach(news => {
+    displayNews.forEach(news => {
       stats[news.category] = (stats[news.category] || 0) + 1;
     });
     return stats;
-  }, [weeklyNews]);
+  }, [displayNews]);
 
   // 按重要性筛选高分新闻
   const highImpactNews = useMemo(() => {
-    return weeklyNews
+    return displayNews
       .filter(news => news.score >= 8)
       .sort((a, b) => b.score - a.score)
       .slice(0, 5);
-  }, [weeklyNews]);
+  }, [displayNews]);
 
   // 提取关键主题
   const keyThemes = useMemo(() => {
     const themes: string[] = [];
     
     // 检查是否有相关主题
-    if (weeklyNews.some(n => n.title.includes('DMA') || n.title.includes('数字市场法'))) {
+    if (displayNews.some(n => n.title.includes('DMA') || n.title.includes('数字市场法'))) {
       themes.push('欧盟DMA监管持续深化');
     }
-    if (weeklyNews.some(n => n.title.includes('佣金') || n.title.includes('抽成'))) {
+    if (displayNews.some(n => n.title.includes('佣金') || n.title.includes('抽成'))) {
       themes.push('应用商店佣金改革');
     }
-    if (weeklyNews.some(n => n.title.includes('支付') || n.title.includes('EPI') || n.title.includes('Wero'))) {
+    if (displayNews.some(n => n.title.includes('支付') || n.title.includes('EPI') || n.title.includes('Wero'))) {
       themes.push('欧洲支付主权建设');
     }
-    if (weeklyNews.some(n => n.title.includes('AI') || n.title.includes('人工智能'))) {
+    if (displayNews.some(n => n.title.includes('AI') || n.title.includes('人工智能'))) {
       themes.push('AI生态开放争议');
     }
-    if (weeklyNews.some(n => n.title.includes('第三方') || n.title.includes('侧载'))) {
+    if (displayNews.some(n => n.title.includes('第三方') || n.title.includes('侧载'))) {
       themes.push('第三方应用商店崛起');
     }
     
     return themes.slice(0, 4);
-  }, [weeklyNews]);
+  }, [displayNews]);
 
   // 如果没有新闻，不显示此版块
-  if (weeklyNews.length === 0) {
+  if (displayNews.length === 0) {
     return null;
   }
 
@@ -81,11 +94,11 @@ export default function WeeklySummary() {
           <div className="flex items-center gap-3 mb-2">
             <Calendar className="w-6 h-6 text-blue-600" />
             <h2 className="font-bold text-gray-900 text-xl md:text-2xl">
-              一周快讯一览
+              {title}
             </h2>
           </div>
           <p className="text-gray-600 text-sm md:text-base">
-            {start} 至 {end} · 共 {weeklyNews.length} 条动态
+            {start === end ? start : `${start} 至 ${end}`} · 共 {displayNews.length} 条动态
           </p>
         </div>
 
@@ -94,7 +107,7 @@ export default function WeeklySummary() {
           <div className="mb-6 bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-200">
             <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
               <TrendingUp className="w-5 h-5 text-blue-600" />
-              本周焦点
+              {isWeekly ? '上周焦点' : '今日焦点'}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {keyThemes.map((theme, index) => (
