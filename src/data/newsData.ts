@@ -37,7 +37,7 @@ export const newsData: NewsItem[] = [
     id: '64',
     title: '土耳其竞争管理局 (RK) 启动人工智能 (AI) 生态系统行业调查',
     source: '土耳其 RK',
-    sourceUrl: 'https://www.rekabet.gov.tr/en',
+    sourceUrl: 'https://www.rekabet.gov.tr/tr/Guncel/yapay-zekaya-rekabet-kurumu-sektor-incel-d21eee058332f11193f70050568585c9',
     summary: '土耳其竞争管理局（RK）于 2026 年 4 月正式对人工智能产业链展开深度行业调查。此次审查重点聚焦于 AI 模型的数据获取渠道合法性、核心计算资源（算力与芯片）分配的公平性，以及占据市场主导地位的大型科技平台是否存在将自身 AI 服务与现有业务强行捆绑、实施自我优待的垄断行为。此举旨在预防少数巨头在 AI 技术发展的早期阶段形成难以打破的权力集中。',
     aiComment: {
       overallImpact: '土耳其此举标志着全球 AI 监管进入“早期干预”阶段。不仅紧随欧盟 DMA 与 AI 法案的步伐，更突显了区域性反垄断机构对 AI 基础设施（如算力、数据池）被少数跨国巨头垄断的高度警惕。未来，针对基础大模型供应商和云服务提供商的合规要求将急剧攀升。',
