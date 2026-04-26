@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, TrendingUp, Minus, TrendingDown, Info } from 'lucide-react';
+import { ExternalLink, TrendingUp, Minus, TrendingDown } from 'lucide-react';
 import { sortedNewsData } from '../data/newsData';
 
 // 热门搜索关键词
