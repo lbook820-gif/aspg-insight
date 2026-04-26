@@ -19,6 +19,51 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: '65',
+    title: '英国 ICO 发布“设计即隐私”审计报告，严厉打击移动应用“暗黑模式”',
+    source: '英国 ICO',
+    sourceUrl: 'https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/',
+    summary: '2026年4月26日，英国信息专员办公室 (ICO) 发布专项审计报告，点名批评了多家社交与电商应用在隐私设置中使用的“暗黑模式”（Dark Patterns），如诱导性按钮设计和隐蔽的账号注销路径。ICO 明确表示，任何违背“设计即隐私”原则的行为都将面临高额罚款。',
+    aiComment: {
+      overallImpact: '这是 ICO 在 2026 年针对用户交互设计（UX/UI）合规性的首次大规模整治，意味着合规已从后台逻辑延伸至前端视觉设计。',
+      huaweiImpact: '华为等中国出海应用需立即自查：Cookie 弹窗是否具有对等的“全部拒绝”选项？广告关闭按钮是否清晰可见？账号注销流程是否与注册同样简便？建议参照 ICO 指南重新设计关键交互流程。',
+    },
+    publishDate: '2026-04-26',
+    score: 9,
+    category: 'appstore',
+    tags: ['ICO', '隐私设计', '暗黑模式', '英国', '合规审计'],
+  },
+  {
+    id: '64',
+    title: '土耳其竞争管理局 (RK) 启动人工智能 (AI) 生态系统行业调查',
+    source: '土耳其 RK',
+    sourceUrl: 'https://www.rekabet.gov.tr/en',
+    summary: '土耳其 RK 于 2026 年 4 月底正式对 AI 产业链展开行业调查，重点审查数据访问权限、计算资源分配以及大型平台是否在 AI 服务中实施自我优待。此举旨在防止 AI 领域的权力过度集中。',
+    aiComment: {
+      overallImpact: '土耳其正在迅速对齐欧盟 DMA 关于 AI 竞争的监管思路。对于在土运营的云服务商和 AI 模型商，意味着更严格的公平竞争审查。',
+      huaweiImpact: '华为等中国 AI 企业进入土耳其市场需关注算法中立性和数据开放性要求。RK 的调查结果可能直接影响后续的准入政策。',
+    },
+    publishDate: '2026-04-26',
+    score: 8,
+    category: 'dma',
+    tags: ['土耳其 RK', '人工智能', '反垄断', '数据权限'],
+  },
+  {
+    id: '63',
+    title: '欧盟智能手机可持续性新规全面执行，小米、OPPO 调整在欧产品策略',
+    source: 'TechCrunch',
+    sourceUrl: 'https://techcrunch.com/2026/04/26/eu-smartphone-sustainability-rules-china-brands/',
+    summary: '2026年4月26日，欧盟针对智能手机和平板电脑的《生态设计与能源标签指令》进入全面执行期。小米、OPPO 等中资手机大厂已完成在欧销售产品的合规改造，包括承诺 5 年内的零件供应保障及 3 年以上的功能更新支持。',
+    aiComment: {
+      overallImpact: '这不仅是环保政策，更是隐性的贸易技术壁垒。中国厂商通过技术升级和供应链调整，已成功适应了全球最严苛的硬件耐用性与软件支持标准。',
+      huaweiImpact: '中国消费电子品牌在欧正从“高性价比”向“高耐用性、长生命周期”转型。建议华为等中资出海品牌关注此类绿色贸易壁垒，提前进行模块化设计储备。',
+    },
+    publishDate: '2026-04-26',
+    score: 7,
+    category: 'developer',
+    tags: ['小米', 'OPPO', '可持续性', '硬件合规', '欧盟'],
+  },
+  {
     id: '49',
     title: '苹果App Store Connect迎史上最大更新，新增超100项数据指标',
     source: 'TechWeb / IT之家',
