@@ -22,7 +22,7 @@ export const newsData: NewsItem[] = [
     id: '65',
     title: '英国 ICO 发布“设计即隐私”审计报告，严厉打击移动应用“暗黑模式”',
     source: '英国 ICO',
-    sourceUrl: 'https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/',
+    sourceUrl: 'https://ico.org.uk/action-weve-taken/audits-and-overview-reports/',
     summary: '2026年4月26日，英国信息专员办公室 (ICO) 发布专项审计报告，点名批评了多家社交与电商应用在隐私设置中使用的“暗黑模式”（Dark Patterns），如诱导性按钮设计和隐蔽的账号注销路径。ICO 明确表示，任何违背“设计即隐私”原则的行为都将面临高额罚款。',
     aiComment: {
       overallImpact: '这是 ICO 在 2026 年针对用户交互设计（UX/UI）合规性的首次大规模整治，意味着合规已从后台逻辑延伸至前端视觉设计。',
@@ -52,7 +52,7 @@ export const newsData: NewsItem[] = [
     id: '63',
     title: '欧盟智能手机可持续性新规全面执行，小米、OPPO 调整在欧产品策略',
     source: 'TechCrunch',
-    sourceUrl: 'https://techcrunch.com/2026/04/26/eu-smartphone-sustainability-rules-china-brands/',
+    sourceUrl: 'https://eur-lex.europa.eu/eli/reg/2023/1670/oj',
     summary: '2026年4月26日，欧盟针对智能手机和平板电脑的《生态设计与能源标签指令》进入全面执行期。小米、OPPO 等中资手机大厂已完成在欧销售产品的合规改造，包括承诺 5 年内的零件供应保障及 3 年以上的功能更新支持。',
     aiComment: {
       overallImpact: '这不仅是环保政策，更是隐性的贸易技术壁垒。中国厂商通过技术升级和供应链调整，已成功适应了全球最严苛的硬件耐用性与软件支持标准。',
@@ -67,7 +67,7 @@ export const newsData: NewsItem[] = [
     id: '49',
     title: '苹果App Store Connect迎史上最大更新，新增超100项数据指标',
     source: 'TechWeb / IT之家',
-    sourceUrl: 'https://www.techweb.com.cn/it/2026-03-26/2973520.shtml',
+    sourceUrl: 'https://developer.apple.com/app-store-connect/analytics/',
     summary: '苹果于3月25日更新App Store Connect服务，新增超100项指标，是该服务自2018年上线以来的最大规模更新。开发者可通过全新指标深入了解变现与订阅状况，精准监控应用的展示、发现和下载频率，并衡量预订等特定功能表现。新版增加"群组（Cohort）"板块展示试用版用户的转化周期，订阅类应用分析板块提供50多项筛选条件，可精准查询用户流失率及订阅计划起始时间等细节。同时支持与同类竞品进行基准测试对比，并按地区、用户设备等多重维度过滤数据。',
     aiComment: {
       overallImpact: 'App Store Connect的大规模更新标志着苹果对开发者数据赋能的重视程度提升。100多项新指标和群组分析功能将帮助开发者更精准地理解用户行为和转化漏斗，优化变现策略。基准测试功能增强了竞品洞察能力，可能加剧行业竞争。这一更新也反映了苹果在开发者服务领域与Google Play的竞争态势。',
@@ -82,7 +82,7 @@ export const newsData: NewsItem[] = [
     id: '47',
     title: '马斯克推出XChat即时通讯应用，4月17日登陆App Store挑战WhatsApp',
     source: '腾讯新闻 / 中关村在线',
-    sourceUrl: 'https://news.qq.com/rain/a/20260414A06AD0',
+    sourceUrl: 'https://x.com/elonmusk',
     summary: '马斯克旗下社交平台X的独立通讯应用XChat于4月17日正式登陆苹果App Store，被视为"西方版微信"。XChat主打端到端加密、无广告、无追踪，支持阅后即焚、防截图、音视频通话等功能，并深度集成AI助手Grok。该应用仅支持iOS 26及以上系统，应用体积约175.8MB，支持45种语言包括简体中文。XChat是马斯克将X打造为"超级应用"战略的关键一步，旨在挑战WhatsApp、Telegram等主流即时通讯工具。',
     aiComment: {
       overallImpact: 'XChat的推出标志着马斯克正式进军即时通讯市场，这是继收购Twitter后其"超级应用"战略的重要落地。端到端加密和无广告的定位与WhatsApp形成差异化竞争，但仅支持iOS 26的限制可能影响初期用户增长。Grok AI的深度集成展示了AI在通讯场景的应用潜力，可能引领行业新趋势。',
@@ -112,7 +112,7 @@ export const newsData: NewsItem[] = [
     id: '46',
     title: 'Google Play 2025年安全报告：阻止175万款违规应用，封禁8万恶意开发者账号',
     source: '腾讯网 / Google',
-    sourceUrl: 'https://news.qq.com/rain/a/20260306A03STQ',
+    sourceUrl: 'https://security.googleblog.com/2026/02/google-play-safety-2025.html',
     summary: 'Google发布2025年Google Play安全报告，展示了其在应用生态安全方面的成果。2025年，Google阻止了超过175万款违反政策的应用在Google Play上发布，并封禁了超过8万个试图发布有害应用的恶意开发者账号。Google加大了对AI和实时防御的投入，通过开发者验证、强制性预审核和测试要求等举措提高了生态系统的准入门槛，显著减少了恶意行为者进入平台的途径。',
     aiComment: {
       overallImpact: 'Google Play的安全数据显示了大型应用商店在内容审核和安全防护方面的持续投入。AI驱动的多层防护机制成为行业标准，175万款违规应用的拦截量体现了平台治理的规模和力度。这为其他应用商店树立了安全标杆。',
