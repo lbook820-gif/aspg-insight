@@ -47,36 +47,29 @@ export default function WeeklySummary() {
 
   return (
     <div className="mb-10 bg-blue-50 rounded-xl p-5 md:p-6 border border-blue-100 shadow-sm">
-      <div className="mb-5 border-b border-blue-200/60 pb-3 flex items-center justify-between">
+      <div className="mb-4 border-b border-blue-200/60 pb-3 flex items-center justify-between">
         <h3 className="font-bold text-lg flex items-center gap-2 text-blue-900">
           <Calendar className="w-5 h-5 text-blue-600" />
           上周快讯一览 <span className="text-sm font-normal text-blue-600/70">（{start} 至 {end}）</span>
         </h3>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-2">
         {displayNews.map((news, index) => (
           <Link
             key={news.id}
             to={`/#news-${news.id}`}
-            className="block p-4 bg-white hover:bg-gray-50 border border-gray-200 rounded-lg transition-colors shadow-sm"
+            className="flex items-center gap-3 p-2 hover:bg-white rounded transition-colors group"
           >
-            <div className="flex items-start gap-3">
-              <span className="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold mt-0.5">
-                {index + 1}
-              </span>
-              <div className="flex-1 min-w-0">
-                <h4 className="font-medium text-gray-900 text-base mb-1">
-                  {news.title}
-                </h4>
-                <p className="text-gray-600 text-sm mb-2 line-clamp-2">
-                  {news.summary}
-                </p>
-                <div className="text-xs text-gray-400">
-                  {news.publishDate}
-                </div>
-              </div>
-            </div>
+            <span className="flex-shrink-0 w-5 h-5 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold">
+              {index + 1}
+            </span>
+            <span className="flex-1 text-gray-700 text-sm group-hover:text-blue-600 transition-colors line-clamp-1">
+              {news.title}
+            </span>
+            <span className="text-xs text-gray-400 flex-shrink-0">
+              {news.publishDate.slice(5)}
+            </span>
           </Link>
         ))}
       </div>
