@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, TrendingUp, Minus, TrendingDown } from 'lucide-react';
+import { ExternalLink, TrendingUp, Minus, TrendingDown, Info } from 'lucide-react';
 import { sortedNewsData } from '../data/newsData';
 
 // 热门搜索关键词
@@ -180,15 +180,20 @@ export default function IntelligenceList() {
                       <ExternalLink className="w-4 h-4" />
                     </Link>
                   )}
-                  <a
-                    href={news.sourceUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 font-medium text-black text-sm"
-                  >
-                    原文链接
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
+                  <div className="flex items-center gap-2">
+                    <a
+                      href={news.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 font-medium text-black text-sm hover:underline"
+                    >
+                      原文链接
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                    <span className="text-gray-400 text-xs hidden sm:inline">
+                      (新窗口打开)
+                    </span>
+                  </div>
                 </div>
               </div>
             </article>

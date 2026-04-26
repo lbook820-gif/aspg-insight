@@ -127,15 +127,20 @@ export default function LatestNews() {
               <ExternalLink className="w-4 h-4" />
             </Link>
           )}
-          <a
-            href={news.sourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-medium text-black text-sm"
-          >
-            原文链接
-            <ExternalLink className="w-4 h-4" />
-          </a>
+          <div className="flex items-center gap-2">
+            <a
+              href={news.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-medium text-black text-sm hover:underline"
+            >
+              原文链接
+              <ExternalLink className="w-4 h-4" />
+            </a>
+            <span className="text-gray-400 text-xs hidden sm:inline">
+              (新窗口打开)
+            </span>
+          </div>
         </div>
       </div>
     </article>
