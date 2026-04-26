@@ -19,21 +19,6 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
-    id: '65',
-    title: '英国 ICO 发布“设计即隐私”审计报告，严厉打击移动应用“暗黑模式”',
-    source: '英国 ICO',
-    sourceUrl: 'https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/accountability-and-governance/privacy-by-design/',
-    summary: '2026年4月26日，英国信息专员办公室 (ICO) 发布专项审计报告，点名批评了多家社交与电商应用在隐私设置中使用的“暗黑模式”（Dark Patterns），如诱导性按钮设计和隐蔽的账号注销路径。ICO 明确表示，任何违背“设计即隐私”原则的行为都将面临高额罚款。',
-    aiComment: {
-      overallImpact: '这是 ICO 在 2026 年针对用户交互设计（UX/UI）合规性的首次大规模整治，意味着合规已从后台逻辑延伸至前端视觉设计。',
-      huaweiImpact: '华为等中国出海应用需立即自查：Cookie 弹窗是否具有对等的“全部拒绝”选项？广告关闭按钮是否清晰可见？账号注销流程是否与注册同样简便？建议参照 ICO 指南重新设计关键交互流程。',
-    },
-    publishDate: '2026-04-26',
-    score: 9,
-    category: 'appstore',
-    tags: ['ICO', '隐私设计', '暗黑模式', '英国', '合规审计'],
-  },
-  {
     id: '64',
     title: '土耳其竞争管理局 (RK) 启动人工智能 (AI) 生态系统行业调查',
     source: '土耳其 RK',
