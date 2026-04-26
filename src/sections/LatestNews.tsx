@@ -24,14 +24,16 @@ const isMondayInBeijing = (): boolean => {
 
 export default function LatestNews() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [visibleRecentCount, setVisibleRecentCount] = useState(10);
 
   // 获取当日新增新闻（使用北京时间）
   const today = getBeijingDate();
   const todayNews = sortedNewsData.filter(news => news.publishDate === today)
     .sort((a, b) => b.score - a.score);
 
-  // 获取近期动态（最近10条，排除今日新闻）
-  const recentNews = getLatestNews(30).filter(news => news.publishDate !== today).slice(0, 5);
+  // 获取近期动态（过滤掉今日新闻），默认展示10条
+  const allRecentNews = getLatestNews(30).filter(news => news.publishDate !== today);
+  const recentNews = allRecentNews.slice(0, visibleRecentCount);
 
   // 搜索功能 - 实时筛选
   const searchResults = searchQuery.trim()
@@ -309,6 +311,18 @@ export default function LatestNews() {
             <div className="space-y-4 md:space-y-6">
               {recentNews.map((news) => renderNewsCard(news, false))}
             </div>
+
+            {/* 更多动态按钮 */}
+            {allRecentNews.length > visibleRecentCount && visibleRecentCount < 20 && (
+              <div className="mt-6 text-center">
+                <button
+                  onClick={() => setVisibleRecentCount(20)}
+                  className="px-6 py-2 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 hover:text-black transition-colors font-medium text-sm shadow-sm"
+                >
+                  查看更多动态
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>
