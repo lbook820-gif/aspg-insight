@@ -14,6 +14,13 @@ const getBeijingDate = (): string => {
   return `${beijingTime.getUTCFullYear()}-${String(beijingTime.getUTCMonth() + 1).padStart(2, '0')}-${String(beijingTime.getUTCDate()).padStart(2, '0')}`;
 };
 
+// 检查北京时间是否为周一
+const isMondayInBeijing = (): boolean => {
+  const now = new Date();
+  const beijingTime = new Date(now.getTime() + (8 * 60 * 60 * 1000));
+  return beijingTime.getUTCDay() === 1;
+};
+
 export default function LatestNews() {
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -242,8 +249,8 @@ export default function LatestNews() {
           </div>
         )}
 
-        {/* 当日新增 - 仅在无搜索时显示 */}
-        {!searchQuery && (
+        {/* 当日新增 - 仅在非周一且无搜索时显示 */}
+        {!isMondayInBeijing() && !searchQuery && (
           <div className="mb-10">
             <div className="mb-4 border-b border-gray-200 pb-2">
               <h3 className="font-bold text-lg">

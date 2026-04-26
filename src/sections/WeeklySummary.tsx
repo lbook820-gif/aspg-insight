@@ -24,14 +24,18 @@ const getDateRange = (): { start: string; end: string; title: string; isWeekly: 
     const start = new Date(beijingNow.getTime() - (7 * 24 * 60 * 60 * 1000)).toISOString().split('T')[0];
     return { start, end, title: '上周快讯一览', isWeekly: true };
   } else {
-    // 当日新增
-    const today = beijingNow.toISOString().split('T')[0];
-    return { start: today, end: today, title: '当日新增', isWeekly: false };
+    // 非周一不显示此组件，返回空状态由外部判断
+    return { start: '', end: '', title: '', isWeekly: false };
   }
 };
 
 export default function WeeklySummary() {
   const { start, end, title, isWeekly } = getDateRange();
+
+  // 如果不是周一，直接不渲染
+  if (!isWeekly) {
+    return null;
+  }
 
   // 获取对应时间范围的新闻
   const displayNews = useMemo(() => {
