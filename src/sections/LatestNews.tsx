@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Search } from 'lucide-react';
 import { getLatestNews, sortedNewsData } from '../data/newsData';
+import WeeklySummary from './WeeklySummary';
 
 // 热门搜索关键词
 const hotKeywords = ['DMA', 'Google Play', 'App Store', '反垄断', 'Epic Games', 'WhatsApp', 'Meta'];
@@ -249,27 +250,31 @@ export default function LatestNews() {
           </div>
         )}
 
-        {/* 当日新增 - 仅在非周一且无搜索时显示 */}
-        {!isMondayInBeijing() && !searchQuery && (
-          <div className="mb-10">
-            <div className="mb-4 border-b border-gray-200 pb-2">
-              <h3 className="font-bold text-lg">
-                当日新增 <span className="text-sm font-normal text-gray-500">（{todayNews.length}）</span>
-              </h3>
-            </div>
+        {/* 动态展示块：周一展示上周一览，其他时间展示当日新增 */}
+        {!searchQuery && (
+          isMondayInBeijing() ? (
+            <WeeklySummary />
+          ) : (
+            <div className="mb-10">
+              <div className="mb-4 border-b border-gray-200 pb-2">
+                <h3 className="font-bold text-lg">
+                  当日新增 <span className="text-sm font-normal text-gray-500">（{todayNews.length}）</span>
+                </h3>
+              </div>
 
-            {todayNews.length > 0 ? (
-              <div className="space-y-4 md:space-y-6">
-                {todayNews.map((news) => renderNewsCard(news, true))}
-              </div>
-            ) : (
-              <div className="text-center py-8 bg-white rounded-lg border border-gray-200">
-                <p className="text-gray-500">
-                  今日暂无新增新闻
-                </p>
-              </div>
-            )}
-          </div>
+              {todayNews.length > 0 ? (
+                <div className="space-y-4 md:space-y-6">
+                  {todayNews.map((news) => renderNewsCard(news, true))}
+                </div>
+              ) : (
+                <div className="text-center py-8 bg-white rounded-lg border border-gray-200">
+                  <p className="text-gray-500">
+                    今日暂无新增新闻
+                  </p>
+                </div>
+              )}
+            </div>
+          )
         )}
 
         {/* 近期动态 - 仅在无搜索时显示 */}
