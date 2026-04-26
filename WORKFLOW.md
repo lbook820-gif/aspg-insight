@@ -3,7 +3,6 @@
 ## 每日自动更新流程
 
 ### 1. 新闻采集（由我执行）
-- **时间**：每天北京时间 00:00（午夜）
 - **方式**：OpenClaw Cron 任务（isolated session）
 - **搜索关键词**（10组）：
   1. Apple App Store / iOS / App Store Connect 政策 / XChat
