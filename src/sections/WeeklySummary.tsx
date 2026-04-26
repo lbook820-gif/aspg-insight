@@ -46,11 +46,11 @@ export default function WeeklySummary() {
   }
 
   return (
-    <div className="mb-10">
-      <div className="mb-4 border-b border-gray-200 pb-2 flex items-center justify-between">
-        <h3 className="font-bold text-lg flex items-center gap-2">
+    <div className="mb-10 bg-blue-50 rounded-xl p-5 md:p-6 border border-blue-100 shadow-sm">
+      <div className="mb-5 border-b border-blue-200/60 pb-3 flex items-center justify-between">
+        <h3 className="font-bold text-lg flex items-center gap-2 text-blue-900">
           <Calendar className="w-5 h-5 text-blue-600" />
-          上周快讯一览 <span className="text-sm font-normal text-gray-500">（{start} 至 {end}）</span>
+          上周快讯一览 <span className="text-sm font-normal text-blue-600/70">（{start} 至 {end}）</span>
         </h3>
       </div>
 
@@ -59,7 +59,7 @@ export default function WeeklySummary() {
           <Link
             key={news.id}
             to={`/#news-${news.id}`}
-            className="block p-4 bg-white hover:bg-gray-50 border border-gray-200 rounded-lg transition-colors"
+            className="block p-4 bg-white hover:bg-gray-50 border border-gray-200 rounded-lg transition-colors shadow-sm"
           >
             <div className="flex items-start gap-3">
               <span className="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold mt-0.5">
