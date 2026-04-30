@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { ExternalLink, Search } from 'lucide-react';
 import { getLatestNews, sortedNewsData } from '../data/newsData';
 import WeeklySummary from './WeeklySummary';
-import MonthlySummary from './MonthlySummary';
 
 // 热门搜索关键词
 const hotKeywords = ['DMA', 'Google Play', 'App Store', '反垄断', 'Epic Games', 'WhatsApp', 'Meta'];
@@ -175,9 +174,6 @@ export default function LatestNews() {
             网站更新于：{today}
           </p>
         </div>
-
-        {/* 4月快讯综述 */}
-        <MonthlySummary />
 
         {/* Search Bar */}
         <div className="mb-8">
