@@ -100,7 +100,15 @@
 ## 相关路径
 - 本地仓库：`/home/sandbox/.openclaw/workspace/repo/aspg-insight/`
 - 远程仓库：`https://github.com/lbook820-gif/aspg-insight`
+- **Git Push Token**：存在变量中（不写入文件），通过 `git config credential.helper` 本地管理
 - 网站地址：`https://lbook820-gif.github.io/aspg-insight/`
+
+### Push 配置
+```bash
+# Token 已通过 git credential-store 本地管理，不写入仓库文件
+# 如需重配，在 sandbox 上执行：
+# echo "url=https://github.com/lbook820-gif/aspg-insight.git" | git credential-store store
+```
 
 ## 定时任务信息
 - **任务ID**：`5e03e870-b12c-4ba1-8068-105306a3f3bb`
