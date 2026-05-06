@@ -1,5 +1,5 @@
 // 生态峰会动态数据
-// 按时间顺序排列（2026年4月-10月）
+// 按时间顺序排列（2026年5月-12月）
 
 export interface Summit {
   id: string;
@@ -13,61 +13,9 @@ export interface Summit {
 }
 
 export const summitData: Summit[] = [
-  // 2026年4月
-  {
-    id: '1',
-    name: 'MIT AI Conference (Paris Edition)',
-    date: '2026年4月14日',
-    location: '法国巴黎',
-    coreAreas: ['人工智能', '技术战略', '数字化未来'],
-    highlights: '由麻省理工学院工业联络计划（ILP）主办，侧重于学术前沿与企业应用的结合，适合寻找AI领域技术趋势和战略洞察的专业人士。',
-    sourceUrl: 'https://business20channel.tv/top-10-ai-events-in-2026-leading-conferences-in-london-uk-europe-us-saudi-arabia-singapore-dubai-china-and-germany-3-december-2025',
-    sourceName: 'Business 2.0 Channel',
-  },
-  {
-    id: '2',
-    name: 'infra/CAPITAL 2026',
-    date: '2026年4月15-16日',
-    location: '美国',
-    coreAreas: ['超大规模AI基础设施', '数据中心', '云基础设施投资', '数字连接'],
-    highlights: '该会议汇聚了全球顶尖的AI算力提供商、云服务运营商以及数字基础设施投资者，是探讨"AI如何重塑数据中心与云架构"的绝佳平台。',
-    sourceUrl: 'https://www.ctomagazine.com/top-fintech-conferences-2026/',
-    sourceName: 'CTO Magazine',
-  },
-  {
-    id: '3',
-    name: 'The IFD 2026 Meetings',
-    date: '2026年4月15日',
-    location: '待定',
-    coreAreas: ['金融创新', '支付', '金融科技'],
-    highlights: '由Finance Innovation组织，通常涵盖金融科技（FinTech）领域的最新趋势，包括支付技术革新和银行数字化转型。',
-    sourceUrl: 'https://www.ctomagazine.com/top-fintech-conferences-2026/',
-    sourceName: 'CTO Magazine',
-  },
-  {
-    id: '4',
-    name: 'Money 20/20 Asia',
-    date: '2026年4月21-23日',
-    location: '泰国曼谷',
-    coreAreas: ['东盟实时支付', '数字钱包', '超级应用', '跨境商务'],
-    highlights: '亚洲领先的金融科技峰会，聚焦东南亚支付生态、数字钱包创新和跨境支付解决方案。',
-    sourceUrl: 'https://www.ctomagazine.com/top-fintech-conferences-2026/',
-    sourceName: 'CTO Magazine',
-  },
-
   // 2026年5月
   {
     id: '5',
-    name: 'Machine Learning Prague 2026',
-    date: '2026年5月4-6日',
-    location: '捷克布拉格',
-    coreAreas: ['机器学习', '深度学习', '负责任AI'],
-    highlights: '欧洲知名机器学习会议，强调应用机器学习、深度学习和负责任AI。技术研讨会和专家讲座吸引从业者和研究人员。',
-    sourceUrl: 'https://ainextconference.com/top-ai-conferences-to-attend-in-2026/',
-    sourceName: 'AI Next Conference',
-  },
-  {
-    id: '6',
     name: 'IEEE AI 2026',
     date: '2026年5月8-10日',
     location: '西班牙格拉纳达',
@@ -77,7 +25,7 @@ export const summitData: Summit[] = [
     sourceName: 'AI Next Conference',
   },
   {
-    id: '7',
+    id: '6',
     name: 'Dubai FinTech Summit 2026',
     date: '2026年5月11-12日',
     location: '阿联酋迪拜',
@@ -87,7 +35,7 @@ export const summitData: Summit[] = [
     sourceName: 'Dubai FinTech Summit',
   },
   {
-    id: '8',
+    id: '7',
     name: 'Google I/O 2026',
     date: '2026年5月19-20日',
     location: '美国加州山景城',
@@ -96,10 +44,30 @@ export const summitData: Summit[] = [
     sourceUrl: 'https://blog.google/innovation-and-ai/technology/developers-tools/io-2026-save-the-date/',
     sourceName: 'Google Blog',
   },
+  {
+    id: '8',
+    name: 'AI Everything Kenya x GITEX Africa',
+    date: '2026年5月19-21日',
+    location: '肯尼亚内罗毕',
+    coreAreas: ['非洲AI创新', '数字基础设施', '新兴市场科技'],
+    highlights: 'GITEX品牌首次深入东非市场，聚焦非洲AI创新、数字基础设施建设和新兴市场科技创业生态。适合关注非洲数字经济发展的企业和投资者。',
+    sourceUrl: 'https://www.unite.ai/zh-cn/conferences/',
+    sourceName: 'Unite.AI',
+  },
 
   // 2026年6月
   {
     id: '9',
+    name: 'COMPUTEX 2026',
+    date: '2026年6月2-5日',
+    location: '中国台湾台北',
+    coreAreas: ['AI硬件', '半导体', '边缘计算', '智慧制造'],
+    highlights: '全球第二大电脑展，聚焦AI硬件创新、半导体生态和边缘计算。NVIDIA、AMD、Intel等芯片巨头和新创企业同台展示。',
+    sourceUrl: 'https://www.unite.ai/zh-cn/conferences/',
+    sourceName: 'Unite.AI',
+  },
+  {
+    id: '10',
     name: 'Money 20/20 Europe',
     date: '2026年6月2-4日',
     location: '荷兰阿姆斯特丹',
@@ -109,7 +77,7 @@ export const summitData: Summit[] = [
     sourceName: 'CTO Magazine',
   },
   {
-    id: '10',
+    id: '11',
     name: 'Apple WWDC 2026',
     date: '2026年6月8-12日',
     location: '美国加州库比蒂诺',
@@ -119,7 +87,7 @@ export const summitData: Summit[] = [
     sourceName: 'Thurrott',
   },
   {
-    id: '11',
+    id: '12',
     name: 'Visa Payments Forum',
     date: '2026年6月9-11日',
     location: '美国旧金山',
@@ -129,7 +97,7 @@ export const summitData: Summit[] = [
     sourceName: 'LoanPro',
   },
   {
-    id: '12',
+    id: '13',
     name: 'The AI Summit London',
     date: '2026年6月10-11日',
     location: '英国伦敦',
@@ -139,7 +107,7 @@ export const summitData: Summit[] = [
     sourceName: 'Straiker',
   },
   {
-    id: '13',
+    id: '14',
     name: 'SuperAI 2026',
     date: '2026年6月10-11日',
     location: '新加坡',
@@ -148,10 +116,20 @@ export const summitData: Summit[] = [
     sourceUrl: 'https://ainextconference.com/top-ai-conferences-to-attend-in-2026/',
     sourceName: 'AI Next Conference',
   },
+  {
+    id: '15',
+    name: 'VivaTech 2026',
+    date: '2026年6月17-20日',
+    location: '法国巴黎',
+    coreAreas: ['AI与生产力', '网络安全与防务', '绿色科技', '深科技'],
+    highlights: '欧洲最大科技创业盛会十周年，展览面积扩大30%，预计吸引15,000家初创企业、3600名投资者。首次推出"投资者办公时间"计划。法国总统马克龙预计出席，Mistral AI等欧洲本土AI巨头将亮相。',
+    sourceUrl: 'https://www.donews.com/news/detail/8/6513462.html',
+    sourceName: 'DoNews',
+  },
 
   // 2026年7月
   {
-    id: '14',
+    id: '16',
     name: 'AI for Good Global Summit 2026',
     date: '2026年7月7-10日',
     location: '瑞士日内瓦',
@@ -160,10 +138,20 @@ export const summitData: Summit[] = [
     sourceUrl: 'https://business20channel.tv/top-10-ai-events-in-2026-leading-conferences-in-london-uk-europe-us-saudi-arabia-singapore-dubai-china-and-germany-3-december-2025',
     sourceName: 'Business 2.0 Channel',
   },
+  {
+    id: '17',
+    name: 'Agentic AI Summit 2026',
+    date: '2026年7月15日',
+    location: '印度孟买',
+    coreAreas: ['AI代理', '自主系统', '企业AI自动化'],
+    highlights: '专注于AI代理（Agentic AI）领域的新兴峰会，探讨自主AI系统的架构、应用场景和风险管理。适合关注AI从"聊天"到"行动"演进趋势的专业人士。',
+    sourceUrl: 'https://aimojo.io/conference/',
+    sourceName: 'AI Mojo',
+  },
 
   // 2026年9月
   {
-    id: '15',
+    id: '18',
     name: 'FinovateFall',
     date: '2026年9月9-11日',
     location: '美国纽约',
@@ -173,7 +161,7 @@ export const summitData: Summit[] = [
     sourceName: 'CTO Magazine',
   },
   {
-    id: '16',
+    id: '19',
     name: 'Money20/20 Middle East',
     date: '2026年9月14-16日',
     location: '沙特阿拉伯利雅得',
@@ -183,19 +171,19 @@ export const summitData: Summit[] = [
     sourceName: 'CTO Magazine',
   },
   {
-    id: '17',
-    name: 'Sibos 2026',
-    date: '2026年9月28日-10月1日',
-    location: '美国迈阿密海滩',
-    coreAreas: ['跨境支付', '银行创新', '全球金融社区'],
-    highlights: '全球金融社区顶级盛会，聚焦跨境支付、银行创新和金融基础设施。',
-    sourceUrl: 'https://www.ctomagazine.com/top-fintech-conferences-2026/',
-    sourceName: 'CTO Magazine',
+    id: '20',
+    name: 'The AI Conference 2026',
+    date: '2026年9月29日-10月1日',
+    location: '美国旧金山',
+    coreAreas: ['企业AI', '生成式AI', 'AI安全', '大规模部署'],
+    highlights: '旧金山年度AI盛会，预计120+演讲者，Peter Norvig（斯坦福HAI、前Google/NASA研究总监）等重量级人物出席。聚焦AI在企业中的实际应用和规模化部署挑战。',
+    sourceUrl: 'https://aiconference.com/',
+    sourceName: 'The AI Conference',
   },
 
   // 2026年10月
   {
-    id: '18',
+    id: '21',
     name: 'World Summit AI 2026',
     date: '2026年10月7-8日',
     location: '荷兰阿姆斯特丹',
@@ -205,7 +193,7 @@ export const summitData: Summit[] = [
     sourceName: 'AI Next Conference',
   },
   {
-    id: '19',
+    id: '22',
     name: 'Money 20/20 USA',
     date: '2026年10月18-21日',
     location: '美国拉斯维加斯',
@@ -213,6 +201,28 @@ export const summitData: Summit[] = [
     highlights: '北美最大的金融科技盛会，汇聚银行、支付、科技和投资领域的领导者。',
     sourceUrl: 'https://www.ctomagazine.com/top-fintech-conferences-2026/',
     sourceName: 'CTO Magazine',
+  },
+  {
+    id: '23',
+    name: 'GITEX Vietnam 2026',
+    date: '2026年10月1-2日',
+    location: '越南河内',
+    coreAreas: ['东南亚科技', '数字基础设施', 'AI应用', '创业生态'],
+    highlights: 'GITEX品牌首进越南，涵盖AI Everything、数据中心、量子技术等专题展区。聚集东南亚科技生态，适合关注东南亚数字经济和制造业数字化转型的参与者。',
+    sourceUrl: 'https://exposale.net/zh-cn/exhibition/gitex-vietnam',
+    sourceName: 'Exposale',
+  },
+
+  // 2026年11月-12月
+  {
+    id: '24',
+    name: 'GITEX Global 2026',
+    date: '2026年12月8-11日',
+    location: '阿联酋迪拜',
+    coreAreas: ['全球科技', 'AI基础设施', '数字城市', '创业投资'],
+    highlights: '全球最大科技展之一，预计6800+参展商、17万+参与者。聚焦AI基础设施、智慧城市、网络安全和创业投资。中东科技生态年度盛会。',
+    sourceUrl: 'http://www.818u.com/shenzhen/zhaoshang/a64483922.html',
+    sourceName: '818同城网',
   },
 ];
 
