@@ -4,6 +4,7 @@
 
 ### 1. 新闻采集（由我执行）
 - **方式**：OpenClaw Cron 任务（isolated session）
+- **时间范围**：过去48 小时
 - **搜索关键词**（10组）：
   1. Apple App Store / iOS / App Store Connect 政策 / XChat
   2. Google Play / Android / Play Store 政策
