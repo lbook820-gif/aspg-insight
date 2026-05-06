@@ -117,7 +117,7 @@
 - **Cron**：`0 0 * * *` @ Asia/Shanghai
 - **Session Target**：isolated
 - **Thinking**：high
-- **Timeout**：600秒
+- **Timeout**：1000秒
 
 ## 更新历史
 - 2026-04-21：初始化工作流，添加3条华为生态新闻，设置定时任务
