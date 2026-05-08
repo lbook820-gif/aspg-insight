@@ -17,24 +17,88 @@
   9. EPI / Wero / 欧洲支付 / 支付主权 / 数字欧元
   10. Visa / Mastercard / 跨境支付 / 数字钱包 / 即时支付
 
-#### 固定官方信源（必须额外检索）
-除上述关键词搜索外，还需主动访问以下官方信源网站，检查过去48小时是否有新发布的公告：
+#### 固定官方信源检索（使用多引擎搜索，Bing精准检索）
+除上述关键词搜索外，必须使用 **多引擎搜索（multi-search-engine）** 对以下官方信源进行精准检索。使用 Bing 国际版搜索的 `site:` 指令确保直接命中官方发布页面。
 
-- **欧盟委员会数字市场法官网**：https://digital-markets-act.ec.europa.eu/latest-news_en
-  - 关键词补充搜索：`site:digital-markets-act.ec.europa.eu DMA review impact 2026`
-  - 来源前缀：`https://digital-markets-act.ec.europa.eu/`
-- **欧盟委员会新闻稿**：https://ec.europa.eu/commission/presscorner/
-  - 关键词补充搜索：`site:ec.europa.eu/commission/presscorner DMA 2026`
-- **Apple Developer News**：https://developer.apple.com/news/
-  - 关键词补充搜索：`site:developer.apple.com App Store policy 2026`
-- **Google Developers Blog**：https://android-developers.googleblog.com/
-  - 关键词补充搜索：`site:android-developers.googleblog.com Play Store 2026`
-- **Google Security Blog**：https://security.googleblog.com/
-- **Epic Games News**：https://www.epicgames.com/site/en-US/news
+> **注意**：使用 Bing 国际版（`bing.com/search?ensearch=1`）而不是国内版（`ensearch=0`），以获得英文官方站点的更好的检索结果。
 
-**检查方式**：对上述官方信源，先用 `web_fetch` 访问首页/新闻列表页，提取最近发布的新闻标题和链接，再与已有数据进行URL去重和主题去重。确保不遗漏官方一手信息。
+```javascript
+// 检索指令（web_fetch 调用Bing搜索）：
+// 时间范围：使用 &freshness=week 限定最近一周
+// 注意：如需要更精确的时间，可改用 &freshness=day（最近24小时）
 
-### 2. 内容生成
+// 1. 欧盟委员会 DMA 相关
+web_fetch({"url": "https://www.bing.com/search?q=site:digital-markets-act.ec.europa.eu DMA review 2026&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=site:ec.europa.eu/commission/presscorner DMA 2026&ensearch=1&freshness=week"})
+
+// 2. Apple 开发者相关
+web_fetch({"url": "https://www.bing.com/search?q=site:developer.apple.com/news App Store policy 2026&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=site:www.apple.com/newsroom App Store DMA 2026&ensearch=1&freshness=week"})
+
+// 3. Google 开发者相关
+web_fetch({"url": "https://www.bing.com/search?q=site:android-developers.googleblog.com Play Store 2026&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=site:security.googleblog.com Android Play 2026&ensearch=1&freshness=week"})
+
+// 4. Epic Games
+web_fetch({"url": "https://www.bing.com/search?q=site:www.epicgames.com news store 2026&ensearch=1&freshness=week"})
+
+// 5. 权威科技媒体（辅助验证）
+web_fetch({"url": "https://www.bing.com/search?q=site:techcrunch.com DMA 2026&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=site:theverge.com DMA 2026&ensearch=1&freshness=week"})
+```
+
+**检索流程**：
+1. 依次执行以上 `web_fetch` 调用，获取搜索结果中的标题和链接
+2. 对每条结果进行**URL去重**（与 `src/data/newsData.ts` 中已有 sourceUrl 比对）
+3. 对未收录的结果进行**主题去重**（检查是否已有相同主题新闻）
+4. 保留符合收录条件的新新闻进入第2步内容生成
+
+#### 英文关键词补充搜索（弥补中文搜索盲区）
+使用Bing国际版搜索补充以下英文关键词，覆盖中文搜索容易遗漏的英文报道：
+
+```javascript
+// DMA相关
+web_fetch({"url": "https://www.bing.com/search?q=DMA review 2026 European Commission&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=Digital Markets Act gatekeeper compliance 2026&ensearch=1&freshness=week"})
+
+// 平台政策
+web_fetch({"url": "https://www.bing.com/search?q=Apple App Store commission fee 2026&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=Google Play service fee third party billing 2026&ensearch=1&freshness=week"})
+
+// 第三方应用商店
+web_fetch({"url": "https://www.bing.com/search?q=third party app store Apple iOS 2026&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=alternative app store Google Android 2026&ensearch=1&freshness=week"})
+
+// 消息互操作
+web_fetch({"url": "https://www.bing.com/search?q=WhatsApp interoperability DMA 2026&ensearch=1&freshness=week"})
+
+// 反垄断诉讼
+web_fetch({"url": "https://www.bing.com/search?q=antitrust lawsuit app store monopoly 2026&ensearch=1&freshness=week"})
+
+// 支付生态
+web_fetch({"url": "https://www.bing.com/search?q=EPI Wero digital wallet Europe 2026&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=European digital euro CBDC 2026&ensearch=1&freshness=week"})
+```
+
+### 2. 来源验证（news-research 分级体系）
+对已通过去重的新新闻进行来源可靠性验证：
+
+**可靠来源等级**：
+| 等级 | 说明 | 来源示例 |
+|------|------|---------|
+| **S级** | 官方公告，直接可用 | Apple Developer, Google Developers Blog, European Commission |
+| **A级** | 权威科技媒体，直接可用 | TechCrunch, The Verge, Ars Technica, Engadget |
+| **B级** | 专业垂直媒体，需要交叉验证 | 9to5Mac, Android Police, PocketGamer, Game Developer |
+| **C级** | 综合科技/财经媒体，需要交叉验证 | 新浪科技、搜狐、凤凰网、同花顺等 |
+
+**验证方法**：
+1. 检查 sourceUrl 是否可访问
+2. 查看发布日期是否明确
+3. 交叉验证多个来源报道同一事件
+4. 优先选择有署名作者的文章
+5. C级来源的新闻优先查找S/A级来源交叉验证
+
+### 3. 内容生成
 - 读取 `src/data/newsData.ts`，提取已有 sourceUrl 去重
 - **⚠️ 去重机制（必须严格执行）**：
   1. **URL去重**：提取所有已存在的 `sourceUrl`，新发现的新闻URL必须不在列表中
@@ -49,7 +113,7 @@
      grep -E "(关键词1|关键词2|关键词3)" src/data/newsData.ts | grep "title:"
      ```
   5. **重复新闻处理**：如发现重复，跳过该新闻，不添加到数据中
-- 对每条新发现的新闻，AI 生成：
+- 对每条新发现的新闻，AI 生成（按下文框架分析）：
   - `overallImpact`：整体行业影响分析
   - `huaweiImpact`：对华为的影响分析（**核心字段，必须生成**），提供深度扩展的多维度分析结果。
   - `score`：1-10 重要性评分
@@ -57,6 +121,35 @@
   - `tags`：相关标签
 - 新新闻追加到数组末尾，id 按最大+1递增
 - **注意**：不收录纯华为产品报道，聚焦行业动态和监管政策
+
+### 3.1 影响分析框架（news-research 结构化分析）
+
+#### 整体影响分析（overallImpact）的 6 个维度
+撰写 `overallImpact` 时应涵盖以下维度的分析：
+
+1. **政策层面** — 是否改变行业规则？是否为先例？
+2. **市场层面** — 对竞争格局的影响？市场份额变化？
+3. **开发者层面** — 对开发者成本/收益的影响？合规成本？
+4. **用户层面** — 对用户体验的影响？选择权增加？
+5. **时间维度** — 短期/中期/长期影响？
+6. **地域维度** — 影响范围（全球/地区/国家）？
+
+#### 对华为影响分析（huaweiImpact）的 5 个维度
+撰写 `huaweiImpact` 时应涵盖以下维度的分析：
+
+1. **竞争影响** — 与华为AppGallery的直接竞争关系？
+2. **机会窗口** — 是否为华为创造差异化机会？
+3. **技术影响** — 是否需要技术调整？
+4. **市场影响** — 对华为海外/国内市场的影响？
+5. **合规参考** — 华为是否需要跟进类似措施？
+
+**评分标准**：
+| 分数 | 说明 |
+|------|------|
+| 9-10 | 行业变革级 |
+| 7-8 | 重要政策级 |
+| 5-6 | 一般动态 |
+| 1-4 | 参考信息 |
 
 ### 2.1 新闻分类规则
 网站分为两个二级频道：**应用生态** 和 **支付生态**，分类逻辑如下：
@@ -115,6 +208,41 @@
 - **入口**：Actions → Auto Update News → Run workflow
 - **表单字段**：标题、链接、来源、摘要、整体影响、华为影响、分类、评分
 
+## 盲区检测清单（执行完新闻采集后逐一核对）
+
+完成所有搜索后，对照以下清单检查是否有遗漏：
+
+### 1. 细分领域覆盖检查（6大领域）
+| 领域 | 覆盖渠道 | 检查是否已搜 |
+|------|---------|------------|
+| 消息应用互操作 | WhatsApp/DMA/第三方消息 | 中文搜索 + Bing英文搜索 |
+| 支付系统开放 | Apple Pay、Google Pay、EPI/Wero、数字欧元 | 中文搜索 + Bing英文搜索 |
+| 广告平台规则 | App Store广告、Google Play广告、Apple Maps广告 | 中文搜索 |
+| 浏览器引擎选择 | DMA浏览器选择屏幕、WebKit限制 | Bing英文搜索 |
+| 侧载/替代分发 | 第三方应用商店、Epic Games、Aptoide、AltStore | 中文搜索 + Bing英文搜索 |
+| 平台反垄断诉讼 | Epic诉Apple/Google、Aptoide诉Google、美国DOJ/欧盟DMA | 中文搜索 + Bing英文搜索 |
+
+### 2. 遗漏案例分析（记录并改进）
+当发现重要新闻在常规搜索中被遗漏时，分析原因并记录在此：
+
+```markdown
+## 遗漏案例登记表
+| 日期 | 遗漏新闻 | 原因 | 改进措施 |
+|------|---------|------|---------|
+| 2026-05-08 | 欧盟DMA首次审查报告 | 中文搜索对EC官网索引低，关键词未精准覆盖 | 新增固定官方信源检索 + Bing site:指令 |
+| (新发现) | ... | ... | ... |
+```
+
+### 3. 每周深度检索（周六执行一次）
+除了每日过去48小时的常规搜索，每周额外执行一次深度检索（时间范围扩展至30天），覆盖以下关键词：
+
+```javascript
+web_fetch({"url": "https://www.bing.com/search?q=DMA interoperability 2026 site:techcrunch.com OR site:theverge.com&ensearch=1&freshness=month"})
+web_fetch({"url": "https://www.bing.com/search?q=WhatsApp third party apps EU interoperability 2026&ensearch=1&freshness=month"})
+web_fetch({"url": "https://www.bing.com/search?q=App Store alternative payment commission 2026&ensearch=1&freshness=month"})
+web_fetch({"url": "https://www.bing.com/search?q=Google Play commission change alternative billing 2026&ensearch=1&freshness=month"})
+```
+
 ## 相关路径
 - 本地仓库：`/home/sandbox/.openclaw/workspace/repo/aspg-insight/`
 - 远程仓库：`https://github.com/lbook820-gif/aspg-insight`
@@ -144,3 +272,4 @@
 - 2026-04-24：重构支付生态分类逻辑，从关键词匹配改为核心关键词+排除关键词模式，聚焦支付行业本身（支付渠道、支付公司、银行、卡组织、钱包、数字货币），排除应用商店生态相关新闻；优化应用生态和支付生态页面搜索功能，与首页保持一致；修复多条新闻分类错误；新增Stripe估值暴涨、Stripe加密货币支付、Curve Pay与华为手表合作等新闻；更新支付生态热门搜索词为EPI/Wero/Visa/Mastercard/Stripe/数字欧元
 - 2026-04-26：**强化去重机制**，新增URL去重、标题去重、主题去重三重检查机制，避免重复收录新闻
 - 2026-05-08：新增**固定官方信源**检索规则（欧盟DMA官网、EC新闻稿、Apple Developer News、Google Developers Blog、Google Security Blog、Epic Games News），确保官方一手信息不遗漏；同时将新收录的欧盟DMA官方新闻稿写入数据并构建部署
+- 2026-05-09：整合**news-research 技能精华**，新增来源验证分级体系（S/A/B/C四级）、影响分析框架（整体影响6维度+华为影响5维度）、盲区检测清单（6大细分领域覆盖检查）、遗漏案例分析登记表、每周深度检索机制
