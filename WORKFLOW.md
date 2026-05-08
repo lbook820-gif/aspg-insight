@@ -24,31 +24,31 @@
 
 ```javascript
 // 检索指令（web_fetch 调用Bing搜索）：
-// 时间范围：使用 &freshness=week 限定最近一周
-// 注意：如需要更精确的时间，可改用 &freshness=day（最近24小时）
+// 时间范围：使用 &freshness=day 限定最近24小时（每天执行，覆盖两次执行间隔）
+// 注意：如返回结果较少，可临时改用 &freshness=week 补搜
 
 // 1. 欧盟委员会 DMA 相关
-web_fetch({"url": "https://www.bing.com/search?q=site:digital-markets-act.ec.europa.eu DMA review 2026&ensearch=1&freshness=week"})
-web_fetch({"url": "https://www.bing.com/search?q=site:ec.europa.eu/commission/presscorner DMA 2026&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=site:digital-markets-act.ec.europa.eu DMA review 2026&ensearch=1&freshness=day"})
+web_fetch({"url": "https://www.bing.com/search?q=site:ec.europa.eu/commission/presscorner DMA 2026&ensearch=1&freshness=day"})
 
 // 2. Apple 开发者相关
-web_fetch({"url": "https://www.bing.com/search?q=site:developer.apple.com/news App Store policy 2026&ensearch=1&freshness=week"})
-web_fetch({"url": "https://www.bing.com/search?q=site:www.apple.com/newsroom App Store DMA 2026&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=site:developer.apple.com/news App Store policy 2026&ensearch=1&freshness=day"})
+web_fetch({"url": "https://www.bing.com/search?q=site:www.apple.com/newsroom App Store DMA 2026&ensearch=1&freshness=day"})
 
 // 3. Google 开发者相关
-web_fetch({"url": "https://www.bing.com/search?q=site:android-developers.googleblog.com Play Store 2026&ensearch=1&freshness=week"})
-web_fetch({"url": "https://www.bing.com/search?q=site:security.googleblog.com Android Play 2026&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=site:android-developers.googleblog.com Play Store 2026&ensearch=1&freshness=day"})
+web_fetch({"url": "https://www.bing.com/search?q=site:security.googleblog.com Android Play 2026&ensearch=1&freshness=day"})
 
 // 4. Epic Games
-web_fetch({"url": "https://www.bing.com/search?q=site:www.epicgames.com news store 2026&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=site:www.epicgames.com news store 2026&ensearch=1&freshness=day"})
 
 // 5. 权威科技媒体（辅助验证）
-web_fetch({"url": "https://www.bing.com/search?q=site:techcrunch.com DMA 2026&ensearch=1&freshness=week"})
-web_fetch({"url": "https://www.bing.com/search?q=site:theverge.com DMA 2026&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=site:techcrunch.com DMA 2026&ensearch=1&freshness=day"})
+web_fetch({"url": "https://www.bing.com/search?q=site:theverge.com DMA 2026&ensearch=1&freshness=day"})
 ```
 
 **检索流程**：
-1. 依次执行以上 `web_fetch` 调用，获取搜索结果中的标题和链接
+1. 依次执行以上 `web_fetch` 调用，获取搜索结果中的标题和链接。**注意**：Bing的freshness=day仅覆盖最近24小时。如果搜索返回结果较少，可临时改为freshness=week补搜
 2. 对每条结果进行**URL去重**（与 `src/data/newsData.ts` 中已有 sourceUrl 比对）
 3. 对未收录的结果进行**主题去重**（检查是否已有相同主题新闻）
 4. 保留符合收录条件的新新闻进入第2步内容生成
@@ -58,26 +58,53 @@ web_fetch({"url": "https://www.bing.com/search?q=site:theverge.com DMA 2026&ense
 
 ```javascript
 // DMA相关
-web_fetch({"url": "https://www.bing.com/search?q=DMA review 2026 European Commission&ensearch=1&freshness=week"})
-web_fetch({"url": "https://www.bing.com/search?q=Digital Markets Act gatekeeper compliance 2026&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=DMA review 2026 European Commission&ensearch=1&freshness=day"})
+web_fetch({"url": "https://www.bing.com/search?q=Digital Markets Act gatekeeper compliance 2026&ensearch=1&freshness=day"})
 
 // 平台政策
-web_fetch({"url": "https://www.bing.com/search?q=Apple App Store commission fee 2026&ensearch=1&freshness=week"})
-web_fetch({"url": "https://www.bing.com/search?q=Google Play service fee third party billing 2026&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=Apple App Store commission fee 2026&ensearch=1&freshness=day"})
+web_fetch({"url": "https://www.bing.com/search?q=Google Play service fee third party billing 2026&ensearch=1&freshness=day"})
 
 // 第三方应用商店
-web_fetch({"url": "https://www.bing.com/search?q=third party app store Apple iOS 2026&ensearch=1&freshness=week"})
-web_fetch({"url": "https://www.bing.com/search?q=alternative app store Google Android 2026&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=third party app store Apple iOS 2026&ensearch=1&freshness=day"})
+web_fetch({"url": "https://www.bing.com/search?q=alternative app store Google Android 2026&ensearch=1&freshness=day"})
 
 // 消息互操作
-web_fetch({"url": "https://www.bing.com/search?q=WhatsApp interoperability DMA 2026&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=WhatsApp interoperability DMA 2026&ensearch=1&freshness=day"})
 
 // 反垄断诉讼
-web_fetch({"url": "https://www.bing.com/search?q=antitrust lawsuit app store monopoly 2026&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=antitrust lawsuit app store monopoly 2026&ensearch=1&freshness=day"})
 
 // 支付生态
-web_fetch({"url": "https://www.bing.com/search?q=EPI Wero digital wallet Europe 2026&ensearch=1&freshness=week"})
-web_fetch({"url": "https://www.bing.com/search?q=European digital euro CBDC 2026&ensearch=1&freshness=week"})
+web_fetch({"url": "https://www.bing.com/search?q=EPI Wero digital wallet Europe 2026&ensearch=1&freshness=day"})
+web_fetch({"url": "https://www.bing.com/search?q=European digital euro CBDC 2026&ensearch=1&freshness=day"})
+```
+
+#### 英文关键词补充搜索（弥补中文搜索盲区）
+使用Bing国际版搜索补充以下英文关键词，覆盖中文搜索容易遗漏的英文报道：
+
+```javascript
+// DMA相关
+web_fetch({"url": "https://www.bing.com/search?q=DMA review 2026 European Commission&ensearch=1&freshness=day"})
+web_fetch({"url": "https://www.bing.com/search?q=Digital Markets Act gatekeeper compliance 2026&ensearch=1&freshness=day"})
+
+// 平台政策
+web_fetch({"url": "https://www.bing.com/search?q=Apple App Store commission fee 2026&ensearch=1&freshness=day"})
+web_fetch({"url": "https://www.bing.com/search?q=Google Play service fee third party billing 2026&ensearch=1&freshness=day"})
+
+// 第三方应用商店
+web_fetch({"url": "https://www.bing.com/search?q=third party app store Apple iOS 2026&ensearch=1&freshness=day"})
+web_fetch({"url": "https://www.bing.com/search?q=alternative app store Google Android 2026&ensearch=1&freshness=day"})
+
+// 消息互操作
+web_fetch({"url": "https://www.bing.com/search?q=WhatsApp interoperability DMA 2026&ensearch=1&freshness=day"})
+
+// 反垄断诉讼
+web_fetch({"url": "https://www.bing.com/search?q=antitrust lawsuit app store monopoly 2026&ensearch=1&freshness=day"})
+
+// 支付生态
+web_fetch({"url": "https://www.bing.com/search?q=EPI Wero digital wallet Europe 2026&ensearch=1&freshness=day"})
+web_fetch({"url": "https://www.bing.com/search?q=European digital euro CBDC 2026&ensearch=1&freshness=day"})
 ```
 
 ### 2. 来源验证（news-research 分级体系）
@@ -262,7 +289,7 @@ web_fetch({"url": "https://www.bing.com/search?q=Google Play commission change a
 - **Cron**：`0 0 * * *` @ Asia/Shanghai
 - **Session Target**：isolated
 - **Thinking**：high
-- **Timeout**：1000秒
+- **Timeout**：1200秒
 
 ## 更新历史
 - 2026-04-21：初始化工作流，添加3条华为生态新闻，设置定时任务
@@ -273,3 +300,4 @@ web_fetch({"url": "https://www.bing.com/search?q=Google Play commission change a
 - 2026-04-26：**强化去重机制**，新增URL去重、标题去重、主题去重三重检查机制，避免重复收录新闻
 - 2026-05-08：新增**固定官方信源**检索规则（欧盟DMA官网、EC新闻稿、Apple Developer News、Google Developers Blog、Google Security Blog、Epic Games News），确保官方一手信息不遗漏；同时将新收录的欧盟DMA官方新闻稿写入数据并构建部署
 - 2026-05-09：整合**news-research 技能精华**，新增来源验证分级体系（S/A/B/C四级）、影响分析框架（整体影响6维度+华为影响5维度）、盲区检测清单（6大细分领域覆盖检查）、遗漏案例分析登记表、每周深度检索机制
+- 2026-05-09：优化时间范围，所有Bing搜索从freshness=week改为freshness=day（聚焦最近48小时）；定时任务超时从1000秒改为1200秒
