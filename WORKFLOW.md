@@ -17,6 +17,23 @@
   9. EPI / Wero / 欧洲支付 / 支付主权 / 数字欧元
   10. Visa / Mastercard / 跨境支付 / 数字钱包 / 即时支付
 
+#### 固定官方信源（必须额外检索）
+除上述关键词搜索外，还需主动访问以下官方信源网站，检查过去48小时是否有新发布的公告：
+
+- **欧盟委员会数字市场法官网**：https://digital-markets-act.ec.europa.eu/latest-news_en
+  - 关键词补充搜索：`site:digital-markets-act.ec.europa.eu DMA review impact 2026`
+  - 来源前缀：`https://digital-markets-act.ec.europa.eu/`
+- **欧盟委员会新闻稿**：https://ec.europa.eu/commission/presscorner/
+  - 关键词补充搜索：`site:ec.europa.eu/commission/presscorner DMA 2026`
+- **Apple Developer News**：https://developer.apple.com/news/
+  - 关键词补充搜索：`site:developer.apple.com App Store policy 2026`
+- **Google Developers Blog**：https://android-developers.googleblog.com/
+  - 关键词补充搜索：`site:android-developers.googleblog.com Play Store 2026`
+- **Google Security Blog**：https://security.googleblog.com/
+- **Epic Games News**：https://www.epicgames.com/site/en-US/news
+
+**检查方式**：对上述官方信源，先用 `web_fetch` 访问首页/新闻列表页，提取最近发布的新闻标题和链接，再与已有数据进行URL去重和主题去重。确保不遗漏官方一手信息。
+
 ### 2. 内容生成
 - 读取 `src/data/newsData.ts`，提取已有 sourceUrl 去重
 - **⚠️ 去重机制（必须严格执行）**：
@@ -126,3 +143,4 @@
 - 2026-04-23：执行每日更新流程，新增3条新闻：马克龙呼吁欧洲支付主权、万事达卡支持Apple Pay跨境支付、欧盟认定Meta违反反垄断规则要求开放WhatsApp AI访问
 - 2026-04-24：重构支付生态分类逻辑，从关键词匹配改为核心关键词+排除关键词模式，聚焦支付行业本身（支付渠道、支付公司、银行、卡组织、钱包、数字货币），排除应用商店生态相关新闻；优化应用生态和支付生态页面搜索功能，与首页保持一致；修复多条新闻分类错误；新增Stripe估值暴涨、Stripe加密货币支付、Curve Pay与华为手表合作等新闻；更新支付生态热门搜索词为EPI/Wero/Visa/Mastercard/Stripe/数字欧元
 - 2026-04-26：**强化去重机制**，新增URL去重、标题去重、主题去重三重检查机制，避免重复收录新闻
+- 2026-05-08：新增**固定官方信源**检索规则（欧盟DMA官网、EC新闻稿、Apple Developer News、Google Developers Blog、Google Security Blog、Epic Games News），确保官方一手信息不遗漏；同时将新收录的欧盟DMA官方新闻稿写入数据并构建部署

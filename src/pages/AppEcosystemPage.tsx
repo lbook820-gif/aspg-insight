@@ -65,6 +65,34 @@ export default function AppEcosystemPage() {
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 py-8">
+        {/* DMA Review Banner */}
+        <Link 
+          to="/dma-review" 
+          className="block mb-8 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-lg p-5 hover:shadow-lg transition-all group"
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="px-3 py-1 bg-green-600 text-white font-semibold rounded-full text-xs">
+                  专栏
+                </span>
+                <span className="text-green-600 font-bold text-lg">DMA 审查专栏</span>
+              </div>
+              <p className="text-gray-700 text-sm md:text-base">
+                欧盟《数字市场法》首次审查报告深度分析 · 实施两年成效评估 · AI与云计算成下一监管焦点
+              </p>
+              <p className="text-gray-500 text-xs mt-2">
+                点击查看完整分析 →
+              </p>
+            </div>
+            <div className="ml-4 text-green-600 group-hover:translate-x-1 transition-transform">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
+        </Link>
+
         {/* Search Bar */}
         <div className="mb-8">
           <div className="relative max-w-xl">

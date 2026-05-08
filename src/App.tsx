@@ -9,6 +9,7 @@ import SummitPage from './pages/SummitPage';
 import PrivacyPage from './pages/PrivacyPage';
 import MetaAnalysisPage from './pages/MetaAnalysisPage';
 import EPIInsightPage from './pages/EPIInsightPage';
+import DMAResearchPage from './pages/DMAResearchPage';
 import Footer from './sections/Footer';
 import RefreshButton from './components/RefreshButton';
 import DisplayModeToggle from './components/DisplayModeToggle';
@@ -39,6 +40,7 @@ function AppContent() {
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/meta-analysis" element={<MetaAnalysisPage />} />
           <Route path="/epi-insight" element={<EPIInsightPage />} />
+          <Route path="/dma-review" element={<DMAResearchPage />} />
         </Routes>
         <Footer />
         <PageNavigator />
