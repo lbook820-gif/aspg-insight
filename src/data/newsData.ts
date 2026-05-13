@@ -1197,6 +1197,23 @@ export const newsData: NewsItem[] = [
     category: 'appstore',
     tags: ['苹果', 'iOS 26.5', 'RCS', '端到端加密', '跨平台', '通信', '短信'],
   },
+  // ===== Added by daily update (2026-05-14) =====
+
+  {
+    id: '81',
+    title: 'Android 17重大更新:Quick Share跨平台传送打通AirDrop,原生应用锁和防盗功能上线',
+    source: '澎湃新闻 / DoNews / Android Authority / IT之家',
+    sourceUrl: 'https://www.thepaper.cn/newsDetail_forward_33169132',
+    summary: '谷歌于5月13日北京时间凌晨1点举行The Android Show | I/O Edition活动,正式展示Android 17系统(CinnamonBun肉桂卷)重大新功能。核心更新包括:Quick Share快速分享接入WhatsApp等第三方应用,并打通Apple AirDrop实现安卓向苹果设备的跨平台文件传送;新增原生应用锁功能,用户可锁定支付宝、银行App等敏感应用;Find Hub"标记为丢失"功能新增生物识别认证,即使窃贼获取了设备PIN码也无法关闭追踪,并隐藏快捷设置栏禁用新Wi-Fi/蓝牙连接;UI采用磨砂玻璃质感,通知栏与快捷设置分屏布局;Gemini AI深度整合实现全域感知辅助。Android 17测试版已迭代至Beta 4/QPR1 Beta 2,正式版预计6至8月推出。Google同时展示了Aluminium OS(基于Android的PC系统)的进展。',
+    aiComment: {
+      overallImpact: 'Android 17是近年来安卓系统最具实质性升级的版本之一。跨平台文件传送打通AirDrop是历史性突破——安卓和苹果生态之间首次实现原生级别的文件互传,彻底终结了长期以来"安卓传文件到iPhone"的体验痛点。原生应用锁功能回应了用户多年的呼声,使得安卓在隐私保护层面追平甚至超越了众多定制ROM。防盗升级(生物识别锁定丢失设备)借鉴了巴西试点经验,标志着谷歌在设备安全领域的战略投入加大。Quick Share接入WhatsApp等第三方应用,进一步强化了安卓生态的开放互联优势。Aluminium OS的同步展示暗示谷歌正在加速构建"手机+PC"统一生态,这可能对ChromeOS的未来发展路径产生深远影响。从竞争角度看,Android 17的跨平台传送能力直接削弱了苹果生态在"设备间无缝传输"方面的独占优势,而原生应用锁和防盗升级则弥补了安卓长期存在的安全短板。',
+      huaweiImpact: 'Android 17的跨平台文件传送功能对华为生态具有双重战略影响。竞争层面:安卓打通AirDrop后,华为设备用户通过安卓系统即可实现与iPhone的文件互传,可能降低用户对"鸿蒙+华为设备"生态锁定效应的依赖——此前华为通过鸿蒙星河互联App实现与苹果设备的互传,这是鸿蒙生态的差异化卖点之一。现在安卓原生支持此功能,部分削弱了鸿蒙在跨平台互联方面的独特优势。机会层面:华为可借鉴Android 17的Quick Share设计理念,进一步优化鸿蒙的"超级终端"和"多屏协同"体验,尤其是在跨品牌设备互联方面。原生应用锁方面:Android 17首次为原生安卓加入应用锁,而华为EMUI/HarmonyOS早已内置此功能,华为应继续保持领先,可考虑加入更高级的应用锁功能(如分身加密、应用锁定时长限制等)保持差异化。防盗升级竞争:华为的"查找设备"功能需对标Android 17的生物识别防盗机制,升级为即使窃贼掌握PIN也无法关闭追踪的安全等级。Aluminium OS启示:谷歌推进Android PC系统的做法与华为"手机+平板+PC"多端融合战略有相似之处,华为应加速鸿蒙PC系统的研发和推广,在桌面端生态构建先发优势。',
+    },
+    publishDate: '2026-05-13',
+    score: 7,
+    category: 'googleplay',
+    tags: ['Google', 'Android 17', 'The Android Show', 'Quick Share', 'AirDrop', '应用锁', '防盗', 'AI', 'Aluminium OS'],
+  },
 ];
 
 // 按日期降序排序(最新的在前)
