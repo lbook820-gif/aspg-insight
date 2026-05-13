@@ -7,14 +7,6 @@ import WeeklySummary from './WeeklySummary';
 // 热门搜索关键词
 const hotKeywords = ['DMA', 'Google Play', 'App Store', '反垄断', 'Epic Games', 'WhatsApp', 'Meta'];
 
-// 获取北京时间（UTC+8）的日期字符串
-const getBeijingDate = (): string => {
-  const now = new Date();
-  // 北京时间 = UTC时间 + 8小时
-  const beijingTime = new Date(now.getTime() + (8 * 60 * 60 * 1000));
-  return `${beijingTime.getUTCFullYear()}-${String(beijingTime.getUTCMonth() + 1).padStart(2, '0')}-${String(beijingTime.getUTCDate()).padStart(2, '0')}`;
-};
-
 // 检查北京时间是否为周一
 const isMondayInBeijing = (): boolean => {
   const now = new Date();
@@ -26,13 +18,8 @@ export default function LatestNews() {
   const [searchQuery, setSearchQuery] = useState('');
   const [visibleRecentCount, setVisibleRecentCount] = useState(10);
 
-  // 获取当日新增新闻（使用北京时间）
-  const today = getBeijingDate();
-  const todayNews = sortedNewsData.filter(news => news.publishDate === today)
-    .sort((a, b) => b.score - a.score);
-
-  // 获取近期动态（过滤掉今日新闻），默认展示10条
-  const allRecentNews = getLatestNews(30).filter(news => news.publishDate !== today);
+  // 获取近期动态，默认展示10条
+  const allRecentNews = getLatestNews(30);
   const recentNews = allRecentNews.slice(0, visibleRecentCount);
 
   // 搜索功能 - 实时筛选
@@ -171,7 +158,7 @@ export default function LatestNews() {
             聚焦欧盟DMA政策、应用商店监管与欧洲数字市场动态
           </p>
           <p className="mt-2 text-gray-400 text-xs">
-            网站更新于：{today}
+            网站更新于：{new Date().toISOString().split('T')[0]}
           </p>
         </div>
 
@@ -252,32 +239,8 @@ export default function LatestNews() {
           </div>
         )}
 
-        {/* 动态展示块：周一展示上周一览，其他时间展示当日新增 */}
-        {!searchQuery && (
-          isMondayInBeijing() ? (
-            <WeeklySummary />
-          ) : (
-            <div className="mb-10">
-              <div className="mb-4 border-b border-gray-200 pb-2">
-                <h3 className="font-bold text-lg">
-                  当日新增 <span className="text-sm font-normal text-gray-500">（{todayNews.length}）</span>
-                </h3>
-              </div>
-
-              {todayNews.length > 0 ? (
-                <div className="space-y-4 md:space-y-6">
-                  {todayNews.map((news) => renderNewsCard(news, true))}
-                </div>
-              ) : (
-                <div className="text-center py-8 bg-white rounded-lg border border-gray-200">
-                  <p className="text-gray-500">
-                    今日暂无新增新闻
-                  </p>
-                </div>
-              )}
-            </div>
-          )
-        )}
+        {/* 动态展示块：周一展示上周一览 */}
+        {!searchQuery && isMondayInBeijing() && <WeeklySummary />}
 
         {/* 近期动态 - 仅在无搜索时显示 */}
         {!searchQuery && (
