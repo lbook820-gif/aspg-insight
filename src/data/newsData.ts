@@ -1531,6 +1531,69 @@ export const newsData: NewsItem[] = [
     tags: ['拉美', '智能手机', '三星', '荣耀', '小米', '苹果', '摩托罗拉', '市场调研', '出货量'],
   },
 
+  // ===== Added by daily update (2026-05-23) =====
+
+  {
+    id: '104',
+    title: '欧洲五国支付巨头联合搭建互操作枢纽,1300万用户2026年起"脱钩"Visa/Mastercard',
+    source: '网易新闻 / 移动支付网',
+    sourceUrl: 'https://www.163.com/dy/article/KTDQNCCP05561FZL.html',
+    summary: '法国Wero、西班牙Bizum、意大利Bancomat、葡萄牙MB WAY、北欧Vipps MobilePay五国支付工具签署协议,从2026年开始打通,将1300万活跃用户纳入同一技术框架,日常转账不再经过Visa/Mastercard清算网络。2026年建立中央互操作枢纽,先上线P2P转账覆盖13国,2027年扩展至线上和线下商户支付,最终触达欧盟+挪威72%人口。Pilot已运行一年。',
+    aiComment: {
+      overallImpact: '五国支付系统联合"脱钩"Visa/Mastercard是欧洲支付主权运动的历史性突破。此次联盟覆盖法国、西班牙、意大利、葡萄牙和北欧五国,涵盖1300万活跃用户,数据留欧洲服务器,清算走欧洲通道。与巴西Pix(1.7亿用户,月交易70亿笔)和印度UPI(年交易228亿笔)的崛起形成全球"去卡化"运动。2027年扩展到线下商户支付后将对Visa/Mastercard在欧洲65%的信用卡支付份额构成实质性挑战。',
+      huaweiImpact: '华为支付在欧洲可探索与这五国联合支付框架合作的路径。五国通过中央互操作枢纽实现"保持各自品牌+后台统一"的架构,为华为整合不同市场本地支付方式提供了参考。华为可定位为"中立支付基础设施提供商",推动类似的去美国卡组织支付互联模式,特别是在东南亚、中东等市场。',
+    },
+    publishDate: '2026-05-23',
+    score: 9,
+    category: 'dma',
+    tags: ['欧洲支付', '支付主权', 'Wero', 'Bizum', 'Bancomat', 'MB WAY', 'Vipps', 'Visa', 'Mastercard'],
+  },
+  {
+    id: '105',
+    title: '波兰国民支付系统Blik正式加入EPI,欧洲统一支付网络加速扩张',
+    source: '移动支付网',
+    sourceUrl: 'https://www.mpaypass.com.cn/news/202605/14173339.html',
+    summary: '5月13日,波兰移动支付平台Blik正式加入欧洲支付倡议(EPI)。合作阵营包括意大利Bancomat、西班牙Bizum、葡萄牙MB Way、北欧Vipps MobilePay及EPI旗下Wero钱包。2026年初以上机构签署MOU,已建成对接不同支付系统的中央互操作机制,今明两年逐步落地互通功能。Blik成立于2015年,由波兰主要银行联合推出,超过90%波兰银行客户可用Blik。',
+    aiComment: {
+      overallImpact: '波兰Blik加入EPI将EPI网络从中西欧向东欧延伸。至此,EPI覆盖范围从最初德法比三国扩展至波兰、荷兰、卢森堡,并与南欧和北欧支付系统建立互操作连接,形成覆盖超过2亿人口的超级支付网络。对Visa/Mastercard/PayPal而言,EPI联盟正在升级为"欧洲大陆级竞争对手"。',
+      huaweiImpact: '波兰作为中东欧最大市场之一,华为在当地有较好品牌基础。华为可考虑与Blik合作在华为设备预装Blik支付能力。Blik的"一次性支付码"模式值得华为支付借鉴。华为应加速与EPI对话,探讨"华为钱包+EPI"联合方案。',
+    },
+    publishDate: '2026-05-22',
+    score: 7,
+    category: 'dma',
+    tags: ['EPI', 'Blik', '波兰', '欧洲支付', '支付主权', 'Wero', 'Bizum', '支付互联'],
+  },
+  {
+    id: '106',
+    title: 'Google Play全面AI化:推出Ask Play对话搜索及Play Shorts短视频种草',
+    source: 'IT之家 / 新浪财经 / Google Developers Blog',
+    sourceUrl: 'https://www.ithome.com/0/952/539.htm',
+    summary: '在2026 Google I/O上,Google Play推出多项AI重大升级:Ask Play支持多轮自然语言对话发现应用;Ask Play Highlights在搜索结果页展示AI摘要;Play Shorts竖屏短视频让用户预览应用界面;Gemini集成使Play商店应用可嵌入Gemini推荐;Play Sidekick游戏内叠加层已上线超100款游戏。Gemini将成为新的应用发现入口。',
+    aiComment: {
+      overallImpact: 'Google Play全面AI化是应用商店商业模式的历史性变革。从"关键词搜索+榜单"到"对话+短视频",用户发现应用的方式被彻底重构。传统ASO规则被改写——AI语义匹配和短视频质量成为新核心指标。Play Sidekick将商店功能从"分发前"延伸到"使用中",模糊了"商店"和"游戏平台"的边界。Gemini作为应用发现入口意味着用户不需主动"去商店"。',
+      huaweiImpact: '华为AppGallery应加速基于盘古大模型实现类似Ask Play的自然语言搜索和视频预览功能。小艺助手应尽快打通从AI对话到AppGallery下载的闭环体验。华为可发挥端侧AI优势,实现离线场景应用推荐,形成与Google的差异化竞争。',
+    },
+    publishDate: '2026-05-23',
+    score: 8,
+    category: 'googleplay',
+    tags: ['Google Play', 'Ask Play', 'Play Shorts', 'Gemini', 'AI', 'I/O 2026', '应用发现'],
+  },
+  {
+    id: '107',
+    title: '谷歌公布2026年5月Android系统更新:AI搜索/诈骗防护/Quick Share跨平台传输',
+    source: '凤凰网科技 / CNMO',
+    sourceUrl: 'https://ishare.ifeng.com/c/s/v002IqHS71bVLIYvOT3z2c0QAyC6vo6JIA-_mSp4J9xeaujE__',
+    summary: '谷歌公布2026年5月Android系统更新:Google Play服务26.19新增防盗保护(英国新激活设备生效);Quick Share跨平台传输支持Android向iOS传文件;Play商店新增AI Overview与Ask Play;新增诈骗电话AI识别;无线紧急警报新增系统语言翻译;WebView v149强化安全;Android Credential Manager支持车载设备。',
+    aiComment: {
+      overallImpact: '5月更新体现了"安全+AI+互联"三大方向。防盗和诈骗防护弥补了Android安全短板。Quick Share支持向iOS传文件是Android生态开放互联的里程碑。Play商店AI搜索将应用分发从"关键词匹配"升级到"智能对话"。整体更新规模在近年5月更新中相当可观。',
+      huaweiImpact: '华为"查找设备"需确保在HarmonyOS NEXT中达到"默认开启"级别。Google打通iOS互传削弱了鸿蒙跨平台价值的独特性,华为应强化超级终端"零等待"体验。AI诈骗识别是刚需功能,华为手机管家需加大覆盖。',
+    },
+    publishDate: '2026-05-22',
+    score: 7,
+    category: 'googleplay',
+    tags: ['Google', 'Android 17', 'Quick Share', '诈骗防护', 'AI Overview', '安全', '防盗'],
+  },
+
 ];
 
 // 按日期降序排序(最新的在前)
