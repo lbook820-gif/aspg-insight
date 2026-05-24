@@ -1502,21 +1502,6 @@ export const newsData: NewsItem[] = [
   },
   {
     id: '102',
-    title: '工信部通报2026年第3批侵害用户权益APP,31款App及SDK被点名',
-    source: '腾讯新闻 / 网易',
-    sourceUrl: 'https://news.qq.com/rain/a/20260521A08BGH',
-    summary: '5月21日,工信部发布2026年第3批(总第56批)侵害用户权益APP通报。经第三方检测机构抽查,共发现31款App及SDK存在侵害用户权益行为。被通报应用包括红苹果短剧、长虹云上农业园、小布咕、Now冥想、疯读小说等。通报要求相关主体按规定整改,整改不到位的将依法处置。此次通报是中央网信办、工信部、公安部联合开展2026年个人信息保护系列专项行动的一部分。',
-    aiComment: {
-      overallImpact: '工信部2026年第3批APP通报延续了中国对个人信息保护的强监管态势。31款违规APP涉及多个主流分发渠道,显示了监管"无死角"覆盖的决心。从渠道分布看,360手机助手和官网渠道违规量最多(各5款),这反映出监管压力正从应用开发商向应用分发平台传导。从违规类型看,违规收集个人信息、强制索取权限三大核心问题说明行业合规执行层面仍存在系统性缺口。',
-      huaweiImpact: '工信部APP通报对华为AppGallery既是合规压力也是品牌机遇。华为AppGallery在此次通报中仅有1款违规应用,在主流应用商店中表现最佳。华为应继续保持并将"最少违规"转化为品牌资产。华为可持续优化应用上架审核流程,在前置审核阶段即帮助开发者规避合规风险。华为可主动发布AppGallery隐私合规白皮书,抢占行业"隐私安全"高地。',
-    },
-    publishDate: '2026-05-21',
-    score: 6,
-    category: 'thirdparty',
-    tags: ['工信部', 'APP违规', '个人信息保护', '隐私', '应用商店', '合规', '监管'],
-  },
-  {
-    id: '103',
     title: '2026年Q1拉美智能手机出货3480万部增3%,荣耀增速30%领跑,苹果增31%',
     source: '新浪财经',
     sourceUrl: 'https://finance.sina.com.cn/roll/2026-05-20/doc-inhypxki6917731.shtml',
@@ -1534,7 +1519,7 @@ export const newsData: NewsItem[] = [
   // ===== Added by daily update (2026-05-23) =====
 
   {
-    id: '104',
+    id: '103',
     title: '欧洲五国支付巨头联合搭建互操作枢纽,1300万用户2026年起"脱钩"Visa/Mastercard',
     source: '网易新闻 / 移动支付网',
     sourceUrl: 'https://www.163.com/dy/article/KTDQNCCP05561FZL.html',
@@ -1549,7 +1534,7 @@ export const newsData: NewsItem[] = [
     tags: ['欧洲支付', '支付主权', 'Wero', 'Bizum', 'Bancomat', 'MB WAY', 'Vipps', 'Visa', 'Mastercard'],
   },
   {
-    id: '105',
+    id: '104',
     title: '波兰国民支付系统Blik正式加入EPI,欧洲统一支付网络加速扩张',
     source: '移动支付网',
     sourceUrl: 'https://www.mpaypass.com.cn/news/202605/14173339.html',
@@ -1564,7 +1549,7 @@ export const newsData: NewsItem[] = [
     tags: ['EPI', 'Blik', '波兰', '欧洲支付', '支付主权', 'Wero', 'Bizum', '支付互联'],
   },
   {
-    id: '106',
+    id: '105',
     title: 'Google Play全面AI化:推出Ask Play对话搜索及Play Shorts短视频种草',
     source: 'IT之家 / 新浪财经 / Google Developers Blog',
     sourceUrl: 'https://www.ithome.com/0/952/539.htm',
@@ -1579,7 +1564,7 @@ export const newsData: NewsItem[] = [
     tags: ['Google Play', 'Ask Play', 'Play Shorts', 'Gemini', 'AI', 'I/O 2026', '应用发现'],
   },
   {
-    id: '107',
+    id: '106',
     title: '谷歌公布2026年5月Android系统更新:AI搜索/诈骗防护/Quick Share跨平台传输',
     source: '凤凰网科技 / CNMO',
     sourceUrl: 'https://ishare.ifeng.com/c/s/v002IqHS71bVLIYvOT3z2c0QAyC6vo6JIA-_mSp4J9xeaujE__',
@@ -1595,7 +1580,7 @@ export const newsData: NewsItem[] = [
   },
   // ===== Added by daily update (2026-05-24) =====
   {
-    id: '108',
+    id: '107',
     title: '欧盟委员会发布DMA第三年度报告:推动数字市场公平与可竞争性取得实质性进展',
     source: 'European Commission - Digital Markets Act',
     sourceUrl: 'https://digital-markets-act.ec.europa.eu/news_en',
@@ -1610,7 +1595,7 @@ export const newsData: NewsItem[] = [
     tags: ['DMA', '第三年度报告', '欧盟', '数字市场法', '互操作性', '数据可携带性', '可穿戴设备', '合规进展'],
   },
   {
-    id: '109',
+    id: '108',
     title: '谷歌就美国反垄断裁决提起上诉,辩称与苹果Safari搜索协议属合法竞争',
     source: '9to5Mac / Reuters',
     sourceUrl: 'https://9to5mac.com/2026/05/22/google-defends-its-safari-deal-with-apple-in-antitrust-ruling-appeal/',
@@ -1626,7 +1611,7 @@ export const newsData: NewsItem[] = [
   },
   // ===== Added by daily update (2026-05-25) =====
   {
-    id: '110',
+    id: '109',
     title: '苹果调整澳大利亚和越南App Store年龄评级体系,开发者需在6月18日前适配',
     source: 'Apple Developer',
     sourceUrl: 'https://developer.apple.com/news/?id=yrrb45pw',
@@ -1641,7 +1626,7 @@ export const newsData: NewsItem[] = [
     tags: ['苹果', 'App Store', '年龄评级', '澳大利亚', '越南', '开箱', 'loot boxes', '内容合规', '本地化监管'],
   },
   {
-    id: '111',
+    id: '110',
     title: 'Bloomberg: iOS 27将原生支持Google Cast等第三方流媒体协议,旨在满足欧盟DMA互操作性要求',
     source: '9to5Mac / Bloomberg / The Verge',
     sourceUrl: 'https://9to5mac.com/2026/05/24/ios-27-google-cast-third-party-streaming-integration-eu/',
