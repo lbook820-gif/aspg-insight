@@ -1969,6 +1969,51 @@ export const newsData: NewsItem[] = [
     category: 'appstore',
     tags: ['苹果','WWDC 2026','iOS 27','Siri AI','Apple Intelligence','Gemini','AI','App Store','AI智能体'],
   },
+  {
+    id: '133',
+    title: '苹果WWDC 2026升级App Store:推出跨开发者订阅Bundle、Retention Messaging挽留、Creative Assets创意素材等开发者生态增强',
+    source: 'Apple Newsroom / IT之家 / 新浪财经 / 网易',
+    sourceUrl: 'https://www.apple.com.cn/newsroom/2026/06/apple-expands-app-store-capabilities-to-help-developers-grow-and-reach-new-users/',
+    summary: '苹果在北京时间6月9日WWDC 2026期间宣布多项App Store开发者生态升级。营销方面:推出Creative Assets(创意素材)功能,允许开发者在产品页标题和搜索结果中展示丰富图片与视频,并上线Asset Library(素材资料库)实现创意素材集中管理。用户发现方面:新增App Notes(应用注释)说明推荐理由,Personalized Collections(个性化合集)根据用户下载记录推送相关内容,6月8日已在美国英语区先行上线。订阅革新:首次推出跨开发者的App Store Bundles(多家开发者组合销售订阅)、Suites(多服务打包不可拆分套餐)和群组购买功能;推出Retention Messaging(订阅挽留信息),开发者在用户取消订阅时可展示定制优惠以降低退订率。审核简化:多个应用内购买项目可合并为统一审核包提交;Mac App Store不再要求支持Intel芯片,开发者可直接分发仅适配Apple Silicon的应用。家长管理:新增"时间额度"功能,可根据儿童年龄灵活管理娱乐、游戏和社交媒体等类别应用的使用时长和时段。',
+    aiComment: {
+      overallImpact: '这是App Store自上线以来最全面的开发者生态功能升级之一。跨开发者订阅Bundle打破了App Bundles仅限于同一开发者的限制,将流媒体行业成熟的"捆绑销售"策略引入移动应用生态,可能催生全新的"开发者联盟"商业模式——创意、效率、健康等垂直场景的开发者可联合推出场景化订阅包,既提升用户价值感又降低订阅疲劳导致的流失。Retention Messaging是苹果首次在用户取消订阅环节开放开发者的干预能力,标志着App Store从"一次性获客"转向"生命周期管理"的商业思维跃迁,对订阅类应用(内容、SaaS、游戏)留存率将产生直接可量化的积极影响。Creative Assets和Asset Library使App Store的营销体系接近电商平台水准,开发者的运营自由度大幅提升。App Notes和Personalized Collections则将App Store的推荐系统从"编辑选品"进化为"千人千面"。审核包合并和Intel放弃显著降低了开发者的提交流本和运维成本。整体观察:本轮更新聚焦"留存"和"效率"两大关键词,表明苹果意识到开发者增长正在从"获客驱动"转向"留存驱动"的新阶段。',
+      huaweiImpact: '苹果App Store的生态升级对华为AppGallery具有全方位的对标参考价值。战略对标层面:跨开发者订阅Bundle是应用商店商业模式的重要创新,华为AppGallery应尽快研究推出类似的"联合订阅"方案,特别是针对游戏、教育、办公等垂直领域,鼓励开发者联合推出跨应用订阅包。Retention Messaging功能是苹果在订阅留存工具上的重大突破,华为AppGallery应推出类似的"订阅关怀"功能——在用户取消订阅时通过鸿蒙Push通道推送定制挽留信息,且可结合小艺AI提供更智能的挽留策略建议,形成比苹果更AI驱动的差异化。营销体系对标:Creative Assets和Asset Library对标华为应升级AppGallery开发者后台的营销工具套装,提供AI辅助的素材生成、多语言适配和多场景投放能力。推荐机制对标:Personalized Collections需要华为AppGallery加大鸿蒙用户画像的精细化建设,结合小艺助手和华为终端的用户行为数据(在隐私合规前提下)构建比苹果更精准的个性化推荐引擎。差异化机会:苹果App Notes和Personalized Collections先在美国英语区上线,华为AppGallery可抓住时间窗口在全球市场率先推出类似功能的中文版本和多语言适配。审核效率:苹果审核包合并的做法华为可借鉴,简化AppGallery的提交流程,降低开发者入驻门槛。战略建议:华为应在6月12日的HDC 2026上宣布类似的功能升级路线图,形成"苹果做App Store,华为做AppGallery,我们做的更好"的竞争叙事。',
+    },
+    publishDate: '2026-06-09',
+    score: 9,
+    category: 'appstore',
+    tags: ['苹果','WWDC 2026','App Store','订阅','Bundles','Suites','Retention Messaging','Creative Assets','Asset Library','App Notes','开发者','Apple Silicon'],
+  },
+  {
+    id: '134',
+    title: '谷歌Play商店2026年6月系统更新:Ask Play正式上线全屏AI搜索,Play Protect安全校验升级,凭据交换标准引入',
+    source: '搜狐网 / ZAKER新闻 / CNMO',
+    sourceUrl: 'https://news.sohu.com/a/1034095588_115831',
+    summary: '谷歌于2026年6月8日发布Play商店v51.8版本更新,多项此前在I/O大会上宣布的功能正式上线。核心更新包括:1)Ask Play全屏AI搜索正式上线:手机端搜索建议栏新增"Ask Play"按钮,用户输入后可进入全屏对话式AI搜索界面,Ask Play Highlights在搜索结果页提供更快的实时流式反馈和灵活的结果展示格式。2)Play Protect安全升级:对未经验证的应用增加额外安全校验,进一步提升恶意应用防御能力。3)凭据交换标准支持:谷歌密码管理器现已支持基于凭据交换(Credential Exchange)标准,与第三方密码管理器之间导入和导出密码及通行密钥,推动跨平台凭据互操作性。4)v51.7版本(6月1日)的商店展示优化:更清晰显示促销价格和活动日期,应用购买弹窗采用新设计,预注册与自动安装流程合并,新增月度挑战和Loyalty MAX挑战弹窗,已安装应用的商店页面可展示相关内容并支持跳转至Play Collections。此外,Play服务v26.21(6月1日)已为开发者新增与地图相关的支持能力。',
+    aiComment: {
+      overallImpact: '这次Google Play 6月更新具有从"AI概念"到"AI落地"的里程碑意义。Ask Play从I/O大会的"预告"到v51.8的"正式上线",标志着应用商店搜索从关键词匹配正式进入AI对话时代——用户在Play商店中不再需要输入精准的应用类别词,而是可以用自然语言描述场景化需求,这将对传统ASO(应用商店优化)行业产生结构性冲击。Ask Play Highlights的流式反馈使搜索结果呈现方式从"静态列表"进化为"动态智能摘要",用户筛选效率大幅提升。Play Protect对未验证应用增加安全校验是谷歌在侧载开放趋势下的防御性加固,表明谷歌在"开放第三方商店"(Epic和解后)的同时也在强化官方分发渠道的安全底线。凭据交换标准的引入是数字身份领域的重要进展——谷歌密码管理器支持与第三方密码管理器互操作,标志着"密码互操作"正在从行业倡议走向产品落地,这对用户跨平台凭据管理和无密码认证技术(e.g. Passkeys)的推广具有积极推动意义。v51.7的营销功能升级(促销展示、月度挑战)则将Play商店的运营体系从"纯分发"升级为"内容运营"。整体观察:6月更新展示了Google Play"AI+安全+互操作"三位一体的进化方向。',
+      huaweiImpact: 'Google Play 6月更新对华为AppGallery的启示集中在三个战略维度。AI搜索对标:Ask Play正式上线后,用户发现应用的方式将从关键词搜索升级为对话式交互,华为AppGallery应加速部署基于盘古大模型的类似功能。具体而言:华为可在小艺助手中集成"AppGallery智能推荐"入口,用户通过语音或文字描述需求后,小艺直接调用AppGallery搜索结果并附带安装链接,形成"小艺→AppGallery"的AI分发闭环——这比Google将Ask Play内嵌于Play商店的方案更具跨场景优势。安全差异化:Play Protect增加未验证应用安全校验,华为AppGallery作为开放的第三方商店生态,安全验证更是核心竞争力。华为应推出"鸿蒙安全认证"标签体系,对AppGallery上架应用进行多维度安全评分并可视化展示给用户,比Google的Play Protect更透明。同时,华为可借势宣传AppGallery在开放生态下(允许侧载)仍能保障安全的能力,与Google通过Play Protect"约束"开放形成差异化叙事。凭据互操作战略意义:谷歌密码管理器支持凭据交换标准对华为的影响深远。华为1Password、华为浏览器等密码管理功能应同步支持Credential Exchange标准,确保鸿蒙用户可在不同密码管理工具之间迁移凭据。如果华为不跟进,鸿蒙用户的密码管理将面临"锁定"风险,削弱鸿蒙生态的开放性品牌形象。更积极的策略是:华为可在Credential Exchange标准基础上扩展鸿蒙生态独有的"分布式凭据"体系——通过超级终端让手机、平板、PC共享凭据管理,形成跨设备无缝认证体验。地图能力:Play服务v26.21为开发者新增地图相关能力,华为应在HMS Core中升级Map Kit,提供与Google Maps对等的API能力,吸引海外开发者。',
+    },
+    publishDate: '2026-06-09',
+    score: 8,
+    category: 'googleplay',
+    tags: ['Google Play','Ask Play','Play Protect','v51.8','AI搜索','凭据交换','Credential Exchange','密码管理器','促销','月度挑战'],
+  },
+  {
+    id: '135',
+    title: '苹果发布2026版《App Store审核指南》:新增迷你App/游戏流媒体/欧盟公证规定,删除多项旧准则',
+    source: 'Apple Developer',
+    sourceUrl: 'https://developer.apple.com/cn/news/?id=7j1f99yf',
+    summary: '苹果在WWDC 2026期间发布了更新后的《App Store审核指南》,以适应新的政策和功能。主要变更包括:1)指南结构重大调整:分为多个章节,新增欧盟iOS应用公证相关规定的单独标注。2)新增规定:迷你App、迷你游戏、流媒体游戏、聊天机器人和插件的要求;用户主要账户若使用第三方或社交登录服务进行设置或验证,则必须提供具有特定隐私功能的其他登录服务。3)删除旧准则:删除了2.5.7(关于动态代码执行)等旧条款,及3.2.2(vi)、4.2.4、4.2.5、4.4.3等多项准则。4)重新编号:3.1.6移至4.9(Apple Pay相关准则),3.2.2(ii)移至4.10。5)网页浏览器引擎授权:在欧盟的App中可使用备选的网页浏览器引擎。6)新增自动续订订阅的定义。此次更新体现了苹果在欧盟DMA合规压力下逐步开放的态度,同时对迷你App和AI代理等新兴应用形态开始建立审核框架。',
+    aiComment: {
+      overallImpact: '苹果年度审核指南更新是App Store生态政策风向标。本次更新释放了多重信号。DMA合规深化:将欧盟iOS App公证规定从"隐含"变为"明确标注",表明苹果已将欧盟特殊监管框架纳入常态化的审核体系,这对在欧盟市场运营的开发者和第三方应用商店具有重要意义——公证流程的透明化可降低合规不确定性,但同时也意味着苹果在DMA框架下的"围墙"并未完全拆除。迷你App/AI代理新规:新增对迷你App、迷你游戏、流媒体游戏、聊天机器人和插件的要求,反映了苹果对微信小程序等超级App、及ChatGPT等AI代理应用形态的政策回应——App Store正在从"传统应用"的审核体系向"多元化数字内容载体"的规则体系演进,这对超级App运营者和AI应用开发者意味着明确的合规路径。删除旧准则的意义:删除2.5.7(关于动态代码执行)可能意味着苹果对"Vibe Coding"(氛围编程)等新兴开发模式的松绑——此前Replit因违反2.5.7被拒绝更新,该条款删除后这类工具将获得更大的合规空间。第三方浏览器引擎开放:在欧盟允许使用备选的网页浏览器引擎是DMA要求的结果,但苹果将其纳入审核指南意味着"可控的开放"策略。第三方登录服务要求:要求如果用户主要账户使用了第三方或社交登录,则必须提供具有特定隐私功能的其他登录服务,这与苹果长期强调的"Sign in with Apple"政策保持一致。',
+      huaweiImpact: '2026版App Store审核指南对华为AppGallery具有"合规对标+政策窗口"双重战略价值。合规对标层面:苹果审核指南的年度更新节奏和结构优化可以为华为AppGallery的开发者政策文档体系建设提供参考。具体而言:华为AppGallery应建立类似的分章节结构(基础要求→安全→隐私→商业→特殊类别)的审核指南;建立针对超级App(如微信小程序生态)的专门审核规则——随着鸿蒙生态中类似"万能卡片"、"元服务"等轻量化应用形态的普及,明确审核标准有助于吸引开发者。开发者友好方面:苹果删除旧准则的做法(如删除2.5.7动态代码执行限制)值得借鉴——华为应定期清理过时且制约创新的审核条款,形成"审核政策白皮书"每年迭代的品牌惯例。政策窗口:苹果在欧盟允许第三方浏览器引擎的条款,间接说明了DMA框架下技术开放的方向。华为AppGallery在欧盟市场推广时可对标此机制,宣称"AppGallery天然支持更多开放特性",比如允许开发者使用任意Web渲染引擎构建应用、允许多种第三方登录方案等,形成与App Store的差异化。AI代理应用机遇:苹果新增对聊天机器人和插件的要求,意味着AI代理类应用在App Store中将有明确的合规路径。华为AppGallery应抢在苹果之前,推出面向AI代理(包括小艺智能体、第三方AI助手)的专门审核通道和激励计划,吸引AI开发者入驻鸿蒙生态。',
+    },
+    publishDate: '2026-06-09',
+    score: 7,
+    category: 'appstore',
+    tags: ['苹果','App Store','审核指南','2026','迷你App','AI代理','DMA','欧盟','公证','浏览器引擎','订阅'],
+  },
 
 ];
 
