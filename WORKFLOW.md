@@ -1,30 +1,5 @@
 # ASPG Insight 工作流记录
 
-## 超时历史（优化前）
-| 日期 | 结果 | 原因 |
-|:----:|:----:|:------|
-| 06-03 | ❌ 编辑失败 | 2000+行文件AI逐词匹配出错 |
-| 06-05 | ❌ 超时 | 35+次搜索 + 大篇幅分析 + 构建 |
-| 06-06 | ❌ 超时 | 同上 |
-| 06-13 | ❌ 超时 | 同上 |
-| 06-14 | ❌ 超时 | 同上 |
-| 06-15 | ❌ 超时 | 同上 |
-| **优化后** | **✅ 预期稳定运行** | **见下** |
-
-## 架构（任务拆分）
-
-```
-Cron（每天 00:30）→ 搜索 + 分析 + 写入数据 → git push
-                                            ↓
-GitHub Actions（自动触发）→ npm ci + npm run build → 部署到 Pages
-```
-
-**关键变化**：
-- **Cron 不再承担构建部署** — 推送到 main 后 GitHub Actions 自动构建
-- **搜索量减半** — 去除噪音高的 Bing site: 搜索，专注小艺搜索 + 少量英文补充
-- **分析篇幅精简** — overallImpact 3维度（政策/市场/开发者），huaweiImpact 2-3维度
-- **超时 900 秒已足够** — 预留了充裕余量
-
 ## 每日自动更新流程
 
 ### 1. 新闻采集
@@ -112,8 +87,9 @@ awk '/sourceUrl:/{print}' src/data/newsData.ts | sort | uniq > /tmp/existing_url
 - **应用生态**：其余所有
 
 ### 5. 写入数据
-
-新新闻追加到 `newsData` 数组末尾。使用 `edit` 工具时，匹配 `id: '当前最大ID'` 所在的对象尾部，在其后加逗号和新的对象。
+每月 1 日在data/news文件夹下的自动创建一个news 文件，格式为new_yyyy_mm
+新新闻更新在最新的 news 文件的数组末尾。
+使用 `edit` 工具时，匹配 `id: '当前最大ID'` 所在的对象尾部，在其后加逗号和新的对象。
 
 ### 6. 推送
 
@@ -174,9 +150,3 @@ web_fetch({"url": "https://www.google.com/search?q=alternative+app+store+commiss
 - **模式**：isolated，thinking=high
 - **超时**：900 秒
 - **Channel**：xiaoyi-channel
-
-## 优化记录
-
-| 日期 | 变更 |
-|------|------|
-| 2026-06-16 | **架构拆分**：Cron 不再构建部署，改用 GitHub Actions 自动构建；搜索从~35次减至 8组小艺搜索 + 3组英文；分析篇幅减半（overallImpact 6→3维度，huaweiImpact 5→3维度）；Cron 改到 00:30；超时设为 900 秒 |
