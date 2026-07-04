@@ -16,22 +16,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-def get_current_news_ids():
-    """获取当前已有新闻的ID列表"""
-    news_data_path = PROJECT_ROOT / "src" / "data" / "newsData.ts"
-    content = news_data_path.read_text(encoding='utf-8')
-    
-    # 提取所有id
-    ids = re.findall(r"id:\s*'(\d+)'", content)
-    return set(ids)
-
-def get_next_id():
-    """获取下一个可用ID"""
-    existing_ids = get_current_news_ids()
-    if not existing_ids:
-        return "1"
-    max_id = max(int(id) for id in existing_ids)
-    return str(max_id + 1)
+from news_db import get_current_news_ids, get_next_id
 
 def search_recent_news():
     """搜索最近2天的相关新闻"""
@@ -133,40 +118,7 @@ def extract_tags(title, summary, category):
     
     return tags[:5]  # 最多5个标签
 
-def add_news_to_data(news_item):
-    """将新闻添加到数据文件中"""
-    news_data_path = PROJECT_ROOT / "src" / "data" / "newsData.ts"
-    content = news_data_path.read_text(encoding='utf-8')
-    
-    # 构建新闻对象字符串
-    news_str = f"""  {{
-    id: '{news_item['id']}',
-    title: '{news_item['title']}',
-    source: '{news_item['source']}',
-    sourceUrl: '{news_item['sourceUrl']}',
-    summary: '{news_item['summary']}',
-    aiComment: {{
-      overallImpact: '{news_item['aiComment']['overallImpact']}',
-      huaweiImpact: '{news_item['aiComment']['huaweiImpact']}',
-    }},
-    publishDate: '{news_item['publishDate']}',
-    score: {news_item['score']},
-    category: '{news_item['category']}',
-    tags: {json.dumps(news_item['tags'], ensure_ascii=False)},
-  }},"""
-    
-    # 在最后一个新闻项之前插入新新闻
-    # 找到最后一个新闻项的结束位置
-    last_item_pattern = r"(  },\s*\n\];)"
-    match = re.search(last_item_pattern, content)
-    
-    if match:
-        insert_pos = match.start()
-        new_content = content[:insert_pos] + news_str + "\n" + content[insert_pos:]
-        news_data_path.write_text(new_content, encoding='utf-8')
-        return True
-    
-    return False
+from news_db import add_news_item as add_news_to_data
 
 def rebuild_and_deploy():
     """重新构建并部署网站"""

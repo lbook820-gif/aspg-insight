@@ -13,13 +13,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).parent.parent
 DATA_FILE = PROJECT_ROOT / "src" / "data" / "newsData.ts"
 
-def get_next_id():
-    """获取下一个可用ID"""
-    content = DATA_FILE.read_text(encoding='utf-8')
-    ids = re.findall(r"id:\s*'(\d+)'", content)
-    if not ids:
-        return "1"
-    return str(max(int(id) for id in ids) + 1)
+from news_db import get_next_id
 
 def get_input(prompt, default=""):
     """获取用户输入"""
@@ -101,43 +95,7 @@ def select_tags():
     
     return selected[:5]  # 最多5个
 
-def add_news_item(news_data):
-    """添加新闻到数据文件"""
-    content = DATA_FILE.read_text(encoding='utf-8')
-    
-    # 转义特殊字符
-    title = news_data['title'].replace("'", "\\'")
-    source = news_data['source'].replace("'", "\\'")
-    summary = news_data['summary'].replace("'", "\\'")
-    overall = news_data['aiComment']['overallImpact'].replace("'", "\\'")
-    huawei = news_data['aiComment']['huaweiImpact'].replace("'", "\\'")
-    
-    # 构建新闻条目
-    news_entry = f"""  {{
-    id: '{news_data['id']}',
-    title: '{title}',
-    source: '{source}',
-    sourceUrl: '{news_data['sourceUrl']}',
-    summary: '{summary}',
-    aiComment: {{
-      overallImpact: '{overall}',
-      huaweiImpact: '{huawei}',
-    }},
-    publishDate: '{news_data['publishDate']}',
-    score: {news_data['score']},
-    category: '{news_data['category']}',
-    tags: {json.dumps(news_data['tags'], ensure_ascii=False)},
-  }},"""
-    
-    # 在数组末尾插入
-    pattern = r"(  },\s*\n\];)"
-    match = re.search(pattern, content)
-    
-    if match:
-        new_content = content[:match.start()] + news_entry + "\n" + content[match.start():]
-        DATA_FILE.write_text(new_content, encoding='utf-8')
-        return True
-    return False
+from news_db import add_news_item
 
 def rebuild_site():
     """重新构建网站"""
