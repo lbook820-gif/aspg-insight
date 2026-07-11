@@ -165,5 +165,20 @@ export const news_2026_07: NewsItem[] = [
     score: 7,
     category: 'dma',
     tags: ['EPI', 'Wero', '数字欧元', '支付主权', 'Visa', 'Mastercard', '欧洲支付', 'CBDC', '移动支付网', '即时支付', '跨境支付'],
+  },
+  {
+    id: '194',
+    title: '欧盟普通法院驳回苹果DMA上诉，维持App Store和iOS"守门人"认定',
+    source: '新浪财经 / 凤凰网/ 新华财经',
+    sourceUrl: 'https://k.sina.com.cn/article_5828676220_15b6a8a7c02001feyk.html',
+    summary: '7月7日,欧盟普通法院驳回苹果针对DMA适用范围的挑战,维持欧盟委员会将App Store和iOS认定为"守门人"的决定。法院认为,欧盟将苹果这两项服务纳入DMA监管范围合法合规,苹果三个层面的异议(互操作性义务、App Store纳入监管、iMessage豁免程序)均被驳回。苹果仍可向欧盟最高法院上诉。此前苹果已因App Store涉嫌违规被罚款5亿欧元。',
+    aiComment: {
+      overallImpact: '驳回苹果DMA上诉是欧盟数字市场法执法的里程碑判决。核心影响:1)为DMA的"守门人"认定机制提供司法背书,增强欧盟对六家守门人(Alphabet/Apple/Amazon/ByteDance/Meta/Microsoft)执法的法律基础;2)苹果在欧盟被彻底纳入DMA监管框架后,必须全面履行第三方商店、支付、互操作性义务,削弱其封闭生态;3)叠加Epic最高法案(2026年10月),全球iOS生态开放进程加速。对开发者来说,欧盟市场iOS侧载和第三方支付获得最高层级的法律确定性。',
+      huaweiImpact: '苹果被强制纳入DMA监管对华为AppGallery在欧盟的竞争格局是实质性利好。App Store受DMA约束开放侧载后,华为AppGallery可以作为iOS欧盟市场第三方应用商店的候选平台,直接获取iOS用户群。同时iOS的DMA合规义务(开放NFC+支付+互操作)迫使苹果调整商业模式,可降低华为在欧洲推广AppGallery和华为支付的市场教育成本,华为可定位为"天然合规"的开放生态,在开发者社区中强化对iOS封闭生态的替代方案认知。',
+    },
+    publishDate: '2026-07-07',
+    score: 9,
+    category: 'appstore',
+    tags: ['欧盟', '普通法院', '苹果', 'DMA', '守门人', 'App Store', 'iOS', '数字市场法', '驳回上诉', '监管'],
   }
 ];
