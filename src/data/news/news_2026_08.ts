@@ -121,4 +121,19 @@ export const news_2026_08: NewsItem[] = [
     category: 'googleplay',
     tags: ['Google Play', '政策更新', 'Billing 8', 'API 36', '匿名聊天', 'Android 16', '开发者合规', '年龄限制'],
   },
+  {
+    id: '223',
+    title: 'Telegram疑似从部分国家App Store下架数小时后恢复,苹果未说明原因',
+    source: '俄罗斯卫星通讯社 / 芒果财经 / Reuters',
+    sourceUrl: 'https://sputniknews.cn/20260804/1072625778.html',
+    summary: '8月4日,Telegram在包括俄罗斯和美国在内的多个国家和地区苹果App Store中无法搜索到,Mac App Store和Google Play正常。数小时后,Telegram宣布应用已在App Store恢复上架,将很快重新向所有用户开放。苹果与Telegram均未就下架原因发表声明。历史显示Telegram曾于2018年因内容问题被苹果全球下架,2023年亦曾在巴西被临时禁用。此次下架范围及持续时间短暂,原因仍不明。',
+    aiComment: {
+      overallImpact: 'Telegram短暂从多国App Store下架事件折射出应用商店平台对即时通讯应用的潜在控制力。尽管此次下架仅持续数小时且原因未明,但引发了对平台审核透明度和程序正当性的讨论——苹果拥有单方面下架全球流行应用的权力,而开发者与用户对此几乎没有申诉或预警机制。此事件与欧盟DMA对"守门人"平台的互操作性和公平审查要求形成直接呼应。对通讯应用行业而言,单一平台依赖风险再次被凸显,Telegram等跨平台通讯工具亟需降低对任何单一应用商店的分发依赖。',
+      huaweiImpact: '此次事件为华为AppGallery在海外通讯应用分发市场提供了差异化机会。Telegram短暂下架导致部分用户寻求替代下载渠道,华为AppGallery若能在海外市场建立"稳定分发"的平台口碑,可吸引对App Store单一下架风险敏感的通讯和社交应用开发者入驻。同时,事件强化了全球通讯应用"去中心化分发"的趋势,华为可借此推动AppGallery作为跨平台通讯应用的可靠分发伙伴定位,尤其在中东、非洲和东南亚等新兴市场。',
+    },
+    publishDate: '2026-08-04',
+    score: 6,
+    category: 'appstore',
+    tags: ['Telegram', 'App Store', '苹果', '下架', '即时通讯', '平台审核', '应用商店'],
+  },
 ];
