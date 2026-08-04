@@ -32,21 +32,6 @@ export const news_2026_08: NewsItem[] = [
     tags: ['苹果', '英国', 'CMA', 'App Store', '外链支付', '战略市场地位', '佣金', '反垄断', 'DMCC'],
   },
   {
-    id: '217',
-    title: '苹果Apple智能国行基础功能获监管批准,将于9月随iOS 27正式版上线,高阶Siri AI仍需等待',
-    source: '网易 / 贝尔财经',
-    sourceUrl: 'https://finance.itbear.com.cn/html/2026-08/445192.html',
-    summary: '苹果CEO库克在2026年Q3财报电话会上确认,Apple智能基础功能已通过中国监管审批,将于9月随iOS 27正式版面向国行用户上线。高阶Siri AI功能仍需等待,原因涉及本地合规要求的进一步适配。针对欧盟市场,库克表示Mac端Siri AI测试即将完成(因Mac不受DMA对iPhone/iPad的同类法规约束),正在与欧盟委员会合作推进iOS版本合规落地。',
-    aiComment: {
-      overallImpact: 'Apple智能在中国获批标志着苹果AI战略在华落地取得关键突破。基础功能先于高阶Siri AI推出的分阶段策略说明中美AI监管差异导致全球AI产品必须采用"一国一策"的分发模型。欧盟DMA导致的iOS版Siri AI缺席(仅Mac可用)成为全球AI监管分化的标志性案例——同一产品的不同功能面向不同市场差异化投放将成为常态,显著增加了跨国企业的AI产品管理复杂度。对开发者而言,需针对各市场合规要求设计AI功能开关和版本管理策略。',
-      huaweiImpact: 'Apple智能在中国率先获批说明中国AI监管透明度正在提升,为包括华为在内的国产AI生态提供了可预期的监管环境。华为鸿蒙HarmonyOS 7的AI能力(盘古大模型深度融合)可借Apple智能尚未完整落地的窗口期,在9月前后集中展示端侧AI对比优势,尤其在多设备协同AI体验和本土化场景理解能力方面形成差异化竞争。同时,Apple智能采用的基础/高阶分阶段策略也为华为AI功能的分级授权提供了参考。',
-    },
-    publishDate: '2026-08-02',
-    score: 8,
-    category: 'appstore',
-    tags: ['苹果', 'Apple智能', 'iOS 27', '中国', '监管审批', 'Siri AI', 'AI合规', '国行', '欧盟DMA'],
-  },
-  {
     id: '218',
     title: 'Worldline推出Click to Pay周期性支付能力,Visa/Mastercard统一在线结账方案扩展至订阅场景',
     source: '同花顺财经 / 移动支付网',
