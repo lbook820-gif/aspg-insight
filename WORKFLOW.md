@@ -18,6 +18,10 @@ cd /home/sandbox/.openclaw/workspace/skills/xiaoyi-web-search && node ./scripts/
 
 #### 搜索关键词（精简为 8 组，覆盖 3 大模块）
 
+> **⚠️ 过滤规则**：所有搜索结果中，**明确以中国内地（大陆）市场为主体**或**仅与中国市场相关**的新闻必须排除。
+> 排除标准包括但不限于："中国""中国市场""中国监管""国行""工信部""国内"等关键词主导的报道，以及来源仅为中国国内媒体的独家本地新闻。
+> 全球性事件（如DMA、Epic诉谷歌等）中若包含中国市场影响分析的段落，不影响该新闻被采用。
+
 **模块 A — 平台政策与监管（4组）**
 1. `App Store iOS 政策 佣金 2026`
 2. `Google Play Android 政策 三方计费 2026`
@@ -33,6 +37,8 @@ cd /home/sandbox/.openclaw/workspace/skills/xiaoyi-web-search && node ./scripts/
 8. `Visa Mastercard 跨境支付 数字钱包 即时支付 2026`
 
 #### 英文补充搜索（仅 3 组，使用 Google 搜索）
+
+> 英文搜索结果优先采用非中国视角的国际化报道。
 ```javascript
 web_fetch({"url": "https://www.google.com/search?q=DMA+Digital+Markets+Act+Apple+Google+2026"})
 web_fetch({"url": "https://www.google.com/search?q=WhatsApp+interoperability+third+party+messaging+2026"})
@@ -46,7 +52,10 @@ web_fetch({"url": "https://www.google.com/search?q=EPI+Wero+digital+euro+payment
 | S级 | 官方公告（EC、Apple Dev、Google Blog） | 直接可用 |
 | A级 | 权威科技媒体（TechCrunch、The Verge） | 直接可用 |
 | B级 | 垂直媒体（9to5Mac、Android Police） | 交叉验证后可用 |
-| C级 | 综合财经媒体（新浪、搜狐等） | 需S/A级交叉验证 |
+| C级 | 综合财经媒体 | 需S/A级交叉验证 |
+| ❌ **排除** | **中国国内媒体（新浪、搜狐、腾讯新闻、IT之家、36氪等）的独家本地报道** | **不采用** |
+
+> **特别说明**：中国国内媒体转载翻译的海外新闻（如转载自Reuters、The Verge等的文章），仍可作为参考来源，但必须追溯原文链接进行交叉验证。
 
 ### 3. 去重检查
 
@@ -73,12 +82,12 @@ awk '/sourceUrl:/{print}' src/data/newsData.ts | sort | uniq > /tmp/existing_url
 | `id` | 当前最大 ID + 1 |
 | `title` | 中文标题，含日期/版本等关键信息 |
 | `source` | 来源名称 |
-| `sourceUrl` | 原文链接 |
+| `sourceUrl` | 原文链接（优先使用海外原文链接） |
 | `summary` | 1-2 句话概括 |
 | `publishDate` | YYYY-MM-DD |
 | `score` | 1-10（9-10行业变革 / 7-8重要政策 / 5-6一般动态 / 1-4参考） |
 | `category` | appstore / googleplay / dma / thirdparty / developer |
-| `tags` | 2-5 个标签 |
+| `tags` | 2-5 个标签（不含中国专有名词/事件） |
 | `overallImpact` | **3 个维度，2-3 句话**：政策影响 + 市场影响 + 开发者/用户影响 |
 | `huaweiImpact` | **2-3 个维度，2-3 句话**：竞争影响 + 机会窗口（或合规参考） |
 
