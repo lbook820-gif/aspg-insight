@@ -286,4 +286,19 @@ export const news_2026_08: NewsItem[] = [
     category: 'thirdparty',
     tags: ['谷歌', 'Android', '开发者验证', '侧载', '第三方分发', '开发者管理中心', '高级流程', '海外'],
   },
+  {
+    id: '235',
+    title: '第三方游戏商店Aptoide Games即将登陆美国Google Play:用户可在Play内直接安装竞争对手商店,Play Catalog Access开放应用目录',
+    source: 'Android Authority / IT之家',
+    sourceUrl: 'https://finance.sina.cn/stock/jdts/2026-08-10/detail-inimvsvm4867589.d.html',
+    summary: '8月10日,据Android Authority报道,Aptoide旗下Android游戏商店Aptoide Games即将登陆美国Google Play,用户此后可直接在Play商店搜索并安装这家独立于Google Play之外的第三方游戏下载平台,安装体验与下载普通App无异。谷歌已确认,符合条件的第三方应用商店可通过新的注册机制进入美国Play商店,Play Catalog Access计划同时允许第三方市场访问Google Play的应用目录。',
+    aiComment: {
+      overallImpact: '政策层面,这是Epic诉谷歌案强制执行后,首个第三方应用商店正式在美国Google Play落地,标志着安卓应用分发渠道从机制开放走向实质性市场化。市场层面,谷歌通过注册机制与Play Catalog Access开放应用目录,在兼顾安全审核的同时大幅降低第三方商店触达用户的门槛,Aptoide Games成为标杆,预计将带动更多第三方商店跟进上架。开发者/用户层面,开发者获得Play之外的多元分发与支付选择,用户也能更便捷、更低门槛地获取独立商店,但安全审核与恶意应用管控压力随之上升。',
+      huaweiImpact: '竞争层面,Android分发渠道的实质性开放削弱了Google Play对开发者与用户的单一锁定,第三方商店生态的壮大为华为AppGallery、HMS生态在海外市场争取更多预装与开发者合作空间提供了参照窗口。机会层面,华为可借鉴谷歌"注册机制+应用目录开放"模式,在合规前提下探索AppGallery面向更多第三方商店的开放接入,并加速争取海外安卓OEM预装入口,以差异化开放策略承接新兴分发竞争带来的增量开发者与用户。',
+    },
+    publishDate: '2026-08-10',
+    score: 7,
+    category: 'thirdparty',
+    tags: ['Aptoide', 'Google Play', '第三方应用商店', '游戏商店', 'Play Catalog Access', '分发渠道', '美国', 'Epic'],
+  },
 ];
