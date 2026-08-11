@@ -301,4 +301,19 @@ export const news_2026_08: NewsItem[] = [
     category: 'thirdparty',
     tags: ['Aptoide', 'Google Play', '第三方应用商店', '游戏商店', 'Play Catalog Access', '分发渠道', '美国', 'Epic'],
   },
+  {
+    id: '236',
+    title: '谷歌收紧Pixel内核源代码获取流程:改为人工表单申请+Drive链接,定制ROM与安全补丁开发延迟数周,引GPLv2合规争议',
+    source: 'IT之家 / Sina Tech / GrapheneOS',
+    sourceUrl: 'https://finance.sina.com.cn/tech/digi/2026-08-11/doc-inimwyqr0772036.shtml',
+    summary: '8月11日消息,谷歌将Pixel手机内核源代码的分发方式由原先自动公开发布,改为需提交谷歌表单申请、经人工审核后发送Google Drive链接,获取周期从数小时延长至数周,同时将更新历史压缩为难以阅读的单一文件。GrapheneOS等定制ROM开发者认为,该做法导致安全补丁开发与新版Android适配严重停滞,且可能触及GPLv2开源许可证对内核代码必须公开的要求。谷歌此前已把AOSP参考目标从Pixel转向虚拟设备cuttlefish,并停止提供Pixel设备树与驱动二进制文件;而GrapheneOS已加速与摩托罗拉合作以绕开谷歌流程。该调整不影响标准Pixel用户的日常更新。',
+    aiComment: {
+      overallImpact: '政策/开源层面,谷歌在收紧Android生态"开放性"的路径上又进一步——继AOSP发布周期改为每年两次、AOSP参考目标迁离Pixel之后,再度将Pixel内核代码获取改为人工审批制,引发GPLv2合规与开源社区信任的双重争议,与此前强制Android开发者验证一脉相承,标志谷歌正从"默认开放"转向"受控开放"。市场层面,这削弱了Pixel作为AOSP参考平台与定制ROM核心机型的开发者地位,驱动GrapheneOS等高端隐私系统向摩托罗拉等厂商转移,Android定制生态的开发者资源与安全补丁节奏面临重构。开发者/用户层面,依赖Pixel运行GrapheneOS等系统的安全敏感用户将承受更长的安全响应窗口,定制ROM社区协作与透明度显著下降。',
+      huaweiImpact: '竞争层面,谷歌持续收紧Android开源与侧载开放性,为华为在海外市场强化"开放可控"的分发与系统生态提供了差异化参照——AppGallery与HMS可强调比谷歌更容易获得、对开发者更友好的开源与第三方接入政策。机会层面,谷歌在Open Source与开发者社区信任上的损耗,给了华为以HarmonyOS NEXT鸿蒙系统在开发者关系、源码透明与合规治理上建立可信形象的窗口,并可与强调开放性的第三方ROM/开源社区合作,承接寻求脱离谷歌管控的开发者与用户。',
+    },
+    publishDate: '2026-08-11',
+    score: 6,
+    category: 'developer',
+    tags: ['谷歌', 'Pixel', '内核源代码', 'GrapheneOS', '定制ROM', 'AOSP', '开源', 'GPLv2', 'Android生态'],
+  },
 ];
