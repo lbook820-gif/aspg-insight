@@ -511,5 +511,5 @@ export const news_2026_08: NewsItem[] = [
     category: 'appstore',
     tags: ['苹果', 'App Store', '服务业务', '佣金', '监管', '监管文件', 'Sensor Tower', '美国'],
   },
-;
+];
 
