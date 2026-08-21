@@ -526,4 +526,19 @@ export const news_2026_08: NewsItem[] = [
     category: 'dma',
     tags: ['欧盟', 'DMA', '监管策略', '合规对话', '规范决定', '罚款', '苹果', '谷歌', 'Meta'],
   },
+  {
+    id: '251',
+    title: 'OpenAI为Mac端ChatGPT上线iMessage连接器:可检索、分析并起草短信,借macOS高级权限绕过App沙盒读取聊天数据',
+    source: '爱范儿 / 财联社',
+    sourceUrl: 'https://www.ifanr.com/1675954',
+    summary: '8月21日,OpenAI为Mac版ChatGPT上线Apple Messages连接器,用户授予权限后可让ChatGPT检索、分析iMessage/SMS/RCS聊天记录并起草回复。该功能依赖macOS的"完全磁盘访问权限"、AppleScript与辅助功能API读取本地SQLite聊天数据库,当前仅限Apple Silicon Mac的ChatGPT Work与Codex模式,后续将扩展至iPhone。',
+    aiComment: {
+      overallImpact: '政策层面,OpenAI借macOS高级权限(完全磁盘访问+AppleScript+辅助功能)绕过App沙盒边界直接读取通讯数据,冲击了苹果十多年构建的App数据隔离体系,也暴露AI智能体时代"系统权限缺口"导致的隐私监管盲区,欧盟GDPR/DMA及美国监管机构可能重新审视AI代理访问通讯数据的授权边界。市场层面,该功能让ChatGPT在与苹果原生Siri AI的竞争中抢得消息场景先手——Siri本以"读取本地消息"为原生核心竞争力,OpenAI经桌面端Agent提前覆盖,加剧即时通讯与AI助手入口之争,并可能迫使苹果调整系统级AI权限策略。开发者/用户层面,AI代理从"对话框问答"走向"直接编排敏感通讯数据",消息隐私边界被大幅重构,用户须权衡便利与数据暴露风险,平台也需重新定义第三方Agent对通讯数据的授权、审计与安全规范。',
+      huaweiImpact: '竞争层面,AI代理经系统级权限接管通讯与跨应用操作的路径,预示着"以对话为中心的AI入口"可能替代部分应用内操作,对HMS生态、小艺等终端AI助手的跨应用智能编排能力构成对标压力,华为需加速补齐同等能力。机会层面,该路径同时暴露了封闭系统在AI Agent时代的安全与体验两难,华为可在鸿蒙生态中提前构建"AI代理统一授权+沙箱+可审计"机制,在保障用户隐私的同时开放跨应用能力,以更清晰、合规的Agent架构形成差异化竞争话语权。',
+    },
+    publishDate: '2026-08-21',
+    score: 6,
+    category: 'developer',
+    tags: ['OpenAI', 'ChatGPT', 'iMessage', '苹果', 'AI智能体', '消息', '隐私', 'Mac', 'Siri AI'],
+  },
 ];
