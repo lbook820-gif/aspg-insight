@@ -49,6 +49,9 @@ export default function IntelligenceList() {
           <p className="text-sm md:text-base text-gray-600">
             聚焦欧盟DMA政策、应用商店监管与欧洲数字市场动态
           </p>
+          <p className="text-sm md:text-base text-gray-600 mt-2">
+            公开信息洞察，仅用于内部分享
+          </p>
         </div>
 
         {/* Search Bar */}
