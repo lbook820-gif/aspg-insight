@@ -157,6 +157,9 @@ export default function LatestNews() {
           <p className="text-gray-500 text-sm mt-2">
             聚焦欧盟DMA政策、应用商店监管与欧洲数字市场动态
           </p>
+          <p className="text-gray-500 text-sm mt-2">
+            公开信息洞察，仅用于内部分享
+          </p>
           <p className="mt-2 text-gray-400 text-xs">
             网站更新于：{new Date().toISOString().split('T')[0]}
           </p>
