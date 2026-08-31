@@ -1,6 +1,7 @@
 // 历史新闻及所有新闻通过月度文件进行管理
 
 // [IMPORTS_START]
+import { news_2026_09 } from './news/news_2026_09';
 import { news_2026_08 } from './news/news_2026_08';
 import { news_2026_07 } from './news/news_2026_07';
 import { news_2026_06 } from './news/news_2026_06';
@@ -37,6 +38,7 @@ export interface NewsItem {
 // 完整新闻数据 = 所有月份新闻合并
 export const newsData: NewsItem[] = [
   // [ARRAY_START]
+  ...news_2026_09,
   ...news_2026_08,
   ...news_2026_07,
   ...news_2026_06,
