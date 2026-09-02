@@ -16,4 +16,19 @@ export const news_2026_09: NewsItem[] = [
     category: 'payment',
     tags: ['Wero', '数字欧元', '德国央行', 'EPI', '支付主权', '即时支付', '欧洲支付'],
   },
+  {
+    id: '260',
+    title: '欧盟普通法院驳回Opera对微软Edge的DMA诉讼:维持Edge不构成“看门人”认定,提高企业挑战监管决定门槛',
+    source: 'Channel News Asia(路透)',
+    sourceUrl: 'https://www.channelnewsasia.com/business/eu-court-rejects-opera-challenge-against-eu-exemption-microsofts-edge-dma-rules-6357211',
+    summary: '9月2日,欧盟普通法院裁定驳回Opera对欧盟委员会2024年决定的诉讼,维持“Edge虽符合DMA量化标准但不构成企业触达用户重要门户”的认定。法院认定欧盟委员会接受微软论证并无错误,Edge继续不被列为DMA“看门人”，不承担相应开放义务。',
+    aiComment: {
+      overallImpact: '政策层面,欧盟法院在DMA相关裁决中再次胜诉,确立“量化标准达标不等于必然构成看门人”的认定逻辑,提高企业挑战监管认定的门槛,也为各平台界定“重要门户”边界提供判例参考。市场层面,Edge未列为看门人意味着微软浏览器暂不受DMA互操作与默认设置开放义务约束,浏览器分发竞争格局短期维持现状。开发者/用户层面,浏览器默认设置与选择规则短期内不变,但该判例将为此后针对平台门户地位的争议提供参照。',
+      huaweiImpact: '竞争层面,DMA“看门人”严格认定标准的判例,为华为海外浏览器及HMS生态在欧合规定位提供了参照——仅量化规模达标不足以被认定为门户。机会层面,监管认定门槛提高意味着非守门人产品在浏览器、默认工具及搜索入口等场景可保留更大自主空间,为华为在欧浏览器与搜索产品策略提供更清晰的合规依据。',
+    },
+    publishDate: '2026-09-02',
+    score: 7,
+    category: 'dma',
+    tags: ['DMA', '看门人', '微软Edge', '欧盟法院', '浏览器互操作', '反垄断', 'Opera'],
+  },
 ];
