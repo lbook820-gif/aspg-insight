@@ -46,4 +46,19 @@ export const news_2026_09: NewsItem[] = [
     category: 'payment',
     tags: ['Visa', '万事达卡', '跨境支付', 'Payinit', '数字钱包', '即时支付', '瑞士'],
   },
+  {
+    id: '262',
+    title: '欧盟正式将ChatGPT指定为"超大型在线搜索引擎"(VLOSE):Reddit与Roblox同列为VLOP,纳入DSA最严监管(最高可罚全球年营收6%)',
+    source: '每日经济(欧盟委员会/新浪/腾讯多源交叉验证)',
+    sourceUrl: 'https://cn.dailyeconomic.com/2026/09/03/155605.html',
+    summary: '8月31日,欧盟委员会依据《数字服务法》(DSA)正式将ChatGPT指定为"超大型在线搜索引擎"(VLOSE),同时将Reddit和Roblox指定为"超大型在线平台"(VLOP),三者欧盟月活跃用户均突破4500万门槛。ChatGPT因具备联网检索信息能力,被纳入搜索引擎监管类别,与Google Search、Bing同级。三家公司须在4个月内(最迟2027年1月)履行额外义务:评估并缓释非法内容传播、未成年人影响、用户身心健康、基本权利保护、选举进程与公共安全等系统性风险,接受独立审计并披露数据;爱尔兰监管机构监督ChatGPT和Reddit,荷兰ACM监督Roblox;违规最高可处全球年营收6%罚款。',
+    aiComment: {
+      overallImpact: '政策层面,欧盟将具备联网检索能力的ChatGPT归入"超大型在线搜索引擎"(VLOSE),是DSA监管的突破性认定——首次将生成式AI视为信息搜索引擎,标志"AI信息入口"正式进入DSA最高监管框架,为全球AI治理树立标杆。市场层面,此次正式认定在7月提案(ChatGPT+Roblox)基础上新增Reddit,三类美国平台须在2027年1月前重构内容审核、透明度与系统性风险评估体系,合规成本显著抬升且可能外溢至全球;对同类AI助手、UGC平台与元宇宙服务划定了更清晰的红线。开发者/用户层面,AI系统如何检索、排序与呈现信息将面临更高透明度和问责,用户获得更安全的信息环境,但平台为合规或收紧部分生成与开放功能。',
+      huaweiImpact: '竞争层面,欧盟将具备搜索能力的AI纳入搜索引擎级监管,显示"AI信息入口"正成为国际监管焦点,为华为AI助手与Petal Search等海外信息服务的合规设计提供直接参照——凡达到用户门槛的AI内容服务都需预置系统性风险评估、透明度与责任治理能力。机会层面,华为可在HarmonyOS与AppGallery中率先构建符合DSA/AI Act的AI内容标识、审核与风险缓释机制,以"合规优先"的AI助手形象差异化进入欧洲,并将AI治理能力作为开发者生态与出海服务的可信卖点。',
+    },
+    publishDate: '2026-08-31',
+    score: 6,
+    category: 'developer',
+    tags: ['欧盟', 'DSA', 'ChatGPT', 'OpenAI', 'VLOSE', '超大型在线搜索引擎', 'Reddit', 'Roblox', 'VLOP', '内容审核'],
+  },
 ];
