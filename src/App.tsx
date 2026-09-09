@@ -5,7 +5,6 @@ import Navbar from './sections/Navbar';
 import HomePage from './pages/HomePage';
 import AppEcosystemPage from './pages/AppEcosystemPage';
 import PaymentEcosystemPage from './pages/PaymentEcosystemPage';
-import SummitPage from './pages/SummitPage';
 import PrivacyPage from './pages/PrivacyPage';
 import MetaAnalysisPage from './pages/MetaAnalysisPage';
 import EPIInsightPage from './pages/EPIInsightPage';
@@ -36,7 +35,6 @@ function AppContent() {
           <Route path="/" element={<HomePage />} />
           <Route path="/app-ecosystem" element={<AppEcosystemPage />} />
           <Route path="/payment-ecosystem" element={<PaymentEcosystemPage />} />
-          <Route path="/summit" element={<SummitPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/meta-analysis" element={<MetaAnalysisPage />} />
           <Route path="/epi-insight" element={<EPIInsightPage />} />

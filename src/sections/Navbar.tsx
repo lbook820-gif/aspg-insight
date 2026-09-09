@@ -20,7 +20,6 @@ export default function Navbar() {
     { name: '首页', href: '/' },
     { name: '应用生态', href: '/app-ecosystem' },
     { name: '支付生态', href: '/payment-ecosystem' },
-    { name: '生态峰会', href: '/summit' },
   ];
 
   const isActive = (path: string) => {

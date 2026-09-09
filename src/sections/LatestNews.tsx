@@ -265,12 +265,6 @@ export default function LatestNews() {
                 >
                   支付生态
                 </Link>
-                <Link
-                  to="/summit"
-                  className="px-3 py-1.5 md:px-4 md:py-2 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded-md font-medium transition-colors text-sm"
-                >
-                  峰会动态
-                </Link>
               </div>
             </div>
 
