@@ -331,4 +331,19 @@ export const news_2026_09: NewsItem[] = [
     category: 'appstore',
     tags: ['苹果', 'Epic', '美国司法部', 'DOJ', '最高法院', '藐视法庭', 'App Store佣金', '外链支付', '反垄断'],
   },
+  {
+    id: '281',
+    title: 'WhatsApp面向Android及iOS测试版开放第三方AI智能体接入:单账号最多连接5个Agent,仅限单聊且不支持端到端加密(据WABetaInfo)',
+    source: 'WABetaInfo(Analytics Insight交叉验证)',
+    sourceUrl: 'https://wabetainfo.com/whatsapp-is-rolling-out-chats-with-third-party-agents/',
+    summary: '9月22日,WhatsApp开始在Android测试版(2.26.35.3)及iOS测试版(26.37.10.70)小范围推出与第三方AI智能体(Agent)的聊天功能。用户可在设置中新增并配置智能体,系统生成API密钥供用户与其账号安全连接,单账号最多可接入5个第三方Agent。该功能允许用户在不离开应用的情况下与外部AI助手对话,但Agent仅能读取其所在专用会话内容,无法访问其他聊天、通讯录或媒体,且暂不支持加入群聊;当前第三方Agent会话不具备端到端加密,WhatsApp会提示AI回复可能存在误差,初期仅支持文本交互。',
+    aiComment: {
+      overallImpact: '生态层面,WhatsApp正式向第三方开发者开放AI智能体接入入口,标志主流超级App从"封闭消息"走向"Agent互操作"的生态开放方向,与欧盟推动消息互操作与平台开放的监管趋势相呼应,为消息平台上的第三方AI服务标准化打开通道。市场层面,该能力令WhatsApp成为可承载外部AI Agent的消息入口,削弱独立AI App的触达价值,同时带动API密钥托管、Agent服务商等周边生态,加剧消息平台间在AI接入能力上的竞争。开发者/用户层面,开发者可获得直达海量用户的消息触达渠道,但需适配WhatsApp的API密钥与权限隔离机制,并面对无端到端加密带来的合规与信任挑战;用户获得在聊天内调用外部AI的能力,但需接受会话可见性与加密降级。',
+      huaweiImpact: '竞争层面,WhatsApp开放第三方AI Agent接入,强化Meta在"消息+AI入口"的主导地位,为华为HMS生态中消息与智能助手产品(如畅连、小艺)在欧开拓"第三方Agent互操作"提供了对标样本。机会层面,华为可在其海外消息与智能助手体系中设计API密钥式、会话隔离的第三方智能体接入方案,以"隐私友好、可托管本地模型"为差异化,争取希望在开放消息生态中分发AI服务的开发者,并借欧盟平台开放与Agent互操作趋势抢占合规先机。',
+    },
+    publishDate: '2026-09-22',
+    score: 6,
+    category: 'developer',
+    tags: ['WhatsApp', 'AI智能体', '消息互操作', '第三方接入', 'API', 'Meta', '隐私', '即时通讯', 'Agent生态'],
+  },
 ];
