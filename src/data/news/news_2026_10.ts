@@ -91,4 +91,19 @@ export const news_2026_10: NewsItem[] = [
     category: 'appstore',
     tags: ['Apple App Store', '印度', 'Bitchat', '下架', '消息应用', '内容监管'],
   },
+  {
+    id: '298',
+    title: '欧洲本土支付联盟正式成立"European Network for Payments"互操作实体:Bancomat、Bizum、EPI/Wero、SIBS-MB WAY与Vipps MobilePay共同持股运营,打通泛欧即时支付网络(据官方新闻稿/EPI官网)',
+    source: 'KBC Newsroom/EPI Company官方新闻稿(交叉验证)',
+    sourceUrl: 'https://newsroom.kbc.com/bancomat-bizum-epiwero-sibs-mb-way-and-vipps-mobilepay-announce-the-creation-of-a-european-interoperability-entity-to-connect-their-respective-solution',
+    summary: '9月30日,Bancomat(意大利)、Bizum(西班牙)、EPI Company/Wero、SIBS-MB WAY(葡萄牙)与Vipps MobilePay(北欧)宣布成立联合实体"European Network for Payments"(ENP),专司运营并扩大各参与欧洲支付方案间的互操作性。该实体通过基于欧洲标准(含即时账户对账户支付)的通用技术与运营层,连接各自独立的钱包方案;五家创始合作方将平等持股,负责技术协调及功能、参与方扩展。方案与ENP正筹备落地实施,分阶段推进,优先从跨境点对点支付开始,后续扩展至电商与线下POS支付。此举是欧洲本土支付网络从"签署互操作谅解备忘录"走向"实体化运营"的关键一步。',
+    aiComment: {
+      overallImpact: '政策层面,ENP实体化是欧洲"支付主权"战略从纸面协议走向落地执行的关键里程碑,将欧洲各国分散的本土即时支付方案(意/西/葡/荷等)通过单一标准互操作层连成泛欧网络,实质挑战Visa/万事达卡及美系钱包在欧洲跨境支付的主导地位,亦与数字欧元、EPI-Wero整合共同构成欧洲去美元化支付体系的三条主线。市场层面,跨境P2P先行、电商与POS跟进的路线,有望让消费者无需绑定卡组织即可跨多个欧洲国家即时转账,改变跨境支付的手续费与结算格局。开发者/用户层面,商户与PSP需评估接入ENP标准层的成本与收益,用户则将获得更多不依赖美系卡组织的跨境支付选择,但网络初期覆盖与兼容深度仍会经历演进。',
+      huaweiImpact: '竞争层面,欧洲本土支付网络实体化运营,将进一步削弱美系卡组织与支付平台在欧洲跨境结算的优势,重塑华为HMS生态及Petal Pay等海外业务所处的支付基础设施格局,非美系支付环境的形成有利于减少路径锁定。机会层面,ENP统一标准层为华为海外支付接入提供了"一次对接、多国通用"的简洁通道,可评估让AppGallery订阅、应用内购与商户结算优先兼容ENP/Wero系账户对账户支付,以更低费率与"本地主权"叙事争取欧洲开发者与消费者信任。',
+    },
+    publishDate: '2026-09-30',
+    score: 6,
+    category: 'payment',
+    tags: ['欧洲支付', 'EPI', 'Wero', '互操作', '即时支付', '支付主权', '跨境支付'],
+  },
 ];
