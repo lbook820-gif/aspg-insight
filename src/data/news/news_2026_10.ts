@@ -121,4 +121,19 @@ export const news_2026_10: NewsItem[] = [
     category: 'dma',
     tags: ['欧盟', '儿童法案', '未成年人', '社交媒体', 'DSA', '内容审核'],
   },
+  {
+    id: '300',
+    title: 'EPI正式加入nexo standards开放标准组织:以ISO 20022统一报文协议打通Wero泛欧商户受理"最后一公里",2027年铺开线下POS受理并长期规划NFC集成(据EPI官方新闻稿/Merchant\'s Eye转载核实)',
+    source: 'EPI Company官方新闻稿(Merchant\'s Eye/FF News转载交叉验证)',
+    sourceUrl: 'https://www.merchantseye.com/news/epi-joins-nexo-standards-to-empower-wero-s-pan-european-ambition-through-interop-6c8abeca',
+    summary: '欧洲支付倡议(EPI)宣布加入支付受理开放标准组织nexo standards,借助其基于ISO 20022的开放报文规范,让Wero(6000万用户)可在不同市场、不同技术环境的商户受理终端间无差别接入,破解账户对账户支付的受理碎片化难题。9月NRF Europe巴黎大会上已演示基于nexo受理环境的Wero二维码扫码支付,相关用例将纳入2027年线下POS受理铺开计划,长期还包括NFC非接集成。',
+    aiComment: {
+      overallImpact: '政策层面,EPI主动拥抱开放受理标准,与ENP互操作实体、数字欧元共同构成欧洲支付主权战略的标准化路径,以"技术开放"对冲国际卡组织的封闭网络优势。市场层面,Wero受理"最后一公里"的标准化将降低收单机构与终端厂商的接入门槛,加速账户对账户支付从P2P向线下POS渗透,直接侵蚀Visa/万事达在欧洲线下受理的护城河。开发者/用户层面,收单方与PSP需评估nexo/ISO 20022兼容改造成本,商户未来可以更低集成成本受理Wero,消费者将获得更多不依赖美系卡组织的线下支付选择。',
+      huaweiImpact: '竞争层面,欧洲受理侧标准化降低了对单一卡组织专有协议的依赖,为华为Petal Pay及终端NFC能力进入欧洲商户受理市场提供了开放协议通道,削弱美系网络对受理端的锁定。机会层面,华为可基于nexo开放规范让智能终端与钱包方案"一次适配、多国受理",并借助2027年Wero线下铺开窗口期,与欧洲本土受理生态建立先发合作,以开放标准+本土化合规叙事争取欧洲银行与商户信任。',
+    },
+    publishDate: '2026-10-08',
+    score: 5,
+    category: 'payment',
+    tags: ['欧洲支付', 'EPI', 'Wero', 'nexo standards', '互操作', '商户受理'],
+  },
 ];
