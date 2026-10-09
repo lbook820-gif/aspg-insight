@@ -164,6 +164,21 @@ export const news_2026_10: NewsItem[] = [
     publishDate: '2026-10-08',
     score: 6,
     category: 'payment',
-    tags: ['Visa', 'Mastercard', '英国', '集体诉讼', '交换费', '跨境支付'], (auto: daily news update 2026-10-09)
+    tags: ['Visa', 'Mastercard', '英国', '集体诉讼', '交换费', '跨境支付'],
+  },
+  {
+    id: '303',
+    title: '苹果iOS 27把WebKit广告追踪屏蔽从写死短名单升级为动态远程清单:从The Trade Desk、LiveRamp、ID5、Permutive等数家扩展至数百家程序化广告、CDP与身份图谱公司,并可在不推送系统更新的情况下随时增删(据AdExchanger,经ExchangeWire/U of Digital交叉验证)',
+    source: 'AdExchanger(ExchangeWire/U of Digital Newsletter交叉验证)',
+    sourceUrl: 'https://www.adexchanger.com/platforms/how-data-and-ad-tech-vendors-are-preparing-for-the-ios-27-fallout/',
+    summary: '10月8日,AdExchanger报道称苹果iOS 27(9月中旬推送)已在Safari及所有iOS浏览器中静默屏蔽The Trade Desk的广告投放域名adsrvr.org,以及LiveRamp、ID5、Permutive、Audigent、Unified ID 2.0等身份与数据厂商;更关键的是,苹果已把原先写死在系统中的数家短名单,改为存放在私有仓库、由设备定期远程拉取的动态内容规则清单(ContentRuleList),可随时将数百家CDP、广告与营销技术公司、数据卖方及身份图谱运营方置入"潜在屏蔽"或"已屏蔽"状态,而无需推送新的iOS版本。10月初发布的iOS 27.2测试版已将adsrvr.org移出名单,但LiveRamp、ID5等仍在屏蔽之列,广告主已出现"赢得竞价却未实际渲染"的损失,行业被迫加速向IAB Tech Lab的Trusted Server(发布方自有服务器)架构迁移。',
+    aiComment: {
+      overallImpact: '政策层面,苹果把广告与身份追踪屏蔽从"随系统版本发布的静态名单"改为"远程可随时增删的动态清单",实质是以WebKit(iOS上所有浏览器均须使用的引擎)为支点,对第三方跨站追踪执行默认拦截,等于单方面把"反指纹、反跨站识别"的隐私立场升级为可即时执行的平台级执法能力,与此前ATT、ITP一脉相承,但也因缺乏事先沟通、无公开规则与申诉机制而引发"平台私设规则"的治理争议,业内普遍认为唯一约束只能来自反垄断。市场层面,屏蔽以域名粒度生效,会直接切断被列入名单厂商的请求与竞价链路,导致跨渠道身份拼接、归因度量与Safari广告投放能力受损;受影响的DSP/身份厂商被迫从第三方脚本模式转向发布方第一方或服务端(Trusted Server)部署,广告技术栈的价值分配与合规成本结构将被重写。开发者/用户层面,开发者与发布方需要重新评估依赖第三方SDK的变现与度量方案、把关键能力内化到自有栈,短期内存在收入与归因口径波动;用户则获得更强的跨站追踪默认拦截,但代价是部分内容与服务的免费变现模式承压、平台对网络广告的裁量权进一步集中。',
+      huaweiImpact: '竞争层面,苹果以浏览器引擎为支点动态拦截跨站追踪,示范了"操作系统+引擎"对广告与数据链路拥有的一票否决权;对华为而言,这既凸显HarmonyOS/ArkWeb自研引擎在广告、度量与隐私合规上的自主可控价值,也提示若海外版本采用第三方引擎或第三方广告SDK,同样可能被平台侧规则随时切断,需提前评估技术路径依赖。机会层面,华为可借鉴苹果"默认拦截跨站追踪+发布方自有服务器"的思路,在HarmonyOS广告与安全框架中预置更透明、可申诉的追踪防护与第一方数据方案,以"规则公开、可预期"的差异化叙事争取欧洲等强监管市场的开发者与发布方,同时为Petal Ads等自有广告业务保留合规且可持续的度量路径。',
+    },
+    publishDate: '2026-10-08',
+    score: 7,
+    category: 'appstore',
+    tags: ['Apple', 'iOS 27', 'WebKit', '广告追踪', '隐私'],
   },
 ];
