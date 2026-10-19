@@ -421,5 +421,20 @@ export const news_2026_10: NewsItem[] = [
     category: 'appstore',
     tags: ['苹果', 'App Store', '审核指南', 'AI内容安全', '开发者政策'],
   },
+  {
+    id: '320',
+    title: '英国CMA拟强制苹果开放iPhone NFC触碰支付:下周发布正式行为要求咨询提案,允许iPhone用户选择Apple Pay以外的默认支付服务,苹果准备诉诸法庭(据Financial Times/Electronic Payments International与dig.watch交叉验证)',
+    source: 'Financial Times(付费墙,经Electronic Payments International转载与dig.watch跟进核实)',
+    sourceUrl: 'https://www.electronicpaymentsinternational.com/news/uk-to-push-apple-to-open-iphone-payment-technology/',
+    summary: '据英国《金融时报》10月16日报道,英国竞争与市场管理局(CMA)拟于"下周"发布正式行为要求咨询提案,认定苹果对英国非接触"tap-to-pay"市场握有不公平控制权,拟要求修改iOS使iPhone用户可选择Apple Pay以外的支付服务作为默认,并一并处理第三方钱包访问NFC芯片的限制;两位知情人士称苹果很可能上诉挑战。银行与金融科技企业此前特别质疑Apple Pay对信用卡交易收取的0.15%费用;CMA拟提出与欧盟DMA对齐的接入框架——欧盟2024年已迫使苹果开放NFC,而苹果2024年10月在英国上线的付费NFC & SE平台至今无产品落地,CMA证据征集称高收费与平台间技术差异是障碍。业内人士指出英欧规则分化已延迟新服务进入英国市场。',
+    aiComment: {
+      overallImpact: '政策层面,这是英国DMCC体制自去年7月对苹果谷歌启动移动支付咨询(站内id 180)以来首次升级为针对NFC独占的定向行为要求,若落地英国将成为继欧盟之后第二个强制开放iPhone触碰支付的主要司法辖区,违规最高可罚全球营收10%,且CMA提案需经咨询程序,苹果已放话上诉,预计进入数年的法律拉锯。市场层面,Apple Pay凭借NFC硬件独占向发卡行收取的费用模式面临直接冲击,PayPal、Revolut等第三方钱包与银行获得进入iOS触碰支付入口的政策通道;若英国框架与欧盟DMA对齐,钱包服务商可"一次适配两个市场",纠正英欧规则分化造成的创新延迟。开发者/用户层面,用户将首次可在iPhone上选择默认钱包,银行与金融科技公司可建立与用户的直接非接触触点,但苹果以安全为由的诉讼抵抗可能使实际开放时间大幅推迟。',
+      huaweiImpact: '竞争层面,若英国与欧盟先后强制开放NFC,Apple Pay的"硬件独占"护城河将在欧洲两大市场被同时击穿,验证了钱包开放与跨生态互操作是全球监管的确定性方向,也为华为钱包类服务未来进入英国及欧洲市场提供了明确政策通道预期(接入NFC/SSE与默认钱包资格)。机会与合规层面,华为应密切跟踪CMA拟定的接入技术路径(HCE与安全单元之争)与"公平合理"收费标准的最终尺度,提前以自身钱包的安全认证与费率体系对标准备欧洲准入论证;苹果"安全不可分离"论调在欧盟与英国接连被监管否定的先例也提示,华为在自有生态推进钱包开放时应主动发布第三方安全认证与互操作承诺,以透明换信任,避免重蹈"以安全为由封闭"被监管强制的被动局面。',
+    },
+    publishDate: '2026-10-16',
+    score: 7,
+    category: 'appstore',
+    tags: ['英国', 'CMA', 'NFC', 'Apple Pay', '战略市场地位'],
+  },
 
 ];
