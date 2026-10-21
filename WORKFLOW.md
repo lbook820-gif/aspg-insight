@@ -4,19 +4,41 @@
 
 ### 1. 新闻采集
 
-- **方式**：OpenClaw Cron 任务（isolated session）
-- **定时**：每天 00:30 @ Asia/Shanghai（避开午夜网络拥堵期）
-- **时间范围**：搜索过去 48 小时
-- **超时**：900 秒（实测约 5-8 分钟可完成）
+- **方式**：WorkBuddy 自动化 `aspg-insight-daily-update`（本机定时，非云端）
+- **定时**：每天本机 17:30（= 北京时间次日 00:30）
+- **时间范围**：最近 72 小时为主，最长回溯 5 天（补跑时）
+- **补跑机制**：本机休眠会错过窗口，开机后由调度器自动补跑；补跑按实际运行日期归档
 
-#### 搜索方式
-**全部使用小艺联网搜索**（xiaoyi-web-search），不再使用 Bing site: 指令。
+#### 采集顺序（重要，2026-10 修订）
+
+**第一步：信源直采（主通道）**
 
 ```bash
-cd /home/sandbox/.openclaw/workspace/skills/xiaoyi-web-search && node ./scripts/search.js "关键词" -n 10
+python3 scripts/fetch_feeds.py --days 3            # 文本清单，按日期分组
+python3 scripts/fetch_feeds.py --days 3 --json      # 结构化，便于逐条判定
 ```
 
-#### 搜索关键词（精简为 8 组，覆盖 3 大模块）
+脚本直连官方与权威媒体的 RSS/Atom，带发布时间，可按时间窗过滤，覆盖：
+
+| 源 | 覆盖 | 级别 |
+|----|------|------|
+| Apple Developer News | App 审核指南、政策更新 | S |
+| Android Developers Blog / Play 标签 | Google Play 政策与能力 | S |
+| 欧盟委员会新闻稿 | DMA/DSA 执法与决定 | S |
+| 英国 CMA | SMS 认定、行为要求、咨询 | S |
+| 欧洲央行 | 数字欧元 | S |
+| TechCrunch / The Verge | 综合科技 | A |
+| 9to5Mac / AppleInsider | 苹果垂直 | B |
+| Finextra / Payments Dive | 支付与收单 | B |
+
+**第二步：搜索补充（辅助）**
+
+对直采未覆盖的角度（如 EPI/Wero、WhatsApp 互操作、区域监管动向）再用 WebSearch 补搜。
+
+> ⚠️ 经验：搜索工具对"新闻类"查询经常返回科普长文、SEO 站与教程页，而非当日新闻，且不保证时效。
+> 因此**不得把搜索结果当作唯一采集通道**；若某天直采与补搜都没有符合条件的新条目，视为"当日确无新增"，并在报告中写明候选数与判断依据，而不是默认漏采。
+
+#### 搜索关键词（补充检索时使用，8 组，覆盖 3 大模块）
 
 > **⚠️ 过滤规则**：所有搜索结果中，**明确以中国内地（大陆）市场为主体**或**仅与中国市场相关**的新闻必须排除。
 > 排除标准包括但不限于："中国""中国市场""中国监管""国行""工信部""国内"等关键词主导的报道，以及来源仅为中国国内媒体的独家本地新闻。
@@ -59,19 +81,28 @@ web_fetch({"url": "https://www.google.com/search?q=EPI+Wero+digital+euro+payment
 
 ### 3. 去重检查
 
-**三步规则**（必须严格执行）：
+**三步规则**（2026-10 修订：区分"重复"与"进展"）：
 
-1. **URL 去重**：新 URL 不能在已有列表中
-2. **标题去重**：与已有标题关键词重叠 ≤ 70%
-3. **主题去重**：不能是已有新闻的后续/同事件报道
+1. **URL 去重**（硬规则）：新 URL 不得在已有数据中出现，含同一文章的不同转载/短链。
+2. **标题去重**（硬规则）：与已有标题关键词重叠 > 70% 且指向同一事件同一进展的，跳过。
+3. **主题去重**（软规则）：判断是否为**同一事件的同一进展**。
+   - **跳过**：仅措辞不同、无新增事实的重复报道；媒体转述同一份公告而未提供新信息。
+   - **收录**：同一事件出现**实质新进展**时，应作为新条目收录，并在 `summary` 首句写明进展点。实质新进展包括：
+     - 监管机构从"拟议/预告"进入"正式提案、启动咨询、作出决定、开出罚单、公布截止日期"
+     - 法院/法官的裁决、听证、上诉、和解批准等程序节点
+     - 企业正式回应、提起上诉、政策正式生效或生效日期确定
+     - 新增可量化数据（金额、费率、用户数、生效范围）或适用范围扩大
+   - 判定示例：10-16"CMA 拟下周发布 NFC 咨询提案"（已收录 id 320）→ 10-20"CMA 正式发布咨询提案、咨询期至 11-17、要求 SE+HCE 双标准"属于**实质新进展**，应收录（id 321），不得以"后续报道"为由跳过。
+
+**时效红线**：`publishDate` 早于运行日前 5 天（补跑窗口）的条目，除重大遗漏外不补录；不收录未来日期的活动预告。
 
 **去重命令**：
 ```bash
-cd /home/sandbox/.openclaw/workspace/repo/aspg-insight
-awk '/sourceUrl:/{print}' src/data/newsData.ts | sort | uniq > /tmp/existing_urls.txt
+cd <仓库根目录>
+grep -h "sourceUrl:" src/data/news/news_*.ts | sed "s/.*sourceUrl: '//;s/'.*//" | sort -u > /tmp/existing_urls.txt
 ```
 
-**如无新增新闻**：`git pull` 后静默结束，不提交。
+**如无新增新闻**：完成采集与去重后确认无条目通过，不提交，并在运行报告中写明「候选 N 条，均因 X 原因未收录」。
 
 ### 4. 内容生成
 
@@ -147,15 +178,23 @@ web_fetch({"url": "https://www.google.com/search?q=alternative+app+store+commiss
 
 ## 相关路径
 
-- 本地仓库：`/home/sandbox/.openclaw/workspace/repo/aspg-insight/`
+- 本地仓库：`/Users/xiaoqingli/WorkBuddy/2026-09-24-21-27-52/aspg-insight/`
 - 远程仓库：`https://github.com/lbook820-gif/aspg-insight`
 - 网站地址：`https://lbook820-gif.github.io/aspg-insight/`
-- Push Token：已通过 git credential-store 本地管理
+- 抓取脚本：`scripts/fetch_feeds.py`
+- Push Token：已通过本机 git 凭据管理（`git config user.name=lbook820-gif`）
 
 ## 定时任务配置
 
 - **任务名**：`aspg-insight-daily-update`
-- **Cron**：`30 0 * * *` @ Asia/Shanghai
-- **模式**：isolated，thinking=high
-- **超时**：900 秒
-- **Channel**：xiaoyi-channel
+- **调度**：WorkBuddy 自动化，每天本机 17:30（本机时区 GMT+1 = 北京时间次日 00:30）
+- **自动化 id**：`142973c9-503a-41e9-95de-a63b7b9ecfef`
+- **调度日志**：`~/.workbuddy/logs/automation.log`（按 id 检索 start/finish 与成败）
+- **推送**：直接 push 到 main，GitHub Actions 自动构建部署；失败时只报错，不强制推送
+
+## 已知陷阱
+
+1. **搜索工具不是新闻源**：对"XX 政策 2026"这类查询常返回科普/SEO 长文，时效不可靠。以 `fetch_feeds.py` 直采为主。
+2. **本机休眠会错过窗口**：日志出现 `scheduling suspended` 即表示本机未运行，恢复后会自动补跑，补跑时间晚于原定窗口属正常。
+3. **不要用"后续报道"一刀切去重**：本领域大部分新闻天然是同一事件的推进，过度去重会导致连续多天"零新增"。按上面的"实质新进展"标准判定。
+4. **跨时区归档**：日期基准取运行当天的本机日期，不要用北京时间推断月份，否则月初会出现归档到上月文件。
