@@ -586,5 +586,20 @@ export const news_2026_10: NewsItem[] = [
     category: 'payment',
     tags: ['美国', '借记卡', '交换费', '美联储', 'Durbin修正案', '司法裁决'],
   },
+  {
+    id: '331',
+    title: 'Visa万事达卡在英国面临新提起的50亿英镑MIF集体诉讼:Harcus Parker与Hausfeld向竞争上诉法庭申请就2020-2026年消费类卡多边交换费索赔,约100万英国商户自动纳入opt-out程序(据The Guardian/Law Gazette/Finextra交叉验证)',
+    source: 'The Guardian/Law Society Gazette(Finextra、PYMNTS、Electronic Payments International交叉验证)',
+    sourceUrl: 'https://www.theguardian.com/business/2026/oct/26/visa-mastercard-potential-uk-lawsuit-interchange-fees-compensation',
+    summary: '进展点:继10月初7亿英镑跨境交换费之诉后,Visa与万事达在英国遭遇新一波、规模约7倍的集体索赔——律所Harcus Parker(大型企业opt-in通道)与Hausfeld(小微商户opt-out通道)代表拟议集体代表Stephen Allen(前Portman Travel高管,2021年起多次发起卡费诉讼)向英国竞争上诉法庭(CAT)提交集体诉讼申请,指控两家卡组织设定的多边交换费(MIF)限制竞争,就2020年10月至2026年10月所有涉及Visa/Mastercard消费类借记卡、信用卡与预付卡的商户交易追偿,估算规模约50亿英镑(约67亿美元),或成英国史上最大竞争赔偿案之一,资助方为伦敦诉讼基金Bench Walk Advisors。若CAT批准集体诉讼令(CPO),2022-2024年年营收低于1亿英镑的约100万家英国企业/机构/慈善组织将自动纳入opt-out集体(每家或可回收数千英镑),营收1亿英镑以上者须主动opt-in;已在诉或债权已被先前和解消灭的企业除外。万事达回应称"强烈不同意索赔依据",并指其属"机会主义第三方资助诉讼",恰好是英国政府今夏公布的opt-out集体诉讼改革拟防范的类型;Visa称交换费是维护安全数字支付生态的关键组成。索赔建立在2025年6月CAT关于商业与消费卡MIF实质性限制竞争的认定之上(两卡组织均已表示上诉),与10月初Water Plus等逾7亿英镑跨境"卡不存在"交换费之诉为不同案件。',
+    aiComment: {
+      overallImpact: '政策与司法层面,该申请把2025年6月CAT对MIF"实质限制竞争"的违法认定推向损害赔偿阶段,与10月初7亿英镑跨境交换费之诉、美国刷卡费和解终审(11月16日听证)形成英美两地对卡组织费率的密集司法围剿,英国政府同期推进的opt-out集体诉讼改革也因本案被再度聚焦。市场层面,50亿英镑量级的潜在赔偿叠加MIF占商户服务费大头的事实,将强化商户对收单成本的谈判筹码,进一步压缩Visa/万事达在欧洲的费率与舆论空间,为Wero/ENP等A2A方案提供替代叙事。商户与用户层面,约100万家小微商户自动获得索赔资格,但CPO批准、责任与金额认定预计耗时数年,期间受理成本走向不确定;卡组织对2025年违法认定的上诉进展将直接影响本案成败。',
+      huaweiImpact: '竞争层面,英国商户侧对MIF的系统性追偿进一步削弱美系卡组织的费率正当性,加速欧洲商户与收单生态向低成本A2A/钱包方案分散,与华为海外钱包与聚合支付的推广方向同向。机会与合规层面,华为可在面向欧洲商户的支付方案中突出"绕开卡网络费率"的成本优势,跟踪CAT对CPO的裁定与2025年MIF违法认定上诉结果,把交换费诉讼风险纳入商户定价与合规沟通素材;同时在英国及欧洲市场的应用内支付与收单合作中预置费率波动情景,避免把卡基费率假设写入长期合约。',
+    },
+    publishDate: '2026-10-26',
+    score: 6,
+    category: 'payment',
+    tags: ['Visa', 'Mastercard', '英国', '集体诉讼', '交换费'],
+  },
 
 ];
