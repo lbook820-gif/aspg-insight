@@ -26,7 +26,8 @@ UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
 # key: (显示名, URL, 分级, 关注模块)
 FEEDS = {
     "apple": ("Apple Developer News", "https://developer.apple.com/news/rss/news.rss", "S", ["appstore"]),
-    "google": ("Android Developers Blog", "https://android-developers.googleblog.com/feeds/posts/default", "S", ["googleplay"]),
+    # 2026-10-15 起官方博客由 Blogger 迁至 developer.android.com/blog，旧 feeds/posts/default 已停更
+    "google": ("Android Developers Blog", "https://developer.android.com/static/blog/atom.xml", "S", ["googleplay"]),
     "googleplay": ("Android Blog · Google Play", "https://android-developers.googleblog.com/feeds/posts/default/-/Google%20Play", "S", ["googleplay"]),
     "ec": ("欧盟委员会新闻稿", "https://ec.europa.eu/commission/presscorner/api/rss?language=en", "S", ["dma"]),
     "cma": ("英国CMA", "https://www.gov.uk/government/organisations/competition-and-markets-authority.atom", "S", ["dma"]),
