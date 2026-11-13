@@ -271,4 +271,19 @@ export const news_2026_11: NewsItem[] = [
     category: 'payment',
     tags: ['交换费', '伊利诺伊', 'OCC', '卡组织', '监管诉讼'],
   },
+  {
+    id: '353',
+    title: 'OpenAI推出ChatGPT Wallet:由dot代理代用户完成购物与结账,首期仅限美国ChatGPT Pro用户、支持Visa/万事达/美国运通,并同步发布商家接入手册(据OpenAI 2026-11-13公告)',
+    source: 'OpenAI官方公告(2026-11-13)/TechCrunch(2026-11-13)/9to5Mac(2026-11-13)',
+    sourceUrl: 'https://openai.com/index/introducing-chatgpt-wallet/',
+    summary: '11月13日,OpenAI上线ChatGPT Wallet,让名为dot的代理在用户逐笔批准下代为挑选商品并完成支付。首期仅面向美国18岁以上的ChatGPT Pro订阅用户,须绑定美国发行的Visa、万事达或美国运通卡;支付以卡组织下发的支付令牌完成,代理与商家均不接触真实卡号,每笔交易需Face ID或指纹确认并留下授权记录,持卡人原有的卡奖励与拒付保护不变。OpenAI同步发布Commerce Partner Playbook,要求商家在ChatGPT认领并验证店铺、上传商品feed、以Web Bot Auth让CDN与防火墙放行签名请求,并与Forter、Riskified、Sardine、Signifyd等风控商合作降低误拒;收单侧由Adyen、Checkout.com、Stripe接入。OpenAI称后续将开放消费限额、商品品类与时段等委托参数,并扩大商户与地区范围;公告未披露对商家的收费或分成比例。',
+    aiComment: {
+      overallImpact: '政策层面,代理代购正落在监管空白上:欧盟11月11日提出的《数字公平法》草案才刚开始确立消费者使用AI代理购物的权利,美国尚无专门立法;令牌化沿用了卡组织既有规则,但"代理误购由谁担责"仍未界定,若规模扩大将推动卡组织与监管明确责任分配。市场层面,结账入口从商家页面与应用内闭环转向对话界面,OpenAI借卡组织令牌切入电商结账而不自建收单,卡组织获得增量交易,Adyen、Stripe、Checkout.com则成为代理商务的收单层;一旦放量,应用内购买与订阅的"平台内闭环"逻辑会被削弱。开发者与用户层面,独立开发者与DTC品牌多了一个入口,但需改造商品feed与风控以防代理流量被当作bot拦截;用户获得便利的同时把部分购买决策让渡给代理,限额、品类约束与可撤销授权成为关键控制点。',
+      huaweiImpact: '竞争层面,代理商务的结账标准若由OpenAI与美国卡组织先行定义,华为小艺与华为支付在海外落地时就需接受他人令牌体系与商家接入规范,议价空间有限;AppGallery的内购与华为钱包应尽早评估是否支持代理代购,避免在欧洲市场被动跟随。机会窗口层面,欧盟DFA的代理购物权利与DMA互操作义务给了第三方代理制度切口,华为可先做"用户授权+限额+可撤销令牌"的合规样板,并以公开的商家接入文档争取欧洲、中东与东南亚商户,把开放接入做成差异化卖点。',
+    },
+    publishDate: '2026-11-13',
+    score: 6,
+    category: 'payment',
+    tags: ['AI代理', '智能钱包', '代理商务', '卡组织', '结账'],
+  },
 ];
